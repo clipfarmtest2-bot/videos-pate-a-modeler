@@ -7,6 +7,7 @@ ffmpeg doit être installé (déjà le cas si Dossiers Noirs tourne sur ce Mac).
 
 ## Rendu
     node rendu.mjs videos/tailles-etoiles.json
+(depuis le dossier `kit/`)
 Résultat dans `out/` : la vidéo 1080×1920, la couverture et le texte de publication.
 Aperçu rapide sans rendu : `node rendu.mjs videos/tailles-etoiles.json --apercu 0.5,12,35`
 

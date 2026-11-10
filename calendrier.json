@@ -1,0 +1,48 @@
+{
+ "publications": [
+  {
+   "date": "2026-11-11",
+   "heure": "18:00",
+   "id": "argent",
+   "titre": "Million ou milliard ? La différence en pièces"
+  },
+  {
+   "date": "2026-11-12",
+   "heure": "18:00",
+   "id": "ocean",
+   "titre": "Jusqu'où descend l'océan ? Accroche-toi"
+  },
+  {
+   "date": "2026-11-13",
+   "heure": "18:00",
+   "id": "tailles-etoiles",
+   "titre": "La taille des étoiles va te donner le vertige"
+  },
+  {
+   "date": "2026-11-16",
+   "heure": "18:00",
+   "id": "vitesse",
+   "titre": "De l'escargot à la lumière : qui va le plus vite ?"
+  },
+  {
+   "date": "2026-11-17",
+   "heure": "18:00",
+   "id": "probas",
+   "titre": "Tes chances de gagner au Loto, en billes"
+  },
+  {
+   "date": "2026-11-18",
+   "heure": "18:00",
+   "id": "espace-2",
+   "titre": "Plus gros que la plus grosse étoile ? Regarde jusqu'au bout"
+  }
+ ],
+ "sujets_traites": [
+  "tailles des planètes et des étoiles (Lune → Stephenson 2-18)",
+  "espace : du système solaire à l'univers observable",
+  "vitesses (escargot → lumière)",
+  "argent en piles de pièces (billet, SMIC, million, milliard, plus grande fortune)",
+  "descente dans l'océan (surface → fosse des Mariannes)",
+  "probabilités en billes (pile ou face → EuroMillions)"
+ ]
+}

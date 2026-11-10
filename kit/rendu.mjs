@@ -27,7 +27,7 @@ async function worker(pg) {
   while (next < nseg) {
     const s = next++, t0 = s * SEG, t1 = Math.min(info.dur, t0 + SEG), n = Math.round((t1 - t0) * FPS), tmp = `${build}/seg-${s}.tmp.mp4`;
     const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-c:v', 'mjpeg', '-framerate', String(FPS), '-i', '-', '-vf', 'fps=30', '-frames:v', String(Math.round((t1 - t0) * 30)),
-      '-c:v', 'libx264', '-crf', '21', '-preset', 'medium', '-pix_fmt', 'yuv420p', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
+      '-c:v', 'libx264', '-crf', '23', '-preset', 'medium', '-pix_fmt', 'yuv420p', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
     const done = new Promise(r => ff.on('exit', r));
     for (let f = 0; f < n; f++) { const buf = await shot(pg, t0 + f / FPS + 1e-4); if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r)); }
     ff.stdin.end(); if (await done !== 0) throw new Error('ffmpeg segment ' + s);
