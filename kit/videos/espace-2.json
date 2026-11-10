@@ -1,0 +1,170 @@
+{
+ "id": "espace-2",
+ "scene": "tailles",
+ "soleil": 1391400,
+ "fond": [
+  "#343a8c",
+  "#1b1247",
+  "#0a0820"
+ ],
+ "objets": [
+  {
+   "nom": "STEPHENSON 2-18",
+   "d": 2990000000.0,
+   "couleur": "#c9203f",
+   "aff": {
+    "n": 3,
+    "suf": " MILLIARDS DE KM"
+   },
+   "titre": [
+    "ENCORE PLUS GROS",
+    "QUE LES ÉTOILES ?"
+   ]
+  },
+  {
+   "nom": "SYSTÈME SOLAIRE",
+   "d": 9000000000.0,
+   "look": "systeme",
+   "aff": {
+    "n": 9,
+    "suf": " MILLIARDS DE KM"
+   },
+   "dt": 3.4,
+   "note": "JUSQU'À NEPTUNE"
+  },
+  {
+   "nom": "TROU NOIR TON 618",
+   "d": 390000000000.0,
+   "look": "trounoir",
+   "aff": {
+    "n": 390,
+    "suf": " MILLIARDS DE KM"
+   },
+   "dt": 3.8,
+   "titre": [
+    "UN SEUL",
+    "TROU NOIR"
+   ],
+   "note": "= 43 × LE SYSTÈME SOLAIRE"
+  },
+  {
+   "nom": "NÉBULEUSE D'ORION",
+   "d": 227056800000000.0,
+   "couleur": "#c264e0",
+   "aff": {
+    "n": 24,
+    "suf": " ANNÉES-LUMIÈRE"
+   },
+   "dt": 4.0,
+   "titre": [
+    "ON CHANGE",
+    "D'ÉCHELLE"
+   ]
+  },
+  {
+   "nom": "VOIE LACTÉE",
+   "d": 9.4607e+17,
+   "look": "galaxie",
+   "couleur": "#9db8ff",
+   "aff": {
+    "n": 100000,
+    "suf": " ANNÉES-LUMIÈRE"
+   },
+   "dt": 3.6,
+   "titre": [
+    "NOTRE",
+    "GALAXIE"
+   ]
+  },
+  {
+   "nom": "ANDROMÈDE",
+   "d": 1.4380264e+18,
+   "look": "galaxie",
+   "couleur": "#ffd9a8",
+   "aff": {
+    "n": 152000,
+    "suf": " ANNÉES-LUMIÈRE"
+   },
+   "dt": 3.4
+  },
+  {
+   "nom": "GROUPE LOCAL",
+   "d": 9.4607e+19,
+   "look": "amas",
+   "couleur": "#8fd0ff",
+   "aff": {
+    "n": 10,
+    "suf": " MILLIONS D'ANNÉES-LUMIÈRE"
+   },
+   "dt": 3.4,
+   "titre": [
+    "DES DIZAINES",
+    "DE GALAXIES"
+   ]
+  },
+  {
+   "nom": "LANIAKEA",
+   "d": 4.919564e+21,
+   "look": "amas",
+   "couleur": "#ffb0e0",
+   "aff": {
+    "n": 520,
+    "suf": " MILLIONS D'ANNÉES-LUMIÈRE"
+   },
+   "dt": 3.6,
+   "titre": [
+    "100 000",
+    "GALAXIES"
+   ]
+  },
+  {
+   "nom": "UNIVERS OBSERVABLE",
+   "d": 8.798451e+23,
+   "look": "univers",
+   "couleur": "#9a86ff",
+   "aff": {
+    "n": 93,
+    "suf": " MILLIARDS D'ANNÉES-LUMIÈRE"
+   },
+   "dt": 3.8,
+   "titre": [
+    "TOUT CE QU'ON",
+    "PEUT VOIR"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.2,
+   "titre": [
+    "ET NOTRE",
+    "GALAXIE ?"
+   ],
+   "nom": "VOIE LACTÉE",
+   "texte": "BIEN PLUS PETITE QUE CE POINT",
+   "point": true
+  },
+  {
+   "dt": 3.6,
+   "titre": [
+    "ET AU-DELÀ ?",
+    "PERSONNE NE SAIT"
+   ],
+   "nom": "ABONNE-TOI",
+   "texte": "POUR LA SUITE"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "Plus gros que la plus grosse étoile ? Regarde jusqu'au bout",
+  "description": "D'une étoile géante à l'univers observable, tout à la même échelle. Tailles approximatives (le trou noir TON 618 et Andromède sont des estimations). À quel moment tu as décroché ?",
+  "hashtags": [
+   "#espace",
+   "#astronomie",
+   "#univers",
+   "#comparaison",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

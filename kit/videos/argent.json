@@ -1,0 +1,88 @@
+{
+ "id": "argent",
+ "scene": "barres",
+ "sens": "v",
+ "unite": {
+  "suf": " €"
+ },
+ "fond": [
+  "#1e5a3a",
+  "#0f2f2a"
+ ],
+ "objets": [
+  {
+   "nom": "UN BILLET",
+   "val": 100,
+   "titre": [
+    "MILLION OU",
+    "MILLIARD ?"
+   ]
+  },
+  {
+   "nom": "1 MOIS DE SMIC",
+   "val": 1478,
+   "dt": 3.2
+  },
+  {
+   "nom": "1 AN DE SMIC",
+   "val": 17735,
+   "dt": 3.2
+  },
+  {
+   "nom": "1 MILLION",
+   "val": 1000000.0,
+   "dt": 3.4,
+   "note": "= 56 ANS DE SMIC"
+  },
+  {
+   "nom": "1 MILLIARD",
+   "val": 1000000000.0,
+   "dt": 4.2,
+   "titre": [
+    "REGARDE BIEN",
+    "LA DIFFÉRENCE"
+   ],
+   "note": "= 56 000 ANS DE SMIC"
+  },
+  {
+   "nom": "PLUS GRANDE FORTUNE",
+   "val": 900000000000.0,
+   "aff": {
+    "n": 900,
+    "de": 1,
+    "pre": "≈ ",
+    "suf": " MILLIARDS $"
+   },
+   "dt": 4.4,
+   "titre": [
+    "ET LA PERSONNE",
+    "LA PLUS RICHE ?"
+   ],
+   "note": "= 900 PILES D'UN MILLIARD"
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.6,
+   "titre": [
+    "TU VOIS",
+    "LA DIFFÉRENCE ?"
+   ],
+   "nom": "ABONNE-TOI",
+   "texte": "POUR LA SUITE"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "Million ou milliard ? La différence en pièces",
+  "description": "Chaque pile est à l'échelle. SMIC net au 1er juin 2026 ; plus grande fortune mondiale : environ 900 milliards de dollars (Forbes, automne 2026). Tu imaginais un tel écart ?",
+  "hashtags": [
+   "#argent",
+   "#milliard",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

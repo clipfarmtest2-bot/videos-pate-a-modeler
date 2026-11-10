@@ -1,0 +1,92 @@
+{
+ "id": "probas",
+ "scene": "probas",
+ "fond": [
+  "#5a2a6e",
+  "#2a1340"
+ ],
+ "objets": [
+  {
+   "nom": "PILE OU FACE",
+   "n": 2,
+   "titre": [
+    "TES CHANCES DE",
+    "GAGNER AU LOTO ?"
+   ]
+  },
+  {
+   "nom": "FAIRE UN 6 AU DÉ",
+   "n": 6,
+   "dt": 2.8
+  },
+  {
+   "nom": "TIRER L'AS DE PIQUE",
+   "n": 52,
+   "dt": 3.0
+  },
+  {
+   "nom": "NÉ LE MÊME JOUR QUE TOI",
+   "n": 365,
+   "dt": 3.2
+  },
+  {
+   "nom": "TRÈFLE À 4 FEUILLES",
+   "n": 5000,
+   "env": true,
+   "dt": 3.4
+  },
+  {
+   "nom": "QUINTE FLUSH ROYALE",
+   "n": 649740,
+   "dt": 3.6,
+   "titre": [
+    "ÇA SE",
+    "COMPLIQUE…"
+   ]
+  },
+  {
+   "nom": "FOUDRE (EN 1 AN)",
+   "n": 1222000,
+   "env": true,
+   "dt": 3.6
+  },
+  {
+   "nom": "GAGNER AU LOTO",
+   "n": 19068840,
+   "dt": 3.8,
+   "titre": [
+    "UNE SEULE",
+    "BILLE ROUGE"
+   ]
+  },
+  {
+   "nom": "EUROMILLIONS",
+   "n": 139838160,
+   "dt": 3.8
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.6,
+   "titre": [
+    "ET POURTANT…",
+    "TU JOUES ?"
+   ],
+   "nom": "ABONNE-TOI",
+   "texte": "POUR LA SUITE"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "Tes chances de gagner au Loto, en billes",
+  "description": "Une seule bille rouge à chaque fois. Loto et EuroMillions : calcul exact ; foudre : estimation du service météo américain (par an, aux États-Unis) ; trèfle : ordre de grandeur. Tu tentes quand même ?",
+  "hashtags": [
+   "#probabilites",
+   "#loto",
+   "#chance",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

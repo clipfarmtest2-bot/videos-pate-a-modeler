@@ -1,0 +1,115 @@
+{
+ "id": "ocean",
+ "scene": "ocean",
+ "fond": [
+  "#3aa6e6",
+  "#1f6fc0",
+  "#0e3f86",
+  "#06204f",
+  "#030c26",
+  "#01040d"
+ ],
+ "objets": [
+  {
+   "nom": "SURFACE",
+   "prof": 0,
+   "fig": "bateau",
+   "titre": [
+    "JUSQU'OÙ",
+    "DESCEND L'OCÉAN ?"
+   ]
+  },
+  {
+   "nom": "PLONGÉE LOISIR",
+   "prof": 40,
+   "fig": "plongeur",
+   "couleur": "#2b4a8c",
+   "dt": 3.2
+  },
+  {
+   "nom": "RECORD EN BOUTEILLE",
+   "prof": 332,
+   "fig": "plongeur",
+   "couleur": "#c23a3a",
+   "dt": 3.4
+  },
+  {
+   "nom": "MANCHOT EMPEREUR",
+   "prof": 564,
+   "fig": "manchot",
+   "dt": 3.4
+  },
+  {
+   "nom": "PLUS AUCUNE LUMIÈRE",
+   "prof": 1000,
+   "fig": "meduse",
+   "dt": 3.6,
+   "titre": [
+    "ICI, C'EST",
+    "LA NUIT TOTALE"
+   ]
+  },
+  {
+   "nom": "BALEINE À BEC",
+   "prof": 2992,
+   "fig": "baleine",
+   "dt": 3.6,
+   "note": "RECORD POUR UN MAMMIFÈRE",
+   "noteA": 2.1
+  },
+  {
+   "nom": "ÉPAVE DU TITANIC",
+   "prof": 3800,
+   "fig": "epave",
+   "dt": 3.8,
+   "aff": {
+    "pre": "≈ − "
+   }
+  },
+  {
+   "nom": "POISSON LE PLUS PROFOND",
+   "prof": 8336,
+   "fig": "poisson",
+   "dt": 3.6,
+   "note": "FILMÉ EN 2022",
+   "noteA": 2.1
+  },
+  {
+   "nom": "FOSSE DES MARIANNES",
+   "prof": 10935,
+   "fig": "bathyscaphe",
+   "dt": 4.0,
+   "aff": {
+    "pre": "≈ − "
+   },
+   "titre": [
+    "L'EVEREST Y",
+    "TIENDRAIT EN ENTIER"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.6,
+   "titre": [
+    "TU DESCENDRAIS",
+    "JUSQUE-LÀ ?"
+   ],
+   "nom": "ABONNE-TOI",
+   "texte": "POUR LA SUITE"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "Jusqu'où descend l'océan ? Accroche-toi",
+  "description": "De la surface au point le plus profond connu, la fosse des Mariannes (environ 10 935 m). Profondeurs : records et valeurs approximatives. Tu t'arrêtes où ?",
+  "hashtags": [
+   "#ocean",
+   "#abysses",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

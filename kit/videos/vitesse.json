@@ -1,0 +1,142 @@
+{
+ "id": "vitesse",
+ "scene": "barres",
+ "sens": "h",
+ "unite": {
+  "suf": " km/h"
+ },
+ "fond": [
+  "#1d6b63",
+  "#0f3340"
+ ],
+ "objets": [
+  {
+   "nom": "ESCARGOT",
+   "val": 0.05,
+   "couleur": "#b08a5a",
+   "aff": {
+    "dec": 2
+   },
+   "titre": [
+    "QUI VA",
+    "LE PLUS VITE ?"
+   ]
+  },
+  {
+   "nom": "RECORD HUMAIN",
+   "val": 44.7,
+   "couleur": "#ffd23d",
+   "aff": {
+    "dec": 1
+   },
+   "dt": 3.0
+  },
+  {
+   "nom": "GUÉPARD",
+   "val": 100,
+   "couleur": "#f2a23a",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.0
+  },
+  {
+   "nom": "FORMULE 1",
+   "val": 370,
+   "couleur": "#e0303a",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.0
+  },
+  {
+   "nom": "TGV (RECORD)",
+   "val": 574.8,
+   "couleur": "#4a7bd8",
+   "aff": {
+    "dec": 1
+   },
+   "dt": 3.0
+  },
+  {
+   "nom": "AVION DE LIGNE",
+   "val": 900,
+   "couleur": "#e8eef5",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.0
+  },
+  {
+   "nom": "CONCORDE",
+   "val": 2180,
+   "couleur": "#cfd8ea",
+   "dt": 3.0
+  },
+  {
+   "nom": "SR-71 BLACKBIRD",
+   "val": 3530,
+   "couleur": "#4a5066",
+   "dt": 3.0
+  },
+  {
+   "nom": "STATION SPATIALE",
+   "val": 27600,
+   "couleur": "#b9c2d6",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.0,
+   "titre": [
+    "ON QUITTE",
+    "LA TERRE"
+   ]
+  },
+  {
+   "nom": "SONDE PARKER",
+   "val": 692000,
+   "couleur": "#ff8a2b",
+   "dt": 3.2,
+   "titre": [
+    "L'OBJET LE PLUS",
+    "RAPIDE CONSTRUIT"
+   ]
+  },
+  {
+   "nom": "LUMIÈRE",
+   "val": 1079252849,
+   "couleur": "#fff3a0",
+   "dt": 3.4,
+   "titre": [
+    "LA LIMITE",
+    "ABSOLUE"
+   ],
+   "note": "7,5 TOURS DE TERRE PAR SECONDE",
+   "noteA": 2.2
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.8,
+   "titre": [
+    "ET L'ESCARGOT ?",
+    "TOUJOURS EN ROUTE"
+   ],
+   "nom": "ABONNE-TOI",
+   "texte": "POUR LA SUITE"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "De l'escargot à la lumière : qui va le plus vite ?",
+  "description": "Chaque barre est à l'échelle de la précédente. Vitesses de pointe ou records (valeurs arrondies). Laquelle t'a le plus surpris ?",
+  "hashtags": [
+   "#vitesse",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion",
+   "#science"
+  ]
+ }
+}
