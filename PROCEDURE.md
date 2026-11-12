@@ -1,6 +1,6 @@
 # Procédure hebdomadaire — « Le Monde en Pâte » (TikTok)
 
-Compte TikTok « Le Monde en Pâte », vidéos de comparaison en stop motion pâte à modeler, **sans voix**, bruitages seulement, 25 à 50 s, en français.
+Compte TikTok « Le Monde en Pâte », vidéos de comparaison en stop motion pâte à modeler, **sans voix**, bruitages seulement, **18 à 30 s**, en français.
 Publication **du lundi au vendredi à 18 h (Europe/Paris)** via Metricool (marque blogId `8004703`, réseau `tiktok`).
 Cette procédure est suivie chaque samedi par une tâche planifiée, sans personne pour valider : chaque étape de contrôle compte.
 
@@ -34,18 +34,24 @@ Cette procédure est suivie chaque samedi par une tâche planifiée, sans person
 
 ## 4. Écrire les fichiers vidéo
 - Un fichier `kit/videos/<id>.json` par vidéo, sur le modèle des exemples (même scène). `id` court, sans accent.
-- 7 à 13 objets, du plus petit au plus grand ; `dt` entre 2,8 et 4 s ; 2 ou 3 `titre` de relance (« ATTENDS LA FIN… », « ÇA DEVIENT N'IMPORTE QUOI »…) ; premier titre = accroche forte (question ou promesse), 2 lignes courtes en MAJUSCULES.
+- 7 à 13 objets, du plus petit au plus grand. **Rythme rapide** (le moteur accélère déjà tout de 1,2× : `dt` est en secondes « logiques ») :
+  - premier `dt` court (1,4 à 1,7) pour qu'un deuxième objet arrive dans la première seconde et demie ;
+  - `tailles` : `dt` 1,4 à 1,8, jusqu'à 2,4-2,8 pour les deux derniers et pour un objet avec `note` (2,2 à 2,6) ;
+  - `barres` : `dt` 2,1 à 2,8 ; `ocean` et `probas` : `dt` 1,9 à 2,8 ;
+  - `fin` : 3,0 pour un écran avec `point`, 2,4 à 3,2 pour le dernier ; `queue` 1,4.
+- Premier titre = accroche **concrète** visible dès la première image (un chiffre, une promesse ou une question qui pique : « TU CROIS QUE LE / SOLEIL EST GROS ? », « LE DERNIER DÉPASSE / 1 MILLIARD DE KM/H »), 2 lignes de longueur proche, 18 caractères max chacune, en MAJUSCULES. Puis 2 ou 3 `titre` de relance.
 - `fin` : un écran de chute ou une question, puis « ABONNE-TOI / POUR LA SUITE ».
 - `publication` : `titre` (accroche, ≤ 60 caractères), `description` (contexte + précision sur les sources/estimations + question pour les commentaires, sur une seule ligne), `hashtags` (5 ou 6 dont #comparaison #lesaviezvous #satisfaisant #stopmotion).
 
 ## 5. Contrôler avant rendu
 - `node rendu.mjs videos/<id>.json --apercu t1,t2,…` (6 à 8 instants : début, chaque titre, fin), puis assembler une planche et **la regarder** (outil Read sur l'image).
+- Regarder aussi les instants 0 / 0,1 / 0,5 / 1,5 s : il doit déjà se passer quelque chose à la première image.
 - Vérifier : texte lisible et non coupé, rien de caché, objets visibles (ni minuscules ni hors cadre), pas d'écran vide, chiffres corrects.
 - Corriger le JSON (durées, textes plus courts, objets) et recommencer jusqu'à ce que ce soit propre.
 
 ## 6. Rendre
-- `node rendu.mjs videos/<id>.json` → `kit/out/<id>.mp4` (environ 7 à 10 min par vidéo). Lancer chaque rendu en arrière-plan et attendre sa fin (une commande au premier plan est limitée à 10 min).
-- Contrôle final : durée 20 à 60 s (`ffprobe`), niveau sonore autour de −14 LUFS, planche de 10 images tirées de la vidéo finie et regardée.
+- `node rendu.mjs videos/<id>.json` → `kit/out/<id>.mp4` (environ 5 min par vidéo ; image 15 i/s, encodage unique en haute qualité, ne jamais réencoder le fichier ensuite). Lancer chaque rendu en arrière-plan et attendre sa fin (une commande au premier plan est limitée à 10 min).
+- Contrôle final : durée 18 à 30 s (`ffprobe`), débit vidéo d'au moins 6 Mbit/s, niveau sonore autour de −14 LUFS, planche de 10 images tirées de la vidéo finie et regardée.
 
 ## 7. Publier
 - Copier `kit/out/<id>.mp4` dans `videos/` et `kit/out/<id>-couverture.jpg` dans `couvertures/`, commit + push (une vidéo par push). Lien public : `https://raw.githubusercontent.com/clipfarmtest2-bot/videos-pate-a-modeler/main/videos/<id>.mp4` (vérifier HTTP 200 avec `curl -sI`).

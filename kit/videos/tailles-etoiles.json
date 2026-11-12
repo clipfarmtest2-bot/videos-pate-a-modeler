@@ -1,30 +1,147 @@
 {
-  "id": "tailles-etoiles",
-  "soleil": 1391400,
-  "fond": ["#343a8c", "#1b1247"],
-  "objets": [
-    { "nom": "LUNE", "d": 3474, "look": "lune", "titre": ["ATTENDS DE VOIR", "LA DERNIÈRE…"] },
-    { "nom": "MARS", "d": 6779, "look": "mars", "dt": 2.2 },
-    { "nom": "TERRE", "d": 12742, "look": "terre", "dt": 2.4 },
-    { "nom": "NEPTUNE", "d": 49244, "look": "neptune", "dt": 2.6 },
-    { "nom": "JUPITER", "d": 139820, "look": "jupiter", "dt": 2.6, "note": "= 11 × LA TERRE" },
-    { "nom": "SOLEIL", "d": 1391400, "couleur": "#ffb11f", "dt": 3.4, "note": "= 109 × LA TERRE", "titre": ["ET CE N'EST QUE", "NOTRE SOLEIL"] },
-    { "nom": "SIRIUS", "x": 1.71, "couleur": "#cfe0ff", "dt": 3.6, "titre": ["MAINTENANT,", "LES ÉTOILES"] },
-    { "nom": "POLLUX", "x": 9.06, "couleur": "#ffb561", "dt": 2.8 },
-    { "nom": "ARCTURUS", "x": 25.4, "couleur": "#ff9a3d", "dt": 2.8 },
-    { "nom": "ALDÉBARAN", "x": 45.1, "couleur": "#ff7a33", "dt": 2.8 },
-    { "nom": "RIGEL", "x": 74.1, "couleur": "#a9c8ff", "dt": 2.8, "titre": ["ÇA DEVIENT", "N'IMPORTE QUOI"] },
-    { "nom": "BÉTELGEUSE", "x": 764, "couleur": "#ff6a2b", "dt": 3.0, "titre": ["ET CE N'EST", "PAS FINI…"] },
-    { "nom": "STEPHENSON 2-18", "x": 2150, "couleur": "#c9203f", "dt": 3.4, "titre": ["L'UNE DES PLUS", "GROSSES CONNUES"] }
-  ],
-  "fin": [
-    { "dt": 4.0, "titre": ["ET NOTRE", "SOLEIL ?"], "nom": "SOLEIL", "texte": "PLUS PETIT QUE CE POINT", "point": true },
-    { "dt": 3.6, "titre": ["ENCORE PLUS", "GRAND ?"], "nom": "ABONNE-TOI", "texte": "POUR LA SUITE" }
-  ],
-  "queue": 2.6,
-  "publication": {
-    "titre": "La taille des étoiles va te donner le vertige",
-    "description": "De la Lune à l'une des plus grosses étoiles connues, tout à la même échelle. Attends la dernière… Tailles : estimations actuelles (Stephenson 2-18 : environ 2 150 fois le Soleil, valeur très incertaine). Laquelle t'a le plus surpris ?",
-    "hashtags": ["#espace", "#astronomie", "#comparaison", "#satisfaisant", "#stopmotion", "#lesaviezvous"]
+ "id": "tailles-etoiles",
+ "soleil": 1391400,
+ "fond": [
+  "#343a8c",
+  "#1b1247"
+ ],
+ "objets": [
+  {
+   "nom": "LUNE",
+   "d": 3474,
+   "look": "lune",
+   "titre": [
+    "TU CROIS QUE LE",
+    "SOLEIL EST GROS ?"
+   ]
+  },
+  {
+   "nom": "MARS",
+   "d": 6779,
+   "look": "mars",
+   "dt": 1.4
+  },
+  {
+   "nom": "TERRE",
+   "d": 12742,
+   "look": "terre",
+   "dt": 1.4
+  },
+  {
+   "nom": "NEPTUNE",
+   "d": 49244,
+   "look": "neptune",
+   "dt": 1.5
+  },
+  {
+   "nom": "JUPITER",
+   "d": 139820,
+   "look": "jupiter",
+   "dt": 1.6,
+   "note": "= 11 × LA TERRE"
+  },
+  {
+   "nom": "SOLEIL",
+   "d": 1391400,
+   "couleur": "#ffb11f",
+   "dt": 2.6,
+   "note": "= 109 × LA TERRE",
+   "titre": [
+    "ET CE N'EST QUE",
+    "NOTRE SOLEIL"
+   ]
+  },
+  {
+   "nom": "SIRIUS",
+   "x": 1.71,
+   "couleur": "#cfe0ff",
+   "dt": 2.2,
+   "titre": [
+    "MAINTENANT,",
+    "LES ÉTOILES"
+   ]
+  },
+  {
+   "nom": "POLLUX",
+   "x": 9.06,
+   "couleur": "#ffb561",
+   "dt": 1.6
+  },
+  {
+   "nom": "ARCTURUS",
+   "x": 25.4,
+   "couleur": "#ff9a3d",
+   "dt": 1.6
+  },
+  {
+   "nom": "ALDÉBARAN",
+   "x": 45.1,
+   "couleur": "#ff7a33",
+   "dt": 1.6
+  },
+  {
+   "nom": "RIGEL",
+   "x": 74.1,
+   "couleur": "#a9c8ff",
+   "dt": 1.8,
+   "titre": [
+    "ÇA DEVIENT",
+    "N'IMPORTE QUOI"
+   ]
+  },
+  {
+   "nom": "BÉTELGEUSE",
+   "x": 764,
+   "couleur": "#ff6a2b",
+   "dt": 2.4,
+   "titre": [
+    "ET CE N'EST",
+    "PAS FINI…"
+   ]
+  },
+  {
+   "nom": "STEPHENSON 2-18",
+   "x": 2150,
+   "couleur": "#c9203f",
+   "dt": 2.8,
+   "titre": [
+    "L'UNE DES PLUS",
+    "GROSSES CONNUES"
+   ]
   }
+ ],
+ "fin": [
+  {
+   "dt": 3.0,
+   "titre": [
+    "ET NOTRE",
+    "SOLEIL ?"
+   ],
+   "nom": "SOLEIL",
+   "texte": "PLUS PETIT QUE CE POINT",
+   "point": true
+  },
+  {
+   "dt": 2.4,
+   "titre": [
+    "ENCORE PLUS",
+    "GRAND ?"
+   ],
+   "nom": "ABONNE-TOI",
+   "texte": "POUR LA SUITE"
+  }
+ ],
+ "queue": 1.4,
+ "publication": {
+  "titre": "La taille des étoiles va te donner le vertige",
+  "description": "De la Lune à l'une des plus grosses étoiles connues, tout à la même échelle. Attends la dernière… Tailles : estimations actuelles (Stephenson 2-18 : environ 2 150 fois le Soleil, valeur très incertaine). Laquelle t'a le plus surpris ?",
+  "hashtags": [
+   "#espace",
+   "#astronomie",
+   "#comparaison",
+   "#satisfaisant",
+   "#stopmotion",
+   "#lesaviezvous"
+  ]
+ }
 }

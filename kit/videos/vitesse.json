@@ -18,8 +18,8 @@
     "dec": 2
    },
    "titre": [
-    "QUI VA",
-    "LE PLUS VITE ?"
+    "LE DERNIER DÉPASSE",
+    "1 MILLIARD DE KM/H"
    ]
   },
   {
@@ -29,7 +29,7 @@
    "aff": {
     "dec": 1
    },
-   "dt": 3.0
+   "dt": 1.7
   },
   {
    "nom": "GUÉPARD",
@@ -38,7 +38,7 @@
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.0
+   "dt": 2.1
   },
   {
    "nom": "FORMULE 1",
@@ -47,7 +47,7 @@
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.0
+   "dt": 2.1
   },
   {
    "nom": "TGV (RECORD)",
@@ -56,7 +56,7 @@
    "aff": {
     "dec": 1
    },
-   "dt": 3.0
+   "dt": 2.1
   },
   {
    "nom": "AVION DE LIGNE",
@@ -65,19 +65,19 @@
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.0
+   "dt": 2.1
   },
   {
    "nom": "CONCORDE",
    "val": 2180,
    "couleur": "#cfd8ea",
-   "dt": 3.0
+   "dt": 2.1
   },
   {
    "nom": "SR-71 BLACKBIRD",
    "val": 3530,
    "couleur": "#4a5066",
-   "dt": 3.0
+   "dt": 2.1
   },
   {
    "nom": "STATION SPATIALE",
@@ -86,7 +86,7 @@
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.0,
+   "dt": 2.3,
    "titre": [
     "ON QUITTE",
     "LA TERRE"
@@ -96,7 +96,7 @@
    "nom": "SONDE PARKER",
    "val": 692000,
    "couleur": "#ff8a2b",
-   "dt": 3.2,
+   "dt": 2.5,
    "titre": [
     "L'OBJET LE PLUS",
     "RAPIDE CONSTRUIT"
@@ -106,18 +106,18 @@
    "nom": "LUMIÈRE",
    "val": 1079252849,
    "couleur": "#fff3a0",
-   "dt": 3.4,
+   "dt": 2.8,
    "titre": [
     "LA LIMITE",
     "ABSOLUE"
    ],
    "note": "7,5 TOURS DE TERRE PAR SECONDE",
-   "noteA": 2.2
+   "noteA": 1.5
   }
  ],
  "fin": [
   {
-   "dt": 4.8,
+   "dt": 3.2,
    "titre": [
     "ET L'ESCARGOT ?",
     "TOUJOURS EN ROUTE"
@@ -126,7 +126,7 @@
    "texte": "POUR LA SUITE"
   }
  ],
- "queue": 2.6,
+ "queue": 1.4,
  "publication": {
   "titre": "De l'escargot à la lumière : qui va le plus vite ?",
   "description": "Chaque barre est à l'échelle de la précédente. Vitesses de pointe ou records (valeurs arrondies). Laquelle t'a le plus surpris ?",

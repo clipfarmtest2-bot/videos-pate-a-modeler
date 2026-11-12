@@ -13,12 +13,12 @@ const args = process.argv.slice(2), fichier = args.find(a => a.endsWith('.json')
 if (!fichier) { console.error('Usage : node rendu.mjs videos/<nom>.json [--apercu t1,t2]'); process.exit(1); }
 const data = JSON.parse(fs.readFileSync(fichier, 'utf8')), id = data.id;
 const ap = args.indexOf('--apercu'), apercu = ap >= 0 ? args[ap + 1].split(',').map(Number) : null;
-const FPS = 12, SEG = 6, build = `${dir}/build`, out = `${dir}/out`;
+const FPS = 15, SEG = 6, build = `${dir}/build`, out = `${dir}/out`;
 fs.mkdirSync(build, { recursive: true }); fs.mkdirSync(out, { recursive: true });
 const b = await chromium.launch();
 const page = async () => { const pg = await b.newPage({ viewport: { width: 1080, height: 1920 } }); await pg.goto('file://' + dir + '/moteur.html'); const info = await pg.evaluate(d => { const i = init(d); return document.fonts.ready.then(() => i); }, data); await pg.waitForTimeout(300); return [pg, info]; };
 const [pg0, info] = await page();
-const shot = async (pg, t, file) => { await pg.evaluate(t => draw(t), t); return pg.screenshot({ type: 'jpeg', quality: 92, ...(file ? { path: file } : {}) }); };
+const shot = async (pg, t, file) => { await pg.evaluate(t => draw(t), t); return pg.screenshot({ type: 'jpeg', quality: 95, ...(file ? { path: file } : {}) }); };
 if (apercu) { for (const t of apercu) await shot(pg0, t, `${build}/apercu-${id}-${t}.jpg`); await b.close(); console.log('aperçus dans build/ · durée', info.dur, 's'); process.exit(0); }
 console.log(`${id} : ${info.dur.toFixed(1)} s, ${info.n} objets`);
 const nseg = Math.ceil(info.dur / SEG), jobs = Math.min(nseg, Math.max(2, Math.min(6, os.cpus().length - 1)));
@@ -27,7 +27,7 @@ async function worker(pg) {
   while (next < nseg) {
     const s = next++, t0 = s * SEG, t1 = Math.min(info.dur, t0 + SEG), n = Math.round((t1 - t0) * FPS), tmp = `${build}/seg-${s}.tmp.mp4`;
     const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-c:v', 'mjpeg', '-framerate', String(FPS), '-i', '-', '-vf', 'fps=30', '-frames:v', String(Math.round((t1 - t0) * 30)),
-      '-c:v', 'libx264', '-crf', '23', '-preset', 'medium', '-pix_fmt', 'yuv420p', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
+      '-c:v', 'libx264', '-crf', '17', '-maxrate', '14M', '-bufsize', '28M', '-preset', 'medium', '-pix_fmt', 'yuv420p', tmp], { stdio: ['pipe', 'inherit', 'inherit'] });
     const done = new Promise(r => ff.on('exit', r));
     for (let f = 0; f < n; f++) { const buf = await shot(pg, t0 + f / FPS + 1e-4); if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r)); }
     ff.stdin.end(); if (await done !== 0) throw new Error('ffmpeg segment ' + s);
