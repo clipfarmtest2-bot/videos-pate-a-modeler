@@ -37,14 +37,14 @@
    "nom": "JUPITER",
    "d": 139820,
    "look": "jupiter",
-   "dt": 1.6,
+   "dt": 2.4,
    "note": "= 11 × LA TERRE"
   },
   {
    "nom": "SOLEIL",
    "d": 1391400,
    "couleur": "#ffb11f",
-   "dt": 2.6,
+   "dt": 4.0,
    "note": "= 109 × LA TERRE",
    "titre": [
     "ET CE N'EST QUE",
@@ -55,7 +55,7 @@
    "nom": "SIRIUS",
    "x": 1.71,
    "couleur": "#cfe0ff",
-   "dt": 2.2,
+   "dt": 3.4,
    "titre": [
     "MAINTENANT,",
     "LES ÉTOILES"
@@ -65,25 +65,25 @@
    "nom": "POLLUX",
    "x": 9.06,
    "couleur": "#ffb561",
-   "dt": 1.6
+   "dt": 2.4
   },
   {
    "nom": "ARCTURUS",
    "x": 25.4,
    "couleur": "#ff9a3d",
-   "dt": 1.6
+   "dt": 2.4
   },
   {
    "nom": "ALDÉBARAN",
    "x": 45.1,
    "couleur": "#ff7a33",
-   "dt": 1.6
+   "dt": 2.4
   },
   {
    "nom": "RIGEL",
    "x": 74.1,
    "couleur": "#a9c8ff",
-   "dt": 1.8,
+   "dt": 2.8,
    "titre": [
     "ÇA DEVIENT",
     "N'IMPORTE QUOI"
@@ -93,7 +93,7 @@
    "nom": "BÉTELGEUSE",
    "x": 764,
    "couleur": "#ff6a2b",
-   "dt": 2.4,
+   "dt": 3.7,
    "titre": [
     "ET CE N'EST",
     "PAS FINI…"
@@ -103,7 +103,7 @@
    "nom": "STEPHENSON 2-18",
    "x": 2150,
    "couleur": "#c9203f",
-   "dt": 2.8,
+   "dt": 4.3,
    "titre": [
     "L'UNE DES PLUS",
     "GROSSES CONNUES"
@@ -112,7 +112,7 @@
  ],
  "fin": [
   {
-   "dt": 3.0,
+   "dt": 4.6,
    "titre": [
     "ET NOTRE",
     "SOLEIL ?"
@@ -120,18 +120,9 @@
    "nom": "SOLEIL",
    "texte": "PLUS PETIT QUE CE POINT",
    "point": true
-  },
-  {
-   "dt": 2.4,
-   "titre": [
-    "ENCORE PLUS",
-    "GRAND ?"
-   ],
-   "nom": "ABONNE-TOI",
-   "texte": "POUR LA SUITE"
   }
  ],
- "queue": 1.4,
+ "queue": 3.0,
  "publication": {
   "titre": "La taille des étoiles va te donner le vertige",
   "description": "De la Lune à l'une des plus grosses étoiles connues, tout à la même échelle. Attends la dernière… Tailles : estimations actuelles (Stephenson 2-18 : environ 2 150 fois le Soleil, valeur très incertaine). Laquelle t'a le plus surpris ?",

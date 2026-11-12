@@ -33,12 +33,12 @@
    "nom": "TRÈFLE À 4 FEUILLES",
    "n": 5000,
    "env": true,
-   "dt": 2.1
+   "dt": 3.2
   },
   {
    "nom": "QUINTE FLUSH ROYALE",
    "n": 649740,
-   "dt": 2.3,
+   "dt": 3.5,
    "titre": [
     "ÇA SE",
     "COMPLIQUE…"
@@ -48,12 +48,12 @@
    "nom": "FOUDRE (EN 1 AN)",
    "n": 1222000,
    "env": true,
-   "dt": 2.3
+   "dt": 3.5
   },
   {
    "nom": "GAGNER AU LOTO",
    "n": 19068840,
-   "dt": 2.6,
+   "dt": 4.0,
    "titre": [
     "UNE SEULE",
     "BILLE ROUGE"
@@ -62,21 +62,21 @@
   {
    "nom": "EUROMILLIONS",
    "n": 139838160,
-   "dt": 2.8
+   "dt": 4.3
   }
  ],
  "fin": [
   {
-   "dt": 3.0,
+   "dt": 4.0,
    "titre": [
     "ET POURTANT…",
     "TU JOUES ?"
    ],
-   "nom": "ABONNE-TOI",
-   "texte": "POUR LA SUITE"
+   "nom": "EUROMILLIONS",
+   "texte": "1 SUR 139 838 160"
   }
  ],
- "queue": 1.4,
+ "queue": 2.2,
  "publication": {
   "titre": "Tes chances de gagner au Loto, en billes",
   "description": "Une seule bille rouge à chaque fois. Loto et EuroMillions : calcul exact ; foudre : estimation du service météo américain (par an, aux États-Unis) ; trèfle : ordre de grandeur. Tu tentes quand même ?",

@@ -70,7 +70,7 @@
     "n": 100000,
     "suf": " ANNÉES-LUMIÈRE"
    },
-   "dt": 1.9,
+   "dt": 2.9,
    "titre": [
     "NOTRE",
     "GALAXIE"
@@ -85,7 +85,7 @@
     "n": 152000,
     "suf": " ANNÉES-LUMIÈRE"
    },
-   "dt": 1.8
+   "dt": 2.8
   },
   {
    "nom": "GROUPE LOCAL",
@@ -96,7 +96,7 @@
     "n": 10,
     "suf": " MILLIONS D'ANNÉES-LUMIÈRE"
    },
-   "dt": 1.9,
+   "dt": 2.9,
    "titre": [
     "DES DIZAINES",
     "DE GALAXIES"
@@ -111,7 +111,7 @@
     "n": 520,
     "suf": " MILLIONS D'ANNÉES-LUMIÈRE"
    },
-   "dt": 2.0,
+   "dt": 3.1,
    "titre": [
     "100 000",
     "GALAXIES"
@@ -126,7 +126,7 @@
     "n": 93,
     "suf": " MILLIARDS D'ANNÉES-LUMIÈRE"
    },
-   "dt": 2.4,
+   "dt": 3.7,
    "titre": [
     "TOUT CE QU'ON",
     "PEUT VOIR"
@@ -135,7 +135,7 @@
  ],
  "fin": [
   {
-   "dt": 3.0,
+   "dt": 4.6,
    "titre": [
     "ET NOTRE",
     "GALAXIE ?"
@@ -143,18 +143,9 @@
    "nom": "VOIE LACTÉE",
    "texte": "BIEN PLUS PETITE QUE CE POINT",
    "point": true
-  },
-  {
-   "dt": 2.4,
-   "titre": [
-    "ET AU-DELÀ ?",
-    "PERSONNE NE SAIT"
-   ],
-   "nom": "ABONNE-TOI",
-   "texte": "POUR LA SUITE"
   }
  ],
- "queue": 1.4,
+ "queue": 3.0,
  "publication": {
   "titre": "Plus gros que la plus grosse étoile ? Regarde jusqu'au bout",
   "description": "D'une étoile géante à l'univers observable, tout à la même échelle. Tailles approximatives (le trou noir TON 618 et Andromède sont des estimations). À quel moment tu as décroché ?",

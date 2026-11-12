@@ -56,7 +56,7 @@
    "aff": {
     "dec": 1
    },
-   "dt": 2.1
+   "dt": 3.2
   },
   {
    "nom": "AVION DE LIGNE",
@@ -65,19 +65,19 @@
    "aff": {
     "pre": "≈ "
    },
-   "dt": 2.1
+   "dt": 3.2
   },
   {
    "nom": "CONCORDE",
    "val": 2180,
    "couleur": "#cfd8ea",
-   "dt": 2.1
+   "dt": 3.2
   },
   {
    "nom": "SR-71 BLACKBIRD",
    "val": 3530,
    "couleur": "#4a5066",
-   "dt": 2.1
+   "dt": 3.2
   },
   {
    "nom": "STATION SPATIALE",
@@ -86,7 +86,7 @@
    "aff": {
     "pre": "≈ "
    },
-   "dt": 2.3,
+   "dt": 3.5,
    "titre": [
     "ON QUITTE",
     "LA TERRE"
@@ -96,7 +96,7 @@
    "nom": "SONDE PARKER",
    "val": 692000,
    "couleur": "#ff8a2b",
-   "dt": 2.5,
+   "dt": 3.8,
    "titre": [
     "L'OBJET LE PLUS",
     "RAPIDE CONSTRUIT"
@@ -106,7 +106,7 @@
    "nom": "LUMIÈRE",
    "val": 1079252849,
    "couleur": "#fff3a0",
-   "dt": 2.8,
+   "dt": 4.3,
    "titre": [
     "LA LIMITE",
     "ABSOLUE"
@@ -117,16 +117,16 @@
  ],
  "fin": [
   {
-   "dt": 3.2,
+   "dt": 4.0,
    "titre": [
     "ET L'ESCARGOT ?",
     "TOUJOURS EN ROUTE"
    ],
-   "nom": "ABONNE-TOI",
-   "texte": "POUR LA SUITE"
+   "nom": "ESCARGOT",
+   "texte": "0,05 km/h"
   }
  ],
- "queue": 1.4,
+ "queue": 2.2,
  "publication": {
   "titre": "De l'escargot à la lumière : qui va le plus vite ?",
   "description": "Chaque barre est à l'échelle de la précédente. Vitesses de pointe ou records (valeurs arrondies). Laquelle t'a le plus surpris ?",
