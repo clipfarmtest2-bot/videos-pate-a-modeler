@@ -24,26 +24,26 @@
    "prof": 40,
    "fig": "plongeur",
    "couleur": "#2b4a8c",
-   "dt": 3.2
+   "dt": 1.9
   },
   {
    "nom": "RECORD EN BOUTEILLE",
    "prof": 332,
    "fig": "plongeur",
    "couleur": "#c23a3a",
-   "dt": 3.4
+   "dt": 2.1
   },
   {
    "nom": "MANCHOT EMPEREUR",
    "prof": 564,
    "fig": "manchot",
-   "dt": 3.4
+   "dt": 2.1
   },
   {
    "nom": "PLUS AUCUNE LUMIÈRE",
    "prof": 1000,
    "fig": "meduse",
-   "dt": 3.6,
+   "dt": 3.2,
    "titre": [
     "ICI, C'EST",
     "LA NUIT TOTALE"
@@ -54,14 +54,13 @@
    "prof": 2992,
    "fig": "baleine",
    "dt": 3.6,
-   "note": "RECORD POUR UN MAMMIFÈRE",
-   "noteA": 2.1
+   "note": "RECORD POUR UN MAMMIFÈRE"
   },
   {
    "nom": "ÉPAVE DU TITANIC",
    "prof": 3800,
    "fig": "epave",
-   "dt": 3.8,
+   "dt": 3.6,
    "aff": {
     "pre": "≈ − "
    }
@@ -71,8 +70,7 @@
    "prof": 8336,
    "fig": "poisson",
    "dt": 3.6,
-   "note": "FILMÉ EN 2022",
-   "noteA": 2.1
+   "note": "FILMÉ EN 2022"
   },
   {
    "nom": "FOSSE DES MARIANNES",
@@ -90,16 +88,16 @@
  ],
  "fin": [
   {
-   "dt": 4.6,
+   "dt": 4.0,
    "titre": [
     "TU DESCENDRAIS",
     "JUSQUE-LÀ ?"
    ],
-   "nom": "ABONNE-TOI",
-   "texte": "POUR LA SUITE"
+   "nom": "FOSSE DES MARIANNES",
+   "texte": "≈ − 10 935 m"
   }
  ],
- "queue": 2.6,
+ "queue": 2.2,
  "publication": {
   "titre": "Jusqu'où descend l'océan ? Accroche-toi",
   "description": "De la surface au point le plus profond connu, la fosse des Mariannes (environ 10 935 m). Profondeurs : records et valeurs approximatives. Tu t'arrêtes où ?",
