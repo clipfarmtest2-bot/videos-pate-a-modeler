@@ -1,145 +1,166 @@
 {
  "id": "duree-de-vie",
- "scene": "barres",
- "sens": "h",
- "unite": {
-  "suf": " ans"
- },
+ "scene": "frise",
+ "annee": 2026,
+ "legende": "POUR AVOIR CET ÂGE AUJOURD'HUI : NÉ EN",
  "fond": [
-  "#234a4f",
-  "#0c1f24"
+  "#2f6f9f",
+  "#3f6a8a",
+  "#7a6238",
+  "#6b4a2e",
+  "#3a2a4a",
+  "#1c1830"
  ],
+ "sol": "#c9a86a",
  "objets": [
   {
    "nom": "ÉPHÉMÈRE",
-   "val": 0.00274,
-   "couleur": "#bfe3a0",
+   "ans": 0.00274,
+   "fig": "ephemere",
    "aff": {
     "n": 1,
     "de": 0,
     "pre": "≈ ",
-    "suf": " jour"
+    "suf": " JOUR"
    },
+   "an": "HIER",
    "titre": [
-    "LE DERNIER A VÉCU",
-    "ENVIRON 11 000 ANS"
+    "CET ANIMAL EST NÉ",
+    "AVANT LES PYRAMIDES"
    ]
   },
   {
    "nom": "SOURIS",
-   "val": 2,
-   "couleur": "#b8b0a8",
+   "ans": 2,
+   "fig": "souris",
    "aff": {
     "pre": "≈ "
    },
-   "dt": 1.7
+   "dt": 1.5
   },
   {
    "nom": "CHIEN",
-   "val": 13,
-   "couleur": "#c98a4b",
+   "ans": 13,
+   "fig": "chien",
    "aff": {
     "pre": "≈ "
    },
-   "dt": 2.1
+   "dt": 1.8
   },
   {
    "nom": "ÉLÉPHANT",
-   "val": 65,
-   "couleur": "#8d95a3",
+   "ans": 65,
+   "fig": "elephant",
+   "repere": "fusee",
    "aff": {
     "pre": "≈ "
    },
-   "dt": 2.1
+   "dt": 2.0,
+   "titre": [
+    "1961 : PREMIER",
+    "HOMME DANS L'ESPACE"
+   ]
   },
   {
    "nom": "HUMAIN (RECORD)",
-   "val": 122,
-   "couleur": "#ffd23d",
+   "ans": 122,
+   "fig": "humain",
+   "repere": "avion",
    "dt": 3.2,
    "titre": [
-    "LE RECORD",
-    "HUMAIN"
+    "1904 : L'AVION VIENT",
+    "D'ÊTRE INVENTÉ"
    ]
   },
   {
    "nom": "TORTUE JONATHAN",
-   "val": 194,
-   "couleur": "#5fa35a",
+   "ans": 194,
+   "fig": "tortue",
+   "repere": "eiffel",
+   "fantome": true,
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.4,
+   "dt": 3.2,
    "titre": [
-    "TOUJOURS EN VIE",
-    "AUJOURD'HUI"
+    "1832 : LA TOUR EIFFEL",
+    "N'EXISTE PAS ENCORE"
    ]
   },
   {
    "nom": "BALEINE BORÉALE",
-   "val": 211,
-   "couleur": "#4f78b0",
+   "ans": 211,
+   "fig": "baleine",
+   "repere": "bicorne",
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.2
+   "dt": 3.2,
+   "titre": [
+    "1815 : NAPOLÉON",
+    "PERD À WATERLOO"
+   ]
   },
   {
    "nom": "REQUIN DU GROENLAND",
-   "val": 392,
-   "couleur": "#7f8fa6",
+   "ans": 392,
+   "fig": "requin",
+   "repere": "couronne",
    "aff": {
     "pre": "≈ "
    },
-   "dt": 3.4,
+   "dt": 3.3,
    "titre": [
-    "LE PLUS VIEUX",
-    "VERTÉBRÉ CONNU"
+    "1634 : LOUIS XIV",
+    "N'EST PAS ENCORE NÉ"
    ]
   },
   {
    "nom": "PALOURDE « MING »",
-   "val": 507,
-   "couleur": "#e9d5b0",
-   "dt": 3.6,
+   "ans": 507,
+   "fig": "palourde",
+   "repere": "caravelle",
+   "dt": 3.3,
    "titre": [
-    "NÉE EN 1499",
-    "(OUI, 1499)"
+    "1519 : MAGELLAN PART",
+    "FAIRE LE TOUR DU MONDE"
    ]
   },
   {
    "nom": "ÉPONGE DE VERRE",
-   "val": 11000,
-   "couleur": "#f2f2e6",
+   "ans": 11000,
+   "fig": "eponge",
+   "repere": "mammouth",
    "aff": {
     "pre": "≈ "
    },
-   "dt": 4.3,
+   "an": "≈ 9 000 AV. J.-C.",
+   "dt": 3.8,
    "titre": [
-    "ET ÇA, C'EST",
-    "BIEN UN ANIMAL"
+    "LES MAMMOUTHS",
+    "EXISTENT ENCORE"
    ]
   }
  ],
  "fin": [
   {
-   "dt": 4.0,
+   "dt": 4.2,
    "titre": [
-    "ET L'ÉPHÉMÈRE ?",
-    "UNE SEULE JOURNÉE"
+    "LES PYRAMIDES ?",
+    "DES MILLÉNAIRES APRÈS"
    ],
-   "nom": "ÉPHÉMÈRE",
-   "texte": "≈ 1 JOUR"
+   "nom": "ÉPONGE DE VERRE",
+   "texte": "≈ 11 000 ANS"
   }
  ],
- "queue": 2.2,
+ "queue": 2.4,
  "publication": {
-  "titre": "Cet animal a vécu environ 11 000 ans",
-  "description": "De l'éphémère (un jour) à l'éponge de verre : les records de longévité, chaque barre à l'échelle de la précédente. Âges records ou estimations (requin du Groenland : entre 272 et 512 ans ; éponge : 11 000 ans à 3 000 ans près). Lequel t'a le plus surpris ?",
+  "titre": "Cet animal est né avant les pyramides",
+  "description": "On remonte le temps d'une vie à chaque arrêt : si l'animal atteignait son record aujourd'hui, voilà quand il serait né. Âges records ou estimations (requin du Groenland : entre 272 et 512 ans ; éponge de verre : 11 000 ans à 3 000 ans près ; la palourde Ming, elle, est née en 1499). Lequel t'a le plus surpris ?",
   "hashtags": [
    "#animaux",
    "#longevite",
-   "#comparaison",
+   "#histoire",
    "#lesaviezvous",
    "#satisfaisant",
    "#stopmotion"

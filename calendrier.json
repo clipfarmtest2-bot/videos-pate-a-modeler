@@ -46,5 +46,15 @@
   "probabilités en billes (pile ou face → EuroMillions)",
   "durées de vie des animaux (éphémère → éponge de verre) — vidéo en réserve, publiée à la main par l'utilisateur, ne pas la programmer",
   "infiniment petit : de l'atome à la pièce de 1 € — vidéo en réserve, publiée à la main par l'utilisateur, ne pas la programmer"
+ ],
+ "scenes_utilisees": [
+  "barres v (piles de pièces) — argent",
+  "ocean (descente) — océan",
+  "tailles (boules de plus en plus grosses) — étoiles",
+  "barres h (course) — vitesse",
+  "probas (billes) — probabilités",
+  "tailles — espace 2",
+  "zoom (loupe + plongée, objets dessinés) — infiniment petit (réserve)",
+  "frise (remonter le temps, animaux + repères) — durée de vie (réserve)"
  ]
 }

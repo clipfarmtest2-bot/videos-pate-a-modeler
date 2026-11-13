@@ -1,161 +1,203 @@
 {
  "id": "infiniment-petit",
- "scene": "tailles",
- "soleil": 1,
+ "scene": "zoom",
  "fond": [
-  "#5c2a52",
-  "#220f24"
+  "#2a3f6b",
+  "#101a30"
  ],
  "objets": [
   {
-   "nom": "ATOME D'HYDROGÈNE",
-   "d": 1e-10,
-   "couleur": "#7fd4ff",
+   "nom": "PIÈCE DE 1 €",
+   "d": 0.02325,
+   "fig": "piece",
+   "ancre": [
+    -0.02,
+    -0.25
+   ],
    "aff": {
-    "n": 0.1,
-    "dec": 1,
-    "pre": "≈ ",
-    "suf": " NANOMÈTRE"
+    "n": 23.25,
+    "dec": 2,
+    "suf": " MILLIMÈTRES"
    },
    "titre": [
-    "UN ATOME, C'EST",
-    "PETIT COMMENT ?"
+    "ZOOM JUSQU'À",
+    "L'ATOME. PRÊT ?"
    ]
   },
   {
-   "nom": "MOLÉCULE D'EAU",
-   "d": 3e-10,
-   "couleur": "#4f9bff",
+   "nom": "FOURMI",
+   "d": 0.003,
+   "fig": "fourmi",
+   "ancre": [
+    -0.24,
+    0.04
+   ],
    "aff": {
-    "n": 0.3,
-    "dec": 1,
+    "n": 3,
     "pre": "≈ ",
-    "suf": " NANOMÈTRE"
+    "suf": " MILLIMÈTRES"
    },
-   "dt": 1.4
-  },
-  {
-   "nom": "ADN (LARGEUR)",
-   "d": 2e-09,
-   "couleur": "#ff8fd0",
-   "aff": {
-    "n": 2,
-    "pre": "≈ ",
-    "suf": " NANOMÈTRES"
-   },
-   "dt": 1.5
-  },
-  {
-   "nom": "VIRUS",
-   "d": 1e-07,
-   "couleur": "#8be36b",
-   "aff": {
-    "n": 100,
-    "pre": "≈ ",
-    "suf": " NANOMÈTRES"
-   },
-   "dt": 1.7
-  },
-  {
-   "nom": "BACTÉRIE",
-   "d": 2e-06,
-   "couleur": "#ffd23d",
-   "aff": {
-    "n": 2,
-    "pre": "≈ ",
-    "suf": " MICROMÈTRES"
-   },
-   "dt": 2.5,
-   "titre": [
-    "TOUJOURS",
-    "INVISIBLE"
-   ]
-  },
-  {
-   "nom": "GLOBULE ROUGE",
-   "d": 7e-06,
-   "couleur": "#e0303a",
-   "aff": {
-    "n": 7,
-    "pre": "≈ ",
-    "suf": " MICROMÈTRES"
-   },
-   "dt": 2.4
-  },
-  {
-   "nom": "CHEVEU (ÉPAISSEUR)",
-   "d": 7e-05,
-   "couleur": "#b07a45",
-   "aff": {
-    "n": 70,
-    "pre": "≈ ",
-    "suf": " MICROMÈTRES"
-   },
-   "dt": 2.6,
-   "titre": [
-    "ENFIN VISIBLE",
-    "À L'ŒIL NU"
-   ]
+   "dt": 1.6
   },
   {
    "nom": "GRAIN DE SABLE",
    "d": 0.0005,
-   "couleur": "#e9cf8f",
+   "fig": "sable",
+   "ancre": [
+    0.08,
+    0.14
+   ],
    "aff": {
     "n": 0.5,
     "dec": 1,
     "pre": "≈ ",
     "suf": " MILLIMÈTRE"
    },
-   "dt": 2.5
+   "dt": 1.8
   },
   {
-   "nom": "FOURMI",
-   "d": 0.003,
-   "couleur": "#9a5a3c",
+   "nom": "CHEVEU (ÉPAISSEUR)",
+   "d": 7e-05,
+   "fig": "cheveu",
+   "ancre": [
+    0.06,
+    -0.04
+   ],
    "aff": {
-    "n": 3,
+    "n": 70,
     "pre": "≈ ",
-    "suf": " MILLIMÈTRES"
+    "suf": " MICROMÈTRES"
+   },
+   "dt": 2.0,
+   "titre": [
+    "L'ÉPAISSEUR",
+    "D'UN SEUL CHEVEU"
+   ]
+  },
+  {
+   "nom": "GLOBULE ROUGE",
+   "d": 7e-06,
+   "fig": "globule",
+   "ancre": [
+    -0.2,
+    0.2
+   ],
+   "aff": {
+    "n": 7,
+    "pre": "≈ ",
+    "suf": " MICROMÈTRES"
+   },
+   "dt": 2.7,
+   "titre": [
+    "DÉJÀ INVISIBLE",
+    "À L'ŒIL NU"
+   ]
+  },
+  {
+   "nom": "BACTÉRIE",
+   "d": 2e-06,
+   "fig": "bacterie",
+   "ancre": [
+    0.1,
+    -0.02
+   ],
+   "aff": {
+    "n": 2,
+    "pre": "≈ ",
+    "suf": " MICROMÈTRES"
    },
    "dt": 2.6
   },
   {
-   "nom": "PIÈCE DE 1 €",
-   "d": 0.02325,
-   "couleur": "#e8c14a",
+   "nom": "VIRUS",
+   "d": 1e-07,
+   "fig": "virus",
+   "ancre": [
+    0.0,
+    0.04
+   ],
    "aff": {
-    "n": 23.25,
-    "dec": 2,
-    "suf": " MILLIMÈTRES"
+    "n": 100,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRES"
    },
-   "dt": 3.4,
+   "dt": 2.7,
    "titre": [
-    "ET VOILÀ",
-    "UNE PIÈCE DE 1 €"
+    "20 FOIS PLUS PETIT",
+    "QU'UNE BACTÉRIE"
+   ]
+  },
+  {
+   "nom": "ADN (LARGEUR)",
+   "d": 2e-09,
+   "fig": "adn",
+   "ancre": [
+    0.34,
+    -0.12
+   ],
+   "aff": {
+    "n": 2,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRES"
+   },
+   "dt": 2.7,
+   "titre": [
+    "DANS LE VIRUS :",
+    "SON CODE GÉNÉTIQUE"
+   ]
+  },
+  {
+   "nom": "MOLÉCULE D'EAU",
+   "d": 3e-10,
+   "fig": "eau",
+   "ancre": [
+    0.28,
+    0.2
+   ],
+   "aff": {
+    "n": 0.3,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRE"
+   },
+   "dt": 2.7
+  },
+  {
+   "nom": "ATOME D'HYDROGÈNE",
+   "d": 1e-10,
+   "fig": "atome",
+   "aff": {
+    "n": 0.1,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRE"
+   },
+   "dt": 2.8,
+   "titre": [
+    "ET ENFIN :",
+    "UN SEUL ATOME"
    ]
   }
  ],
  "fin": [
   {
-   "dt": 4.4,
+   "dt": 3.8,
    "titre": [
-    "ET L'ATOME",
-    "DU DÉBUT ?"
+    "POUR TRAVERSER",
+    "LA PIÈCE DE 1 € ?"
    ],
-   "nom": "ATOME",
-   "texte": "BIEN PLUS PETIT QUE CE POINT",
-   "point": true
+   "nom": "230 MILLIONS",
+   "texte": "D'ATOMES CÔTE À CÔTE"
   }
  ],
- "queue": 3.0,
+ "queue": 2.6,
  "publication": {
-  "titre": "Un atome, c'est petit comment ? Regarde",
-  "description": "De l'atome d'hydrogène à la pièce de 1 €, tout à la même échelle : il faudrait aligner plus de 200 millions d'atomes pour traverser la pièce. Tailles approximatives (un grain de sable varie de 0,1 à 1 mm). À quel moment tu as été surpris ?",
+  "titre": "Zoom dans une pièce de 1 € jusqu'à l'atome",
+  "description": "On plonge d'objet en objet, chaque fois plus petit : fourmi, grain de sable, cheveu, globule rouge, bactérie, virus, ADN, molécule d'eau, atome. Tailles approximatives (un grain de sable varie de 0,1 à 1 mm). Tu aurais deviné l'ordre ?",
   "hashtags": [
    "#science",
    "#atome",
-   "#comparaison",
+   "#zoom",
    "#lesaviezvous",
    "#satisfaisant",
    "#stopmotion"

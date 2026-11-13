@@ -17,14 +17,11 @@ Cette procédure est suivie chaque samedi par une tâche planifiée, sans person
 
 ## 2. Choisir les sujets
 - Un sujet par créneau, **jamais un sujet déjà présent dans `sujets_traites`**, et pas deux sujets proches dans la même semaine.
-- Varier les scènes dans la semaine (pas deux fois la même scène à la suite).
-- Uniquement les scènes et apparences existantes du kit (voir `kit/LISEZMOI.md`). Ne pas créer de nouvelle scène sans humain.
-- Idées compatibles (non exhaustif) :
-  - `tailles` (boules de couleur) : animaux du plus petit au plus grand, lunes du système solaire, volcans, astéroïdes, cratères.
-  - `barres` horizontal : vitesses des animaux, durées de vie des animaux, temps de chargement historiques, longueur des fleuves, distances (Paris → Lune → Mars…), poids.
-  - `barres` vertical (piles de pièces, uniquement pour de l'argent) : salaires des métiers, prix des transferts de foot, coût de monuments, budget de films, fortune des pays.
-  - `ocean` (figurines fixes : bateau, plongeur, manchot, meduse, baleine, epave, poisson, bathyscaphe) : variantes de profondeur uniquement (animaux plongeurs, épaves célèbres…).
-  - `probas` : chances de jumeaux, d'un trou en un au golf, d'une main au poker, d'un anniversaire commun, de trouver une perle dans une huître…
+- **Règle de l'utilisateur : chaque vidéo innove visuellement.** Jamais les mêmes plans ni la même mécanique que les vidéos précédentes, et des **objets dessinés** (figurines SVG reconnaissables), pas de simples boules de couleur.
+  - Pour chaque vidéo, créer une **nouvelle scène** dans `kit/scenes2.js` (voir « Créer une scène » plus bas) : une mécanique qui raconte le sujet. Exemples déjà faits : `zoom` (une loupe repère un objet plus petit, on plonge dedans), `frise` (on remonte le temps d'arrêt en arrêt, animal + repère historique).
+  - Pistes de mécaniques pas encore utilisées : empilement d'objets jusqu'à une hauteur, balance qui penche, récipient qui se remplit, tapis roulant, escalier que l'on monte, carte qui se déplie, horloge ou roue qui tourne, tamis qui trie, fusée qui traverse des couches, coupe d'un objet en tranches.
+  - `calendrier.json` → `scenes_utilisees` liste les mécaniques déjà publiées, dans l'ordre : ne pas reprendre une des 10 dernières. Y ajouter la nouvelle.
+  - Si, après trois séries de corrections, la nouvelle scène n'est toujours pas propre : laisser le créneau vide et le dire dans le résumé (ne pas publier une scène bancale, ne pas retomber sur une ancienne mécanique).
 - Compte encore petit : éviter violence, accidents, maladies, drogues, armes ; pas de personnes privées ; personnalités publiques seulement pour des chiffres publics (ex. fortunes Forbes).
 
 ## 3. Vérifier les chiffres
@@ -32,12 +29,21 @@ Cette procédure est suivie chaque samedi par une tâche planifiée, sans person
 - Valeur incertaine ou contestée → « ≈ » à l'écran et « estimation » dans la description. Si un chiffre ne peut pas être sourcé, changer d'objet ou de sujet.
 - Pas de mots violents à l'écran ni dans les descriptions.
 
+## 3 bis. Créer une scène (`kit/scenes2.js`)
+- Une scène = `SCENES.<nom> = { init(), build(L), draw(t, bi, ev) }` ; lire `zoom` et `frise` comme modèles, et `moteur.html` pour les variables communes (`O`, `N`, `T`, `D`, `SONS`, `evObj`, `RB`/`RE` pour la boucle, `E`, `fit`, `jit`, `eio`, `llog`, `mix`).
+- `init` : appeler `evObj(i, instant, compteur)` pour chaque objet (nom + chiffre du bas, titres) et pousser les bruitages dans `SONS` (plop, whoosh, zip, compteur, note, pip, pieces, bulles), calés sur les mouvements.
+- `draw` : tout doit dépendre de `t` seulement (pas d'état caché). Quand `RB` est vrai, `RE` va de 0 à 1 et doit ramener la scène **exactement** à l'état de `t = 0` (boucle parfaite). À `t = 0`, l'objet principal est déjà à l'écran et bouge (rebond).
+- Dessins : SVG simples, gros et lisibles en une seconde, dans un élément de classe `clay` (texture pâte à modeler) ; aucun élément de plus de 6 000 px de côté ; pas de logo, de marque ni de personnage connu ; pas de visage réaliste.
+- Zones réservées : titres en haut (y 185 à 400), nom et chiffre en bas (y 1225 à 1450). Ne rien d'important au-dessus de y 150 ni en dessous de y 1500 (interface TikTok).
+- Contrôle renforcé pour une scène nouvelle : au moins 20 instants regardés (chaque objet au repos, deux transitions image par image, les 4 dernières images puis l'image 0).
+
 ## 4. Écrire les fichiers vidéo
 - Un fichier `kit/videos/<id>.json` par vidéo, sur le modèle des exemples (même scène). `id` court, sans accent.
 - 7 à 13 objets, du plus petit au plus grand. **Rythme « départ rapide puis posé »** (validé par l'utilisateur ; le moteur accélère tout de 12 %, `dt` est en secondes avant accélération) :
   - les **3 premiers `dt` sont courts** (1,4 à 2,1 ; jusqu'à 2,6 si l'objet a une `note`) : la moitié des spectateurs part avant 3 s, il faut que trois objets soient passés à ce moment-là ;
   - ensuite : `tailles` 2,4 à 2,8 (3,4 à 4,3 pour un objet avec `note` et pour les deux derniers) ; `barres` 3,2 à 4,3 ; `ocean` et `probas` 2,9 à 4,3 ;
-  - prendre les fichiers existants de la même scène comme modèle de minutage.
+  - scène nouvelle : 3 premiers `dt` de 1,4 à 2,0, puis 2,6 à 3,3 (le temps de la transition + une seconde et demie de lecture), 3,8 pour le dernier ;
+  - prendre `infiniment-petit.json` et `duree-de-vie.json` comme modèles de minutage.
 - Premier titre = accroche **concrète** visible dès la première image (un chiffre, une promesse ou une question qui pique : « TU CROIS QUE LE / SOLEIL EST GROS ? », « LE DERNIER DÉPASSE / 1 MILLIARD DE KM/H »), 2 lignes de longueur proche, 18 caractères max chacune, en MAJUSCULES. Le premier objet doit avoir un `titre`. Puis 2 ou 3 `titre` de relance.
 - `fin` : **un seul écran** de chute (question ou rappel du premier objet, `dt` 4,0 à 4,6), `queue` 2,2 à 3,0. **Pas d'écran « Abonne-toi »** : la vidéo se termine par une boucle automatique (la dernière seconde ramène à la première image), un écran de fin la casserait.
 - `publication` : `titre` (accroche, ≤ 60 caractères), `description` (contexte + précision sur les sources/estimations + question pour les commentaires, sur une seule ligne), `hashtags` (5 ou 6 dont #comparaison #lesaviezvous #satisfaisant #stopmotion).
