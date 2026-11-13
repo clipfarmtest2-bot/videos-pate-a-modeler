@@ -24,3 +24,8 @@ les `titre` (2 lignes en haut), les `note`, la `fin` et la `publication`. `dt` =
 | `probas` | probas.json | `n` (une chance sur n), `env: true` pour « ≈ » |
 
 Les bruitages sont fabriqués automatiquement à partir du minutage.
+
+## Rythme et boucle
+- `dt` est en secondes avant accélération : le moteur accélère tout de 12 % (`"vitesse": 1.12` par défaut, modifiable dans le fichier de la vidéo).
+- La dernière seconde ramène à la première image (boucle). `"boucle": false` pour la désactiver.
+- Extrait : `node rendu.mjs videos/x.json --debut 10 --fin 20 --sortie essai`.
