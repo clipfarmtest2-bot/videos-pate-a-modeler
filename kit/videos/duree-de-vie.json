@@ -1,0 +1,148 @@
+{
+ "id": "duree-de-vie",
+ "scene": "barres",
+ "sens": "h",
+ "unite": {
+  "suf": " ans"
+ },
+ "fond": [
+  "#234a4f",
+  "#0c1f24"
+ ],
+ "objets": [
+  {
+   "nom": "ÉPHÉMÈRE",
+   "val": 0.00274,
+   "couleur": "#bfe3a0",
+   "aff": {
+    "n": 1,
+    "de": 0,
+    "pre": "≈ ",
+    "suf": " jour"
+   },
+   "titre": [
+    "LE DERNIER A VÉCU",
+    "ENVIRON 11 000 ANS"
+   ]
+  },
+  {
+   "nom": "SOURIS",
+   "val": 2,
+   "couleur": "#b8b0a8",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 1.7
+  },
+  {
+   "nom": "CHIEN",
+   "val": 13,
+   "couleur": "#c98a4b",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 2.1
+  },
+  {
+   "nom": "ÉLÉPHANT",
+   "val": 65,
+   "couleur": "#8d95a3",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 2.1
+  },
+  {
+   "nom": "HUMAIN (RECORD)",
+   "val": 122,
+   "couleur": "#ffd23d",
+   "dt": 3.2,
+   "titre": [
+    "LE RECORD",
+    "HUMAIN"
+   ]
+  },
+  {
+   "nom": "TORTUE JONATHAN",
+   "val": 194,
+   "couleur": "#5fa35a",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.4,
+   "titre": [
+    "TOUJOURS EN VIE",
+    "AUJOURD'HUI"
+   ]
+  },
+  {
+   "nom": "BALEINE BORÉALE",
+   "val": 211,
+   "couleur": "#4f78b0",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.2
+  },
+  {
+   "nom": "REQUIN DU GROENLAND",
+   "val": 392,
+   "couleur": "#7f8fa6",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 3.4,
+   "titre": [
+    "LE PLUS VIEUX",
+    "VERTÉBRÉ CONNU"
+   ]
+  },
+  {
+   "nom": "PALOURDE « MING »",
+   "val": 507,
+   "couleur": "#e9d5b0",
+   "dt": 3.6,
+   "titre": [
+    "NÉE EN 1499",
+    "(OUI, 1499)"
+   ]
+  },
+  {
+   "nom": "ÉPONGE DE VERRE",
+   "val": 11000,
+   "couleur": "#f2f2e6",
+   "aff": {
+    "pre": "≈ "
+   },
+   "dt": 4.3,
+   "titre": [
+    "ET ÇA, C'EST",
+    "BIEN UN ANIMAL"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.0,
+   "titre": [
+    "ET L'ÉPHÉMÈRE ?",
+    "UNE SEULE JOURNÉE"
+   ],
+   "nom": "ÉPHÉMÈRE",
+   "texte": "≈ 1 JOUR"
+  }
+ ],
+ "queue": 2.2,
+ "publication": {
+  "titre": "Cet animal a vécu environ 11 000 ans",
+  "description": "De l'éphémère (un jour) à l'éponge de verre : les records de longévité, chaque barre à l'échelle de la précédente. Âges records ou estimations (requin du Groenland : entre 272 et 512 ans ; éponge : 11 000 ans à 3 000 ans près). Lequel t'a le plus surpris ?",
+  "hashtags": [
+   "#animaux",
+   "#longevite",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

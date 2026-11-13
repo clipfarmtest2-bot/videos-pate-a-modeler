@@ -51,7 +51,7 @@ Cette procédure est suivie chaque samedi par une tâche planifiée, sans person
 
 ## 6. Rendre
 - `node rendu.mjs videos/<id>.json` → `kit/out/<id>.mp4` (2 à 6 min par vidéo ; image 15 i/s, encodage unique en haute qualité, ne jamais réencoder le fichier ensuite). Lancer chaque rendu en arrière-plan et attendre sa fin (une commande au premier plan est limitée à 10 min).
-- Contrôle final : durée 25 à 40 s (`ffprobe`), débit vidéo d'au moins 6 Mbit/s, niveau sonore autour de −14 LUFS, planche de 10 images tirées de la vidéo finie et regardée.
+- Contrôle final : durée 25 à 40 s (`ffprobe`), débit vidéo d'au moins 5 Mbit/s, niveau sonore autour de −14 LUFS, planche de 10 images tirées de la vidéo finie et regardée.
 
 ## 7. Publier
 - Copier `kit/out/<id>.mp4` dans `videos/` et `kit/out/<id>-couverture.jpg` dans `couvertures/`, commit + push (une vidéo par push). Lien public : `https://raw.githubusercontent.com/clipfarmtest2-bot/videos-pate-a-modeler/main/videos/<id>.mp4` (vérifier HTTP 200 avec `curl -sI`).

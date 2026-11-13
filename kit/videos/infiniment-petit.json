@@ -1,0 +1,164 @@
+{
+ "id": "infiniment-petit",
+ "scene": "tailles",
+ "soleil": 1,
+ "fond": [
+  "#5c2a52",
+  "#220f24"
+ ],
+ "objets": [
+  {
+   "nom": "ATOME D'HYDROGÈNE",
+   "d": 1e-10,
+   "couleur": "#7fd4ff",
+   "aff": {
+    "n": 0.1,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRE"
+   },
+   "titre": [
+    "UN ATOME, C'EST",
+    "PETIT COMMENT ?"
+   ]
+  },
+  {
+   "nom": "MOLÉCULE D'EAU",
+   "d": 3e-10,
+   "couleur": "#4f9bff",
+   "aff": {
+    "n": 0.3,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRE"
+   },
+   "dt": 1.4
+  },
+  {
+   "nom": "ADN (LARGEUR)",
+   "d": 2e-09,
+   "couleur": "#ff8fd0",
+   "aff": {
+    "n": 2,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRES"
+   },
+   "dt": 1.5
+  },
+  {
+   "nom": "VIRUS",
+   "d": 1e-07,
+   "couleur": "#8be36b",
+   "aff": {
+    "n": 100,
+    "pre": "≈ ",
+    "suf": " NANOMÈTRES"
+   },
+   "dt": 1.7
+  },
+  {
+   "nom": "BACTÉRIE",
+   "d": 2e-06,
+   "couleur": "#ffd23d",
+   "aff": {
+    "n": 2,
+    "pre": "≈ ",
+    "suf": " MICROMÈTRES"
+   },
+   "dt": 2.5,
+   "titre": [
+    "TOUJOURS",
+    "INVISIBLE"
+   ]
+  },
+  {
+   "nom": "GLOBULE ROUGE",
+   "d": 7e-06,
+   "couleur": "#e0303a",
+   "aff": {
+    "n": 7,
+    "pre": "≈ ",
+    "suf": " MICROMÈTRES"
+   },
+   "dt": 2.4
+  },
+  {
+   "nom": "CHEVEU (ÉPAISSEUR)",
+   "d": 7e-05,
+   "couleur": "#b07a45",
+   "aff": {
+    "n": 70,
+    "pre": "≈ ",
+    "suf": " MICROMÈTRES"
+   },
+   "dt": 2.6,
+   "titre": [
+    "ENFIN VISIBLE",
+    "À L'ŒIL NU"
+   ]
+  },
+  {
+   "nom": "GRAIN DE SABLE",
+   "d": 0.0005,
+   "couleur": "#e9cf8f",
+   "aff": {
+    "n": 0.5,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " MILLIMÈTRE"
+   },
+   "dt": 2.5
+  },
+  {
+   "nom": "FOURMI",
+   "d": 0.003,
+   "couleur": "#9a5a3c",
+   "aff": {
+    "n": 3,
+    "pre": "≈ ",
+    "suf": " MILLIMÈTRES"
+   },
+   "dt": 2.6
+  },
+  {
+   "nom": "PIÈCE DE 1 €",
+   "d": 0.02325,
+   "couleur": "#e8c14a",
+   "aff": {
+    "n": 23.25,
+    "dec": 2,
+    "suf": " MILLIMÈTRES"
+   },
+   "dt": 3.4,
+   "titre": [
+    "ET VOILÀ",
+    "UNE PIÈCE DE 1 €"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.4,
+   "titre": [
+    "ET L'ATOME",
+    "DU DÉBUT ?"
+   ],
+   "nom": "ATOME",
+   "texte": "BIEN PLUS PETIT QUE CE POINT",
+   "point": true
+  }
+ ],
+ "queue": 3.0,
+ "publication": {
+  "titre": "Un atome, c'est petit comment ? Regarde",
+  "description": "De l'atome d'hydrogène à la pièce de 1 €, tout à la même échelle : il faudrait aligner plus de 200 millions d'atomes pour traverser la pièce. Tailles approximatives (un grain de sable varie de 0,1 à 1 mm). À quel moment tu as été surpris ?",
+  "hashtags": [
+   "#science",
+   "#atome",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}
