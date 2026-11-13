@@ -16,6 +16,7 @@ Cette procédure est suivie chaque samedi par une tâche planifiée, sans person
 - S'il n'y a aucun créneau à remplir, s'arrêter et le dire dans le résumé.
 
 ## 2. Choisir les sujets
+- Prendre d'abord les sujets de `idees_en_reserve` dans `calendrier.json` (idées validées par l'utilisateur, à retirer de la liste une fois faites), puis en inventer dans le même esprit : questions absurdes « combien de… pour… ? », comparaisons, « et si… ».
 - Un sujet par créneau, **jamais un sujet déjà présent dans `sujets_traites`**, et pas deux sujets proches dans la même semaine.
 - **Règle de l'utilisateur : chaque vidéo innove visuellement.** Jamais les mêmes plans ni la même mécanique que les vidéos précédentes, et des **objets dessinés** (figurines SVG reconnaissables), pas de simples boules de couleur.
   - Pour chaque vidéo, créer une **nouvelle scène** dans `kit/scenes2.js` (voir « Créer une scène » plus bas) : une mécanique qui raconte le sujet. Exemples déjà faits : `zoom` (une loupe repère un objet plus petit, on plonge dedans), `frise` (on remonte le temps d'arrêt en arrêt, animal + repère historique).

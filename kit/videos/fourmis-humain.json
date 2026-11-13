@@ -1,0 +1,118 @@
+{
+ "id": "fourmis-humain",
+ "scene": "balance",
+ "legende": "1 FOURMI ≈ 3 MILLIGRAMMES",
+ "fond": [
+  "#2f7a5a",
+  "#123828"
+ ],
+ "objets": [
+  {
+   "nom": "UN TROMBONE (1 g)",
+   "fig": "trombone",
+   "aff": {
+    "n": 330,
+    "pre": "≈ ",
+    "suf": " FOURMIS"
+   },
+   "titre": [
+    "COMBIEN DE FOURMIS",
+    "POUR PESER UN HUMAIN ?"
+   ]
+  },
+  {
+   "nom": "UNE PIÈCE DE 1 € (7,5 g)",
+   "fig": "piece",
+   "aff": {
+    "n": 2500,
+    "pre": "≈ ",
+    "suf": " FOURMIS"
+   },
+   "dt": 2.2
+  },
+  {
+   "nom": "UNE SOURIS (20 g)",
+   "fig": "souris",
+   "aff": {
+    "n": 6700,
+    "pre": "≈ ",
+    "suf": " FOURMIS"
+   },
+   "dt": 2.3
+  },
+  {
+   "nom": "UN TÉLÉPHONE (200 g)",
+   "fig": "telephone",
+   "aff": {
+    "n": 67000,
+    "pre": "≈ ",
+    "suf": " FOURMIS"
+   },
+   "dt": 2.5
+  },
+  {
+   "nom": "UN CHAT (4 kg)",
+   "fig": "chat",
+   "aff": {
+    "n": 1.3,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " MILLION DE FOURMIS"
+   },
+   "dt": 2.7,
+   "titre": [
+    "ÇA GRIMPE",
+    "TRÈS VITE…"
+   ]
+  },
+  {
+   "nom": "UN CHIEN (20 kg)",
+   "fig": "chien",
+   "aff": {
+    "n": 6.7,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " MILLIONS DE FOURMIS"
+   },
+   "dt": 2.8
+  },
+  {
+   "nom": "UN HUMAIN (70 kg)",
+   "fig": "personne",
+   "aff": {
+    "n": 23,
+    "pre": "≈ ",
+    "suf": " MILLIONS DE FOURMIS"
+   },
+   "dt": 3.0,
+   "titre": [
+    "ET POUR",
+    "UN HUMAIN ?"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.2,
+   "titre": [
+    "ET SUR TERRE,",
+    "ELLES SONT…"
+   ],
+   "nom": "20 MILLIONS DE MILLIARDS",
+   "texte": "2,5 MILLIONS PAR HUMAIN"
+  }
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "Combien de fourmis pour peser autant qu'un humain ?",
+  "description": "En comptant 3 mg par fourmi (ça varie beaucoup selon l'espèce), il en faut environ 23 millions pour équilibrer un humain de 70 kg. Et d'après une étude de 2022, il y aurait 20 millions de milliards de fourmis sur Terre, soit 2,5 millions par personne. Tu aurais parié sur combien ?",
+  "hashtags": [
+   "#fourmis",
+   "#animaux",
+   "#calculabsurde",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

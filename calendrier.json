@@ -45,7 +45,10 @@
   "descente dans l'océan (surface → fosse des Mariannes)",
   "probabilités en billes (pile ou face → EuroMillions)",
   "durées de vie des animaux (éphémère → éponge de verre) — vidéo en réserve, publiée à la main par l'utilisateur, ne pas la programmer",
-  "infiniment petit : de l'atome à la pièce de 1 € — vidéo en réserve, publiée à la main par l'utilisateur, ne pas la programmer"
+  "infiniment petit : de l'atome à la pièce de 1 € — vidéo en réserve, publiée à la main par l'utilisateur, ne pas la programmer",
+  "coups de cuillère pour atteindre le centre de la Terre — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
+  "pas pour marcher jusqu'à la Lune — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
+  "fourmis pour peser autant qu'un humain — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -55,6 +58,23 @@
   "probas (billes) — probabilités",
   "tailles — espace 2",
   "zoom (loupe + plongée, objets dessinés) — infiniment petit (réserve)",
-  "frise (remonter le temps, animaux + repères) — durée de vie (réserve)"
+  "frise (remonter le temps, animaux + repères) — durée de vie (réserve)",
+  "creuse (tunnel dans la Terre en coupe, la planète se dévoile) — cuillère",
+  "escalier (marcheur qui grimpe, repères qui défilent) — pas jusqu'à la Lune",
+  "balance (objet contre pluie de fourmis) — fourmis"
+ ],
+ "idees_en_reserve": [
+  {
+   "sujet": "Combien pèse un nuage ?",
+   "piste": "le nuage d'un côté, des éléphants empilés de l'autre ; éviter de refaire la scène balance telle quelle (par exemple un ascenseur ou une grue qui soulève)"
+  },
+  {
+   "sujet": "Combien de gouttes pour remplir une piscine olympique ?",
+   "piste": "un récipient qui se remplit : verre, baignoire, piscine, lac"
+  },
+  {
+   "sujet": "Combien de temps pour compter jusqu'à un milliard ?",
+   "piste": "une horloge qui s'affole, puis les pages d'un calendrier qui s'envolent"
+  }
  ]
 }

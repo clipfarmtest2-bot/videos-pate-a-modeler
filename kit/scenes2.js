@@ -131,3 +131,133 @@ SCENES.frise={
   tag('');fleche(0);
  }
 };
+// ================= scène 7 : creuse (un tunnel s'enfonce dans la Terre vue en coupe, la planète se dévoile) =================
+const CUILLERE=`<rect x="44" y="-20" width="12" height="80" rx="6" fill="#cfd4dc"/><ellipse cx="50" cy="76" rx="21" ry="27" fill="#e3e7ee"/><ellipse cx="45" cy="70" rx="9" ry="13" fill="#f6f8fb"/>`;
+const CREUSEUR=`<ellipse cx="90" cy="114" rx="52" ry="26" fill="#3b5fb0"/><rect x="62" y="52" width="48" height="62" rx="20" fill="#e0453a"/><circle cx="92" cy="34" r="22" fill="#f2c29b"/><path d="M70 30q6-24 26-22q20 2 18 22q-12-10-22-8q-12 0-22 8z" fill="#5a3a2a"/><circle cx="100" cy="36" r="3" fill="${NOIR}"/><path d="M104 70q34 6 52 34" fill="none" stroke="#e0453a" stroke-width="12" stroke-linecap="round"/><circle cx="158" cy="106" r="8" fill="#f2c29b"/>`;
+const fmtDist=m=>m<10000?fr(Math.round(m))+' m':fr(Math.round(m/1000))+' km';
+SCENES.creuse={
+ Y0:600,LG:300,R:6371000,
+ C:[[0,'#8a5a33'],[35000,'#d9662b'],[670000,'#c44a22'],[2890000,'#f2a23a'],[5150000,'#ffe9a8']],
+ init(){O.forEach((o,i)=>{
+   evObj(i,i?T[i]+1.0:0,{cs:i?T[i]+.3:.1,dur:.9,...o.aff});
+   if(i)SONS.push({t:T[i],s:'zip',d:1.0/V,f:150+30*i,g:.4},{t:T[i]+.2,s:'compteur',n:14,f:700,pas:.06,g:.14},{t:T[i]+1.1,s:'plop',big:.3+.6*i/N,g:.55},{t:T[i]+1.25,s:'note',k:i,g:.26});
+   else SONS.push({t:.02,s:'plop',big:.2,g:.5},{t:.1,s:'compteur',n:12,f:700,pas:.06,g:.14},{t:.9,s:'note',k:0,g:.26});});
+  for(let t=1.4;t<TR-.4;t+=.42)SONS.push({t,s:'toc',f:420+60*(Math.floor(t*7)%3),g:.09});   // petits coups de cuillère
+ },
+ etat(t){   // de l'arrêt k-1 vers k (u de 0 à 1) ; f = part du premier trou déjà creusée
+  if(RB){const w=eio(cl(RP/.7))*(N-1),fl=Math.min(N-2,Math.floor(w));return {k:N-1-fl,u:1-(w-fl),f:1-eio(cl((RP-.7)/.2))};}
+  let k=0;for(let i=1;i<N;i++)if(t>=T[i])k=i;
+  return k?{k,u:eio(cl((t-T[k])/1.1)),f:1}:{k:1,u:0,f:eo(cl(t/.8))};
+ },
+ frac(t){const e=this.etat(t);return (e.k-1+e.u)/(N-1);},
+ build(L){let h='';for(let j=0;j<14;j++){const r=5+rnd(j,3)*9;h+=`<div class="star" style="width:${r}px;height:${r}px"></div>`;}
+  h+=`<div id="cg" style="background:#5fa35a"></div>`;this.C.forEach((c,j)=>h+=`<div id="cc${j}" style="background:${c[1]};box-shadow:inset 0 0 90px rgba(60,20,0,.35)"></div>`);
+  h+=`<div id="ctu" style="background:#24140c"></div><div style="width:1080px;height:1920px;background:url(${bruit()});background-size:1080px 1920px;mix-blend-mode:multiply;opacity:.7"></div>`;
+  h+=`<div id="cta" class="clay" style="background:#6e4526;border-radius:50% 50% 0 0"></div>`;
+  for(let j=0;j<6;j++)h+=`<div class="cb" style="width:22px;height:22px;border-radius:50%;background:#6e4526"></div>`;
+  h+=`<div id="cch" class="clay" style="display:none">${svgf('0 0 200 140',CREUSEUR)}</div><div id="csp" class="clay" style="width:110px;height:138px">${svgf('0 -20 100 125',CUILLERE)}</div>`;
+  h+=`<div style="left:50px;top:1196px;width:980px;height:290px;border-radius:44px;background:rgba(20,10,6,.62)"></div>`;
+  h+=`<div id="cl" class="ln" style="top:420px;width:1080px;text-align:center;font-size:40px;color:#fff6e3;text-shadow:0 3px 0 rgba(0,0,0,.4)"></div>`;
+  L.innerHTML=h;const g=id=>document.getElementById(id);this.g=g('cg');this.c=this.C.map((_,j)=>g('cc'+j));this.tu=g('ctu');this.ta=g('cta');this.ch=g('cch');this.sp=g('csp');this.cl=g('cl');
+  this.cl.textContent=D.legende||'';this.bt=[...L.querySelectorAll('.cb')];this.st=[...L.querySelectorAll('.star')];},
+ couche(e,r,y){if(y>2000){e.style.display='none';return;}e.style.display='block';
+  if(r>14000){e.style.borderRadius='0';e.style.width='1300px';e.style.height='2300px';e.style.transform=`translate(-110px,${y}px)`;}
+  else{e.style.borderRadius='50%';e.style.width=e.style.height=2*r+'px';e.style.transform=`translate(${540-r}px,${y}px)`;}},
+ draw(t,bi){
+  const {k,u,f}=this.etat(t),Y0=this.Y0,LG=this.LG,R=this.R,prof=llog(O[k-1].prof,O[k].prof,u),s=LG/prof,len=LG*f,pr=(k-1+u)/(N-1);
+  this.couche(this.g,R*s+12,Y0-12);this.C.forEach(([B],j)=>this.couche(this.c[j],(R-B)*s,Y0+B*s));
+  const w=Math.max(14,Math.min(180,s)),tu=this.tu;   // tunnel d'un mètre de large
+  tu.style.width=w+'px';tu.style.height=len+'px';tu.style.borderRadius=`0 0 ${w/2}px ${w/2}px`;tu.style.transform=`translate(${540-w/2}px,${Y0}px)`;
+  this.sp.style.transformOrigin='50% 0';this.sp.style.transform=`translate(${540-55+jit(bi,3,1)}px,${Y0+len-120}px) rotate(${16*Math.sin(t*13)}deg)`;
+  this.bt.forEach((e,j)=>{const ph=((t*1.9+j/6)%1+1)%1,sd=j%2?1:-1;e.style.opacity=f>0?1-ph:0;e.style.transform=`translate(${540+sd*(w/2+16+ph*(70+40*rnd(j,2)))-11}px,${Y0-18-150*(.6+.4*rnd(j,4))*Math.sin(Math.PI*ph)}px)`;});
+  const hc=1.25*s,ch=this.ch;if(hc>12&&hc<600){ch.style.display='block';ch.style.opacity=cl((hc-12)/30);ch.style.height=hc+'px';ch.style.width=hc*200/140+'px';ch.style.transform=`translate(${540-w/2-hc*200/140-.03*s+jit(bi,5,1)}px,${Y0-hc+4+jit(bi,6,1)}px)`;}else ch.style.display='none';
+  const wt=.9*s,ht=.38*s*f,ta=this.ta;if(wt>8&&wt<700){ta.style.display='block';ta.style.width=wt+'px';ta.style.height=ht+'px';ta.style.transform=`translate(${540+w/2+.12*s}px,${Y0-ht+4}px)`;}else ta.style.display='none';
+  this.cl.style.opacity=cl(pr*(N-1)*2-.6);
+  this.st.forEach((e,j)=>{e.style.opacity=cl((pr-.5)/.2)*.9;e.style.transform=`translate(${30+rnd(j,1)*1020+jit(bi,100+j,.8)}px,${150+rnd(j,2)*380}px)`;});
+  const repos=u==0||u==1,cur=u==0?k-1:k;
+  tag(f<.99?'':repos?O[cur].ptxt||fmtDist(O[cur].prof):fmtDist(prof),540+w/2+150,Y0+len-70,bi);fleche(0);
+ }
+};
+// ================= scène 8 : escalier (un marcheur grimpe vers l'espace, les repères défilent) =================
+const MARCHEUR=`<rect x="26" y="70" width="34" height="58" rx="12" fill="#2f6fb5"/><g id="mA" stroke="#3b3550" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M60 130l-14 62"/><path d="M78 130l22 38l-4 24"/></g><g id="mB" stroke="#3b3550" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M60 130l22 38l-6 24"/><path d="M78 130l-10 62"/></g><rect x="44" y="62" width="48" height="76" rx="20" fill="#e0453a"/><path d="M84 84q22 8 24 30" fill="none" stroke="#e0453a" stroke-width="12" stroke-linecap="round"/><circle cx="70" cy="38" r="24" fill="#f2c29b"/><path d="M48 34q4-26 26-24q22 2 20 26q-12-12-24-10q-12 0-22 8z" fill="#5a3a2a"/><circle cx="80" cy="40" r="3.2" fill="${NOIR}"/>`;
+const EFIG={
+ maison:`<rect x="50" y="100" width="100" height="92" rx="6" fill="#f2e3c6"/><path d="M34 108l66-62 66 62z" fill="#e0453a"/><rect x="88" y="142" width="26" height="50" rx="4" fill="#8a5a2c"/><rect x="60" y="118" width="22" height="22" rx="3" fill="#7fd4ff"/>`,
+ eiffel:REP.eiffel,fusee:REP.fusee,
+ everest:`<path d="M6 194l74-154 40 62 24-36 50 128z" fill="#7b8391"/><path d="M80 40l-27 56 21-10 14 16 12-22 5-8z" fill="#fff"/><path d="M144 66l-14 28 14-6 12 12 5-8z" fill="#fff"/>`,
+ iss:`<rect x="16" y="68" width="48" height="64" rx="4" fill="#2f5fd0"/><rect x="136" y="68" width="48" height="64" rx="4" fill="#2f5fd0"/><path d="M40 68v64M160 68v64M16 100h48M136 100h48" stroke="#7fa2ff" stroke-width="3"/><rect x="60" y="94" width="80" height="12" rx="5" fill="#b9c2d6"/><rect x="82" y="76" width="36" height="48" rx="13" fill="#eef1f5"/><circle cx="100" cy="100" r="9" fill="#7fd4ff"/>`,
+ satellite:`<path d="M100 78v-24" stroke="#b9c2d6" stroke-width="6"/><path d="M76 54a24 15 0 0 1 48 0z" fill="#eef1f5"/><rect x="12" y="84" width="58" height="34" rx="4" fill="#2f5fd0"/><rect x="130" y="84" width="58" height="34" rx="4" fill="#2f5fd0"/><path d="M41 84v34M159 84v34" stroke="#7fa2ff" stroke-width="3"/><rect x="74" y="76" width="52" height="50" rx="8" fill="#e8c14a"/>`,
+ lune:`<circle cx="100" cy="100" r="92" fill="#cfd3da"/><g fill="#a9aeb8"><circle cx="70" cy="72" r="20"/><circle cx="128" cy="118" r="26"/><circle cx="90" cy="144" r="12"/><circle cx="140" cy="62" r="11"/><circle cx="46" cy="118" r="9"/></g>`,
+};
+SCENES.escalier={
+ K:6,XC:360,YC:1040,
+ init(){O.forEach((o,i)=>{
+   evObj(i,i?T[i]+1.0:0,{cs:i?T[i]+.25:.1,dur:1.0,de:0,suf:' PAS',...(o.aff||{})});
+   if(i){SONS.push({t:T[i],s:'whoosh',d:1.1/V,fc:520,g:.35},{t:T[i]+1.2,s:'plop',big:.2+.5*i/N,g:.5},{t:T[i]+1.35,s:'note',k:i,g:.26});for(let j=0;j<this.K;j++)SONS.push({t:T[i]+.1+j*.19,s:'toc',f:300+(j%2)*70,g:.22});}
+   else SONS.push({t:.02,s:'plop',big:.1,g:.5},{t:.6,s:'note',k:0,g:.26});});},
+ pos(t){if(RB)return (N-1)*(1-RE);let k=0;for(let i=1;i<N;i++)if(t>=T[i])k=i;return k?k-1+eio(cl((t-T[k])/1.2)):0;},
+ frac(t){return this.pos(t)/(N-1);},
+ build(L){let h='';for(let j=0;j<18;j++){const r=5+rnd(j,3)*9;h+=`<div class="star" style="width:${r}px;height:${r}px"></div>`;}
+  O.forEach((o,i)=>h+=`<div id="eo${i}" class="clay" style="display:none;width:290px;height:290px">${svgf('0 0 200 200',EFIG[o.fig])}</div>`);
+  for(let j=0;j<17;j++)h+=`<div class="em clay" style="width:122px;height:1500px;border-radius:14px 14px 0 0;background:${D.marche||'#586079'}"></div>`;
+  h+=`<div id="ew" class="clay" style="width:150px;height:250px">${svgf('0 0 120 200',MARCHEUR)}</div>`;
+  h+=`<div id="ec" class="ln" style="top:430px;left:50px;font-size:40px;color:#fff6e3;text-shadow:0 3px 0 rgba(0,0,0,.4)"></div><div id="ey" class="ln" style="top:476px;left:50px;color:#fff6e3;text-shadow:0 8px 0 #7d8399,0 20px 22px rgba(0,0,0,.4);line-height:1.1"></div>`;
+  L.innerHTML=h;const g=id=>document.getElementById(id);this.o=O.map((_,i)=>g('eo'+i));this.w=g('ew');this.ey=g('ey');g('ec').textContent=D.legende||'';
+  this.m=[...L.querySelectorAll('.em')];this.st=[...L.querySelectorAll('.star')];this.mA=g('mA');this.mB=g('mB');},
+ draw(t,bi){
+  const p=this.pos(t),K=this.K,XC=this.XC,YC=this.YC,ph=((p*K)%1+1)%1,bouge=Math.abs(p-Math.round(p))>.004;
+  this.m.forEach((e,j)=>{const q=j-6;e.style.transform=`translate(${XC-61+q*120-120*ph}px,${YC-q*80+80*ph}px)`;});
+  const yt=YC+(ph<.5?80*ph:80*ph-80);let sx=1,sy=1;if(!bouge&&!RB){const v=p==0?t:t-(T[Math.round(p)]+1.2);if(v>=0){const q=.2*Math.exp(-v*9)*Math.cos(v*24);sy=1-q;sx=1+q*.8;}}
+  const pas=bouge?Math.floor(p*K*2)%2:0;this.mA.style.display=pas?'none':'';this.mB.style.display=pas?'':'none';
+  this.w.style.transformOrigin='50% 100%';this.w.style.transform=`translate(${XC-75+jit(bi,1,1)}px,${yt-246+jit(bi,2,1)}px) rotate(${bouge?6:0}deg) scale(${sx},${sy})`;
+  O.forEach((o,i)=>{const d=i-p,e=this.o[i];if(Math.abs(d)>.93){e.style.display='none';return;}
+   e.style.display='block';e.style.transform=`translate(${730+d*900+jit(bi,i*7+3,1.2)}px,${436-d*640+jit(bi,i*7+4,1.2)}px) rotate(${jit(bi,i*7+5,.7)}deg)`;});
+  this.st.forEach((e,j)=>{e.style.opacity=cl((p-2.4)/.8)*.9;e.style.transform=`translate(${30+rnd(j,1)*1020+jit(bi,100+j,.8)}px,${140+((rnd(j,2)*900+p*260)%900)}px)`;});
+  const i0=Math.min(N-1,Math.floor(p+1e-9)),f=p-i0;
+  fit(this.ey,O[i0].atxt&&f<.004?O[i0].atxt:fmtDist(f<.004||i0>=N-1?O[i0].alt:llog(Math.max(1,O[i0].alt),O[i0+1].alt,f)),120,1.0);
+  tag('');fleche(0);
+ }
+};
+// ================= scène 9 : balance (un objet d'un côté, une pluie de petits de l'autre jusqu'à l'équilibre) =================
+const BFIG={
+ trombone:`<path d="M70 184V62a30 30 0 0 1 60 0v100a20 20 0 0 1-40 0V84" fill="none" stroke="#c4ccd8" stroke-width="13" stroke-linecap="round"/>`,
+ piece:`<g transform="translate(20,40) scale(1.6)">${ZFIG.piece.s}</g>`,
+ souris:`<g transform="translate(0,60)">${ANI.souris}</g>`,chien:`<g transform="translate(0,60)">${ANI.chien}</g>`,
+ telephone:`<rect x="56" y="18" width="88" height="180" rx="16" fill="#22222e"/><rect x="64" y="32" width="72" height="142" rx="6" fill="#4f9bff"/><circle cx="100" cy="186" r="5" fill="#666"/>`,
+ chat:`<path d="M152 152q40-10 30-62" fill="none" stroke="#e59a3c" stroke-width="12" stroke-linecap="round"/><rect x="66" y="176" width="22" height="22" rx="9" fill="#f5b65e"/><rect x="112" y="176" width="22" height="22" rx="9" fill="#f5b65e"/><ellipse cx="104" cy="150" rx="56" ry="46" fill="#f2a94a"/><path d="M52 66l-4-42 32 24zM116 66l6-42-34 24z" fill="#f2a94a"/><circle cx="84" cy="84" r="38" fill="#f5b65e"/><circle cx="70" cy="82" r="5" fill="${NOIR}"/><circle cx="98" cy="82" r="5" fill="${NOIR}"/><path d="M79 95l5 6 5-6z" fill="#e0707a"/>`,
+ personne:`<rect x="74" y="128" width="22" height="70" rx="9" fill="#3b3550"/><rect x="104" y="128" width="22" height="70" rx="9" fill="#3b3550"/><path d="M66 80q-22 20-18 52M134 80q22 20 18 52" fill="none" stroke="#2f9f5e" stroke-width="14" stroke-linecap="round"/><rect x="66" y="62" width="68" height="86" rx="24" fill="#2f9f5e"/><circle cx="100" cy="36" r="28" fill="#f2c29b"/><path d="M72 32q4-30 30-28q28 2 24 32q-14-14-28-12q-14 0-26 8z" fill="#5a3a2a"/><circle cx="90" cy="39" r="3.5" fill="${NOIR}"/><circle cx="110" cy="39" r="3.5" fill="${NOIR}"/>`,
+};
+SCENES.balance={
+ P:[540,700],HL:330,PD:170,
+ init(){O.forEach((o,i)=>{const t0=i?T[i]:-.5;
+   evObj(i,i?T[i]+.4:0,{cs:i?T[i]+.5:.02,dur:1.2,...o.aff});
+   SONS.push(i?{t:t0+.4,s:'plop',big:.2+.6*i/N,g:.55}:{t:.02,s:'plop',big:.2,g:.5},{t:Math.max(.05,t0+.5),s:'compteur',n:20,f:1300,pas:.055,g:.12},{t:t0+1.7,s:'note',k:i,g:.3},{t:t0+1.7,s:'pip',g:.2});});},
+ build(L){let h=`<div class="clay" style="left:522px;top:690px;width:36px;height:380px;border-radius:14px;background:#8a5a33"></div><div class="clay" style="left:380px;top:1056px;width:320px;height:36px;border-radius:16px;background:#8a5a33"></div>`;
+  h+=`<div class="bs" style="width:10px;height:${this.PD}px;border-radius:5px;background:#e9d5b0"></div><div class="bs" style="width:10px;height:${this.PD}px;border-radius:5px;background:#e9d5b0"></div>`;
+  h+=`<div id="bbe" class="clay" style="width:700px;height:26px;border-radius:13px;background:#c98a4b"></div><div class="clay" style="left:513px;top:673px;width:54px;height:54px;border-radius:50%;background:#e8c14a"></div>`;
+  h+=`<div class="bp clay" style="width:300px;height:22px;border-radius:11px;background:#c98a4b"></div><div class="bp clay" style="width:300px;height:22px;border-radius:11px;background:#c98a4b"></div>`;
+  O.forEach((o,i)=>h+=`<div id="bo${i}" class="clay" style="display:none;width:250px;height:250px">${svgf('0 0 200 200',BFIG[o.fig])}</div>`);
+  let pts='';for(let j=0;j<46;j++){const x=14+rnd(j,1)*172,y=118-rnd(j,2)*100*(1-Math.pow(Math.abs(x-100)/100,1.6));pts+=`<ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="5" ry="3.2" fill="${j%3?'#8a4424':'#3d1d10'}"/>`;}
+  h+=`<div id="bta" class="clay"><svg viewBox="0 0 200 120" preserveAspectRatio="none" width="100%" height="100%" style="display:block"><path d="M2 120q10-104 98-108q88 4 98 108z" fill="#5a2f1c"/>${pts}</svg></div>`;
+  for(let j=0;j<14;j++)h+=`<div class="bf" style="width:24px;height:14px;border-radius:50%;background:#6b3520"></div>`;
+  h+=`<div id="bl" class="ln" style="top:420px;width:1080px;text-align:center;font-size:40px;color:#fff6e3;text-shadow:0 3px 0 rgba(0,0,0,.4)"></div>`;
+  L.innerHTML=h;const g=id=>document.getElementById(id);this.be=g('bbe');this.o=O.map((_,i)=>g('bo'+i));this.ta=g('bta');g('bl').textContent=D.legende||'';
+  this.s=[...L.querySelectorAll('.bs')];this.p=[...L.querySelectorAll('.bp')];this.f=[...L.querySelectorAll('.bf')];},
+ draw(t,bi){
+  const [px,py]=this.P,HL=this.HL,PD=this.PD;let k=0;for(let i=1;i<N;i++)if(t>=T[i])k=i;
+  const v=k?t-T[k]:t+.5;let th,oi=k,os=1,ody=0,pi=-1,ps=0,ts,verse=false;
+  if(RB){const a=eo(cl(RP/.35));   // tout s'en va, puis le premier objet retombe et fait pencher la balance
+   if(RP<.35){oi=N-1;os=1-a;ts=1-a;th=0;}else{oi=0;ts=0;ody=-(1-Math.pow(cl((RP-.35)/.4),2))*900;th=-13*eo(cl((RP-.75)/.2));}}
+  else{const q=eio(cl((v-.5)/1.2));verse=v>.5&&v<1.7;
+   th=v<.4?0:v<.5?-13*eo((v-.4)/.1):v<1.7?-13*Math.pow(1-q,1.3):1.6*Math.exp(-(v-1.7)*6)*Math.sin((v-1.7)*18);
+   ody=v<.15?-900:v<.4?-(1-Math.pow((v-.15)/.25,2))*900:0;ts=Math.pow(q,.55);
+   if(k>0&&v<.15){pi=k-1;ps=1-v/.15;ts=ps;}}
+  const a=th*Math.PI/180,lx=px-HL*Math.cos(a),ly=py-HL*Math.sin(a),rx=px+HL*Math.cos(a),ry=py+HL*Math.sin(a);
+  this.be.style.transform=`translate(${px-350}px,${py-13}px) rotate(${th}deg)`;
+  [[lx,ly],[rx,ry]].forEach(([x,y],j)=>{this.s[j].style.transform=`translate(${x-5}px,${y}px)`;this.p[j].style.transform=`translate(${x-150+jit(bi,20+j,.8)}px,${y+PD}px)`;});
+  this.o.forEach((e,i)=>{const sc=i==oi?os:i==pi?ps:0;if(sc<=.01||(i==oi&&ody<-890)){e.style.display='none';return;}
+   e.style.display='block';e.style.transformOrigin='50% 100%';e.style.transform=`translate(${lx-125+jit(bi,i*7+1,1)}px,${ly+PD-246+(i==oi?ody:0)+jit(bi,i*7+2,1)}px) rotate(${jit(bi,i*7+3,.6)}deg) scale(${sc})`;});
+  const tw=290*ts,thh=178*Math.pow(ts,1.1),ta=this.ta;if(ts>.02){ta.style.display='block';ta.style.width=tw+'px';ta.style.height=thh+'px';ta.style.transform=`translate(${rx-tw/2+jit(bi,30,.8)}px,${ry+PD-thh+5}px)`;}else ta.style.display='none';
+  this.f.forEach((e,j)=>{if(!verse){e.style.display='none';return;}const ph=((t*2.6+j/14)%1+1)%1;e.style.display='block';e.style.transform=`translate(${rx+(rnd(j,1)-.5)*170-12}px,${lerp(440,ry+PD-thh*.6,ph*ph)}px) rotate(${rnd(j,5)*180}deg)`;});
+  tag('');fleche(0);
+ }
+};

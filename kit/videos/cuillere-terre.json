@@ -1,0 +1,135 @@
+{
+ "id": "cuillere-terre",
+ "scene": "creuse",
+ "legende": "TUNNEL D'1 M DE LARGE · CUILLÈRE À SOUPE",
+ "fond": [
+  "#4fa3e0",
+  "#3b7fc0",
+  "#1d2f5c",
+  "#0c1028",
+  "#05060f"
+ ],
+ "objets": [
+  {
+   "nom": "2 MÈTRES SOUS TERRE",
+   "prof": 2,
+   "ptxt": "2 m",
+   "aff": {
+    "n": 105000,
+    "pre": "≈ ",
+    "suf": " COUPS"
+   },
+   "titre": [
+    "CREUSER JUSQU'AU",
+    "CENTRE DE LA TERRE ?"
+   ]
+  },
+  {
+   "nom": "LE RECORD HUMAIN",
+   "prof": 12262,
+   "ptxt": "12 km",
+   "aff": {
+    "n": 640,
+    "pre": "≈ ",
+    "suf": " MILLIONS DE COUPS"
+   },
+   "dt": 2.0,
+   "titre": [
+    "12 KM : LE TROU LE",
+    "PLUS PROFOND DU MONDE"
+   ]
+  },
+  {
+   "nom": "FIN DE LA CROÛTE",
+   "prof": 35000,
+   "ptxt": "35 km",
+   "aff": {
+    "n": 1.8,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " MILLIARD DE COUPS"
+   },
+   "dt": 2.4
+  },
+  {
+   "nom": "MANTEAU SUPÉRIEUR",
+   "prof": 670000,
+   "ptxt": "670 km",
+   "aff": {
+    "n": 35,
+    "pre": "≈ ",
+    "suf": " MILLIARDS DE COUPS"
+   },
+   "dt": 2.6,
+   "titre": [
+    "DE LA ROCHE",
+    "BRÛLANTE"
+   ]
+  },
+  {
+   "nom": "FIN DU MANTEAU",
+   "prof": 2890000,
+   "ptxt": "2 890 km",
+   "aff": {
+    "n": 151,
+    "pre": "≈ ",
+    "suf": " MILLIARDS DE COUPS"
+   },
+   "dt": 2.8
+  },
+  {
+   "nom": "NOYAU LIQUIDE TRAVERSÉ",
+   "prof": 5150000,
+   "ptxt": "5 150 km",
+   "aff": {
+    "n": 270,
+    "pre": "≈ ",
+    "suf": " MILLIARDS DE COUPS"
+   },
+   "dt": 3.0,
+   "titre": [
+    "DU MÉTAL",
+    "EN FUSION"
+   ]
+  },
+  {
+   "nom": "CENTRE DE LA TERRE",
+   "prof": 6371000,
+   "ptxt": "6 371 km",
+   "aff": {
+    "n": 334,
+    "pre": "≈ ",
+    "suf": " MILLIARDS DE COUPS"
+   },
+   "dt": 3.2,
+   "titre": [
+    "6 371 KM :",
+    "ON Y EST !"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 3.8,
+   "titre": [
+    "À UN COUP PAR SECONDE,",
+    "SANS JAMAIS S'ARRÊTER"
+   ],
+   "nom": "PLUS DE 10 000 ANS",
+   "texte": "POUR 334 MILLIARDS DE COUPS"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "Combien de coups de cuillère jusqu'au centre de la Terre ?",
+  "description": "Calcul pour un tunnel d'un mètre de large creusé à la cuillère à soupe (15 ml par coup), sur 6 371 km : environ 334 milliards de coups, soit plus de 10 000 ans à un coup par seconde. Évidemment impossible en vrai : le record humain est de 12 km. Tu aurais dit combien ?",
+  "hashtags": [
+   "#terre",
+   "#science",
+   "#calculabsurde",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "id": "pas-lune",
+ "scene": "escalier",
+ "legende": "1 PAS = 75 CM, VERS LE HAUT",
+ "fond": [
+  "#4fa3e0",
+  "#3f8fd0",
+  "#2a5fa8",
+  "#16224f",
+  "#0a0d26",
+  "#05060f",
+  "#030409"
+ ],
+ "objets": [
+  {
+   "nom": "DÉPART",
+   "alt": 0,
+   "fig": "maison",
+   "aff": {
+    "n": 0
+   },
+   "titre": [
+    "COMBIEN DE PAS",
+    "JUSQU'À LA LUNE ?"
+   ]
+  },
+  {
+   "nom": "TOUR EIFFEL",
+   "alt": 330,
+   "fig": "eiffel",
+   "aff": {
+    "n": 440
+   },
+   "dt": 1.8
+  },
+  {
+   "nom": "SOMMET DE L'EVEREST",
+   "alt": 8849,
+   "fig": "everest",
+   "aff": {
+    "n": 11800,
+    "pre": "≈ "
+   },
+   "dt": 2.2
+  },
+  {
+   "nom": "DÉBUT DE L'ESPACE",
+   "alt": 100000,
+   "fig": "fusee",
+   "aff": {
+    "n": 133000,
+    "pre": "≈ "
+   },
+   "dt": 2.4,
+   "titre": [
+    "100 KM : L'ESPACE",
+    "COMMENCE ICI"
+   ]
+  },
+  {
+   "nom": "STATION SPATIALE",
+   "alt": 400000,
+   "fig": "iss",
+   "aff": {
+    "n": 533000,
+    "pre": "≈ "
+   },
+   "dt": 3.0,
+   "titre": [
+    "DES HUMAINS",
+    "VIVENT ICI"
+   ]
+  },
+  {
+   "nom": "SATELLITES TÉLÉ",
+   "alt": 35786000,
+   "fig": "satellite",
+   "aff": {
+    "n": 47.7,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " MILLIONS DE PAS"
+   },
+   "dt": 3.0,
+   "titre": [
+    "MÊME PAS 10 %",
+    "DU CHEMIN"
+   ]
+  },
+  {
+   "nom": "LA LUNE",
+   "alt": 384400000,
+   "fig": "lune",
+   "aff": {
+    "n": 512,
+    "pre": "≈ ",
+    "suf": " MILLIONS DE PAS"
+   },
+   "dt": 3.4,
+   "titre": [
+    "384 400 KM",
+    "PLUS TARD…"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.0,
+   "titre": [
+    "À 10 000 PAS PAR JOUR,",
+    "TU ARRIVES DANS…"
+   ],
+   "nom": "140 ANS",
+   "texte": "512 MILLIONS DE PAS"
+  }
+ ],
+ "queue": 2.6,
+ "publication": {
+  "titre": "Combien de pas pour marcher jusqu'à la Lune ?",
+  "description": "Avec des pas de 75 cm, il faut environ 512 millions de pas pour parcourir les 384 400 km qui nous séparent en moyenne de la Lune. À 10 000 pas par jour, ça fait 140 ans. Tu commences quand ?",
+  "hashtags": [
+   "#lune",
+   "#espace",
+   "#calculabsurde",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

@@ -24,6 +24,9 @@ les `titre` (2 lignes en haut), les `note`, la `fin` et la `publication`. `dt` =
 | `probas` | probas.json | `n` (une chance sur n), `env: true` pour « ≈ » |
 | `zoom` | infiniment-petit.json | du plus gros au plus petit : `d`, `fig` (dessin dans `scenes2.js`), `ancre` (où se trouve l'objet suivant), `aff` |
 | `frise` | duree-de-vie.json | `ans`, `fig` (animal), `repere` (dessin historique), `an` (texte de l'année), `legende` |
+| `creuse` | cuillere-terre.json | `prof` (m), `ptxt`, `aff` |
+| `escalier` | pas-lune.json | `alt` (m), `fig`, `aff` |
+| `balance` | fourmis-humain.json | `fig` (objet pesé), `aff` |
 
 Les bruitages sont fabriqués automatiquement à partir du minutage.
 
