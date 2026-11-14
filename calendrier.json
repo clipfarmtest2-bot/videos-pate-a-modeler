@@ -35,6 +35,18 @@
    "heure": "18:00",
    "id": "espace-2",
    "titre": "Plus gros que la plus grosse étoile ? Regarde jusqu'au bout"
+  },
+  {
+   "date": "2026-11-19",
+   "heure": "18:00",
+   "id": "gouttes-piscine",
+   "titre": "Combien de gouttes pour remplir une piscine olympique ?"
+  },
+  {
+   "date": "2026-11-20",
+   "heure": "18:00",
+   "id": "compter-milliard",
+   "titre": "Combien de temps pour compter jusqu'à un milliard ?"
   }
  ],
  "sujets_traites": [
@@ -48,7 +60,9 @@
   "infiniment petit : de l'atome à la pièce de 1 € — vidéo en réserve, publiée à la main par l'utilisateur, ne pas la programmer",
   "coups de cuillère pour atteindre le centre de la Terre — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
   "pas pour marcher jusqu'à la Lune — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
-  "fourmis pour peser autant qu'un humain — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire"
+  "fourmis pour peser autant qu'un humain — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
+  "gouttes pour remplir une piscine olympique (goutte → bassin olympique)",
+  "temps pour compter jusqu'à un milliard (10 → 1 milliard, 1 nombre par seconde)"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -61,20 +75,14 @@
   "frise (remonter le temps, animaux + repères) — durée de vie (réserve)",
   "creuse (tunnel dans la Terre en coupe, la planète se dévoile) — cuillère",
   "escalier (marcheur qui grimpe, repères qui défilent) — pas jusqu'à la Lune",
-  "balance (objet contre pluie de fourmis) — fourmis"
+  "balance (objet contre pluie de fourmis) — fourmis",
+  "remplit (chaque récipient plein versé dans le suivant, puis pipette goutte à goutte) — gouttes piscine",
+  "horloge (personnage qui compte, réveil qui s'affole, pages du calendrier qui s'envolent) — compter jusqu'à un milliard"
  ],
  "idees_en_reserve": [
   {
    "sujet": "Combien pèse un nuage ?",
    "piste": "le nuage d'un côté, des éléphants empilés de l'autre ; éviter de refaire la scène balance telle quelle (par exemple un ascenseur ou une grue qui soulève)"
-  },
-  {
-   "sujet": "Combien de gouttes pour remplir une piscine olympique ?",
-   "piste": "un récipient qui se remplit : verre, baignoire, piscine, lac"
-  },
-  {
-   "sujet": "Combien de temps pour compter jusqu'à un milliard ?",
-   "piste": "une horloge qui s'affole, puis les pages d'un calendrier qui s'envolent"
   }
  ]
 }

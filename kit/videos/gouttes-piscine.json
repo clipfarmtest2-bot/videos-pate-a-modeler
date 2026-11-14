@@ -1,0 +1,156 @@
+{
+ "id": "gouttes-piscine",
+ "scene": "remplit",
+ "fond": [
+  "#3f86c9",
+  "#3576b8",
+  "#2d66a6",
+  "#255693",
+  "#1d4680",
+  "#16386b"
+ ],
+ "objets": [
+  {
+   "nom": "UNE GOUTTE D'EAU",
+   "fig": "goutte",
+   "vol": 0.05,
+   "texte": "≈ 0,05 MILLILITRE",
+   "titre": [
+    "COMBIEN DE GOUTTES",
+    "DANS UNE PISCINE ?"
+   ]
+  },
+  {
+   "nom": "UNE CUILLÈRE À CAFÉ",
+   "fig": "cuillere",
+   "vol": 5,
+   "aff": {
+    "n": 100,
+    "de": 1,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 1.5
+  },
+  {
+   "nom": "UN VERRE (20 cL)",
+   "fig": "verre",
+   "vol": 200,
+   "aff": {
+    "n": 4000,
+    "de": 100,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 1.8,
+   "titre": [
+    "ON VERSE, PUIS",
+    "GOUTTE À GOUTTE"
+   ]
+  },
+  {
+   "nom": "UNE BOUTEILLE (1,5 L)",
+   "fig": "bouteille",
+   "vol": 1500,
+   "aff": {
+    "n": 30000,
+    "de": 4000,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 2.0
+  },
+  {
+   "nom": "UN SEAU (10 L)",
+   "fig": "seau",
+   "vol": 10000,
+   "aff": {
+    "n": 200000,
+    "de": 30000,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 3.0
+  },
+  {
+   "nom": "UNE BAIGNOIRE (≈ 150 L)",
+   "fig": "baignoire",
+   "vol": 150000,
+   "aff": {
+    "n": 3000000,
+    "de": 200000,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 3.1
+  },
+  {
+   "nom": "UN CUBE DE 1 m³",
+   "fig": "cube",
+   "vol": 1000000,
+   "aff": {
+    "n": 20000000,
+    "de": 3000000,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 3.2
+  },
+  {
+   "nom": "PISCINE DE JARDIN 8 × 4 m",
+   "fig": "piscine",
+   "vol": 48000000,
+   "aff": {
+    "n": 960000000,
+    "de": 20000000,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 3.3,
+   "titre": [
+    "TOUT LE CUBE NE",
+    "FAIT QUE 2 % !"
+   ]
+  },
+  {
+   "nom": "PISCINE OLYMPIQUE",
+   "fig": "olympique",
+   "vol": 2500000000,
+   "aff": {
+    "n": 50000000000,
+    "de": 960000000,
+    "pre": "≈ ",
+    "suf": " GOUTTES"
+   },
+   "dt": 3.8,
+   "titre": [
+    "ET MAINTENANT,",
+    "LE GRAND BASSIN"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.4,
+   "titre": [
+    "ET EN CUILLÈRES",
+    "À CAFÉ ?"
+   ],
+   "nom": "500 MILLIONS",
+   "texte": "DE CUILLÈRES À CAFÉ"
+  }
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "Combien de gouttes pour remplir une piscine olympique ?",
+  "description": "On verse chaque récipient plein dans le suivant, puis on complète goutte à goutte. Estimation avec 1 goutte ≈ 0,05 mL (20 gouttes par millilitre, valeur conventionnelle) et un bassin olympique de 50 × 25 × 2 m (2 500 m³) ; piscine de jardin de 8 × 4 m sur 1,5 m de profondeur ; baignoire ≈ 150 L. Tu aurais dit combien ?",
+  "hashtags": [
+   "#piscine",
+   "#calculabsurde",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

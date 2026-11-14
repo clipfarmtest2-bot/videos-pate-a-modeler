@@ -27,6 +27,8 @@ les `titre` (2 lignes en haut), les `note`, la `fin` et la `publication`. `dt` =
 | `creuse` | cuillere-terre.json | `prof` (m), `ptxt`, `aff` |
 | `escalier` | pas-lune.json | `alt` (m), `fig`, `aff` |
 | `balance` | fourmis-humain.json | `fig` (objet pesé), `aff` |
+| `remplit` | gouttes-piscine.json | `fig` (goutte, cuillere, verre, bouteille, seau, baignoire, cube, piscine, olympique), `vol` (mL), `aff` |
+| `horloge` | compter-milliard.json | `n` (nombre atteint = secondes), `texte` (durée affichée) ; `legende` |
 
 Les bruitages sont fabriqués automatiquement à partir du minutage.
 

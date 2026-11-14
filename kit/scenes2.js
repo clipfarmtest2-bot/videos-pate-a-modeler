@@ -261,3 +261,176 @@ SCENES.balance={
   tag('');fleche(0);
  }
 };
+// ================= scène 10 : remplit (chaque récipient plein est versé dans le suivant, puis on complète goutte à goutte) =================
+const EAU='#4fb3ff';
+// vb = cadre du dessin ; cav = forme intérieure (l'eau y est découpée) ; ct/cb = haut et bas de l'eau ; mx = position de l'ouverture (fraction de la largeur) ; mw/mh = taille max à l'écran
+const RFIG={
+ goutte:{vb:[100,130],mh:300,s:`<path d="M50 4C62 30 90 58 90 88A40 40 0 0 1 10 88C10 58 38 30 50 4Z" fill="${EAU}"/><ellipse cx="34" cy="82" rx="9" ry="17" fill="#d6f0ff" opacity=".85" transform="rotate(18 34 82)"/>`},
+ cuillere:{vb:[260,110],mx:180/260,lip:[256,34],mw:640,cav:'M116 40A64 54 0 0 0 244 40Z',ct:40,cb:94,
+  back:`<path d="M120 42L10 12" stroke="#cfd4dc" stroke-width="18" stroke-linecap="round"/><path d="M106 36A74 66 0 0 0 254 36Z" fill="#cfd4dc"/><path d="M116 40A64 54 0 0 0 244 40Z" fill="#8f96a3"/>`,
+  front:`<rect x="104" y="31" width="152" height="10" rx="5" fill="#e9edf3"/>`},
+ verre:{vb:[120,150],lip:[110,8],cav:'M16 12H104L94 136H26Z',ct:12,cb:136,
+  back:`<path d="M8 6H112L100 144H20Z" fill="#dff3ff" opacity=".35"/>`,
+  front:`<path d="M8 6H112L100 144H20Z" fill="none" stroke="#f4fbff" stroke-width="6" stroke-linejoin="round"/><path d="M24 22L33 124" stroke="#fff" stroke-width="6" opacity=".55" stroke-linecap="round"/>`},
+ bouteille:{vb:[110,300],lip:[68,10],cav:'M46 30H64V62Q94 88 94 120V272Q94 286 80 286H30Q16 286 16 272V120Q16 88 46 62Z',ct:30,cb:286,
+  back:`<path d="M40 22H70V58Q102 84 102 118V276Q102 294 84 294H26Q8 294 8 276V118Q8 84 40 58Z" fill="#dff3ff" opacity=".35"/>`,
+  front:`<path d="M40 22H70V58Q102 84 102 118V276Q102 294 84 294H26Q8 294 8 276V118Q8 84 40 58Z" fill="none" stroke="#f4fbff" stroke-width="6" stroke-linejoin="round"/><rect x="34" y="2" width="42" height="24" rx="6" fill="#2f80da"/><rect x="9" y="156" width="92" height="46" fill="#ff7d5c" opacity=".7"/><path d="M24 128V258" stroke="#fff" stroke-width="6" opacity=".5" stroke-linecap="round"/>`},
+ seau:{vb:[180,180],lip:[168,54],cav:'M20 62H160L146 166H34Z',ct:62,cb:166,
+  back:`<path d="M24 60Q90 -30 156 60" fill="none" stroke="#8a8f99" stroke-width="7"/><path d="M12 56H168L152 172H28Z" fill="#ffcf3d" opacity=".4"/>`,
+  front:`<path d="M12 56H168L152 172H28Z" fill="none" stroke="#ffb11f" stroke-width="7" stroke-linejoin="round"/><rect x="6" y="50" width="168" height="14" rx="7" fill="#ffb11f"/>`},
+ baignoire:{vb:[340,180],lip:[334,26],cav:'M20 36H320Q318 140 248 140H92Q22 140 20 36Z',ct:36,cb:140,
+  back:`<circle cx="74" cy="164" r="14" fill="#c9a86a"/><circle cx="266" cy="164" r="14" fill="#c9a86a"/><path d="M8 28H332Q332 150 250 150H90Q8 150 8 28Z" fill="#fff6e3" opacity=".35"/><path d="M296 24V6H326" fill="none" stroke="#cfd4dc" stroke-width="8" stroke-linecap="round"/>`,
+  front:`<path d="M8 28H332Q332 150 250 150H90Q8 150 8 28Z" fill="none" stroke="#fff6e3" stroke-width="8" stroke-linejoin="round"/><rect x="2" y="22" width="336" height="14" rx="7" fill="#fff6e3"/>`},
+ cube:{vb:[200,214],lip:[116,8],cav:'M20 30H180V188H20Z',ct:30,cb:188,
+  back:`<rect x="12" y="22" width="176" height="172" rx="10" fill="#f2f7fb" opacity=".4"/>`,
+  front:`<path d="M12 22H188V194H12ZM56 22V194M100 22V194M144 22V194M12 80H188M12 138H188" fill="none" stroke="#9aa1ad" stroke-width="5"/><rect x="82" y="6" width="36" height="18" rx="4" fill="#2f80da"/><rect x="4" y="194" width="192" height="20" rx="4" fill="#a8744a"/>`},
+ piscine:{vb:[400,170],lip:[364,28],cav:'M40 30H360V150H40Z',ct:30,cb:150,
+  back:`<rect x="0" y="30" width="400" height="140" fill="#8a5a33"/><rect x="0" y="22" width="400" height="14" rx="7" fill="#5fa35a"/><path d="M40 30H360V150H40Z" fill="#cdeeff"/><path d="M80 30V150M120 30V150M160 30V150M200 30V150M240 30V150M280 30V150M320 30V150M40 70H360M40 110H360" stroke="#a9dcf5" stroke-width="3"/>`,
+  front:`<rect x="34" y="24" width="332" height="10" rx="5" fill="#e9e2d0"/><path d="M326 14V96M346 14V96M326 38H346M326 62H346" fill="none" stroke="#cfd4dc" stroke-width="5" stroke-linecap="round"/>`},
+ olympique:{vb:[520,150],cav:'M20 26H500V136H20Z',ct:26,cb:136,cordes:1,
+  back:`<rect x="0" y="26" width="520" height="124" fill="#8a5a33"/><path d="M20 26H500V136H20Z" fill="#cdeeff"/><path d="M40 126H480" stroke="#1d3f72" stroke-width="6"/><path d="M40 118V134M480 118V134" stroke="#1d3f72" stroke-width="6"/>`,
+  front:`<rect x="0" y="20" width="520" height="12" rx="6" fill="#e9e2d0"/><g fill="#e0453a"><rect x="24" y="6" width="22" height="16" rx="3"/><rect x="474" y="6" width="22" height="16" rx="3"/></g>`},
+};
+const PIPETTE=`<rect x="22" y="64" width="16" height="118" rx="6" fill="#e8f6ff" opacity=".85"/><path d="M24 178L30 200L36 178Z" fill="#e8f6ff"/><rect x="25" y="120" width="10" height="58" rx="4" fill="${EAU}"/><ellipse cx="30" cy="40" rx="24" ry="34" fill="#e0453a"/><rect x="14" y="62" width="32" height="12" rx="5" fill="#b8352c"/>`;
+const GOUTTE=`<path d="M50 4C62 30 90 58 90 88A40 40 0 0 1 10 88C10 58 38 30 50 4Z" fill="${EAU}"/>`;
+SCENES.remplit={
+ GY:1150,TX:540,TIP:640,
+ taille(i,mw,mh){const f=RFIG[O[i].fig],[w,h]=f.vb,s=Math.min((f.mw||mw)/w,mh/h,(f.mh||1e9)/h);return [w*s,h*s];},
+ init(){
+  this.A=O.map((o,k)=>{const P=(k<N-1?T[k+1]:(FT.length?FT[0]:T[k]+4))-T[k];return Math.min(1,P/3.0);});
+  O.forEach((o,i)=>{const a=this.A[i];
+   evObj(i,i?T[i]+.45*a:0,{cs:i?T[i]+.45*a:.1,dur:i?1.8*a:.6,...(o.aff||{n:1})});
+   if(i){const t0=T[i];SONS.push({t:t0,s:'whoosh',d:.45*a/V,fc:900,g:.35},{t:t0+.45*a,s:'plop',big:.1+.6*i/N,g:.5},
+     i>1?{t:t0+.72*a,s:'zip',d:.5*a/V,f:260,g:.28}:{t:t0+.72*a,s:'toc',f:900,g:.3},{t:t0+.75*a,s:'bulles',n:9,g:.2},
+     {t:t0+.45*a,s:'compteur',n:16,f:900,pas:1.8*a/16,g:.1},{t:t0+2.3*a,s:'note',k:i,g:.26});
+    for(let x=1.3*a;x<2.25*a;x+=.11)SONS.push({t:t0+x,s:'toc',f:1500+((x*40)|0)%3*120,g:.1});}
+   else SONS.push({t:.02,s:'plop',big:.2,g:.55},{t:.6,s:'note',k:0,g:.26});});
+ },
+ build(L){let h=`<div class="clay" style="left:-40px;top:${this.GY}px;width:1160px;height:44px;border-radius:22px;background:#a8744a"></div>`;
+  O.forEach((o,i)=>{const f=RFIG[o.fig],[w,hh]=f.vb;
+   const eau=f.cav?`<clipPath id="rq${i}"><path d="${f.cav}"/></clipPath><rect id="rw${i}" x="-10" y="0" width="${w+20}" height="0" fill="${EAU}" clip-path="url(#rq${i})"/><rect id="rs${i}" x="-10" y="0" width="${w+20}" height="5" fill="#c9ecff" clip-path="url(#rq${i})"/>`:'';
+   let cordes='';if(f.cordes){for(let x=24;x<500;x+=16)cordes+=`<circle cx="${x}" cy="0" r="5" fill="${(x/16|0)%2?'#e0453a':'#fff6e3'}"/>`;cordes=`<g id="rc${i}">${cordes}</g>`;}
+   h+=`<div id="ro${i}" class="clay" style="display:none">${svgf(`0 0 ${w} ${hh}`,f.s||(f.back+eau+cordes+f.front))}</div>`;});
+  h+=`<div id="rfl" style="display:none;height:24px;border-radius:12px;background:${EAU};transform-origin:0 50%"></div>`;
+  for(let j=0;j<4;j++)h+=`<div class="rdr clay" style="display:none;width:26px;height:34px">${svgf('0 0 100 130',GOUTTE)}</div>`;
+  h+=`<div id="rpi" class="clay" style="width:72px;height:240px">${svgf('0 0 60 200',PIPETTE)}</div>`;
+  L.innerHTML=h;const g=id=>document.getElementById(id);
+  this.o=O.map((_,i)=>g('ro'+i));this.w=O.map((_,i)=>g('rw'+i));this.s=O.map((_,i)=>g('rs'+i));this.c=O.map((_,i)=>g('rc'+i));
+  this.fl=g('rfl');this.pi=g('rpi');this.dr=[...L.querySelectorAll('.rdr')];},
+ pose(i){const [W,H]=this.taille(i,760,480),f=RFIG[O[i].fig];return {W,H,x:this.TX-(f.mx??.5)*W,y:this.GY-H};},   // position au repos (bas posé sur la table)
+ surf(i,p,lev){const f=RFIG[O[i].fig],sc=p.H/f.vb[1];return p.y+(f.cb-(f.cb-f.ct)*lev)*sc;},
+ niveau(i,lev){const f=RFIG[O[i].fig];if(!f.cav)return;const y=f.cb-(f.cb-f.ct)*lev;
+  this.w[i].setAttribute('y',y);this.w[i].setAttribute('height',Math.max(0,f.cb-y+2));this.s[i].setAttribute('y',y-2);this.s[i].style.display=lev>.004?'':'none';
+  if(this.c[i])this.c[i].setAttribute('transform',`translate(0,${Math.max(y,f.ct+8)})`);},
+ place(i,x,y,W,H,rot,sx,sy,bi,op=1){const e=this.o[i];e.style.display='block';e.style.opacity=op;e.style.width=W+'px';e.style.height=H+'px';
+  e.style.transformOrigin='50% 100%';e.style.transform=`translate(${x+jit(bi,i*7+1,1.2)}px,${y+jit(bi,i*7+2,1.2)}px) rotate(${rot+jit(bi,i*7+3,.5)}deg) scale(${sx},${sy})`;},
+ draw(t,bi){
+  const GY=this.GY,TX=this.TX,TIP=this.TIP;let k=0;for(let i=1;i<N;i++)if(t>=T[i])k=i;
+  this.o.forEach(e=>e.style.display='none');this.fl.style.display='none';
+  let goutte=null;   // { de: instant de début, a: rythme, cible: y de la surface } pour la pipette
+  const rebond=v=>{if(v<0)return [1,1];const q=.22*Math.exp(-v*9)*Math.cos(v*24);return [1+q*.8,1-q];};
+  if(RB){   // le grand bassin s'en va, la goutte du début retombe
+   const pN=this.pose(N-1),q1=eio(cl(RE/.5));if(q1<1){this.niveau(N-1,1);this.place(N-1,pN.x,pN.y,pN.W,pN.H,0,1-q1,1-q1,bi);}
+   const q2=cl((RE-.5)/.5),p0=this.pose(0);if(q2>0)this.place(0,p0.x,p0.y-(1-q2*q2)*1500,p0.W,p0.H,0,1,1,bi);
+  }else if(k==0){const p0=this.pose(0),[sx,sy]=rebond(t),w=.035*Math.sin(t*7);this.place(0,p0.x,p0.y,p0.W,p0.H,0,sx*(1+w),sy*(1-w),bi);}
+  else{
+   const a=this.A[k],v=t-T[k],pc=this.pose(k),pp=this.pose(k-1),part=O[k-1].vol/O[k].vol;
+   // nouveau récipient : il tombe, rebondit, se remplit (versement puis gouttes)
+   let dy=0,sx=1,sy=1;if(v<.45*a){const q=v/(.45*a);dy=-(1-q*q)*1500;}else[sx,sy]=rebond(v-.45*a);
+   const lev=v<.75*a?0:v<1.3*a?part*eio(cl((v-.75*a)/(.5*a))):part+(1-part)*eio(cl((v-1.3*a)/a));
+   this.niveau(k,lev);this.place(k,pc.x,pc.y+dy,pc.W,pc.H,0,sx,sy,bi);
+   if(v>1.3*a&&v<2.3*a)goutte={de:T[k]+1.3*a,y:this.surf(k,pc,lev)};
+   // récipient précédent : il monte au-dessus, se penche et se vide dedans
+   const m=eio(cl(v/(.55*a))),[W2,H2]=this.taille(k-1,200,165),sx2=TX-.5*W2-160,sy2=585;
+   if(O[k-1].fig=='goutte'){   // la goutte se rapetisse puis tombe dans la cuillère
+    const [W3,H3]=[46,60],x0=pp.x+pp.W/2,y0=pp.y+pp.H,q=cl((v-.55*a)/(.2*a)),ys=this.surf(k,pc,0);
+    if(v<.8*a){const W=lerp(pp.W,W3,m),H=lerp(pp.H,H3,m),yb=lerp(y0,TIP+70,m)+q*q*(ys-TIP-60);this.place(k-1,lerp(x0,TX,m)-W/2,yb-H,W,H,0,1,1,bi);}
+   }else if(v<1.6*a){
+    const W=lerp(pp.W,W2,m),H=lerp(pp.H,H2,m),cx=lerp(pp.x+pp.W/2,sx2,m),cy=lerp(pp.y+pp.H/2,sy2,m);
+    const ang=115*eio(cl((v-.55*a)/(.3*a))),pl=1-eio(cl((v-.75*a)/(.5*a))),z=1-eio(cl((v-1.28*a)/(.3*a)));
+    this.niveau(k-1,pl);
+    const e=this.o[k-1];e.style.display='block';e.style.opacity=1;e.style.width=W+'px';e.style.height=H+'px';e.style.transformOrigin='50% 50%';
+    e.style.transform=`translate(${cx-W/2+jit(bi,(k-1)*7+1,1.2)}px,${cy-H/2+jit(bi,(k-1)*7+2,1.2)}px) rotate(${ang}deg) scale(${z})`;
+    if(v>.72*a&&v<1.27*a){const r=ang*Math.PI/180,lp=RFIG[O[k-1].fig].lip,lx=(lp[0]/RFIG[O[k-1].fig].vb[0]-.5)*W,ly=(lp[1]/RFIG[O[k-1].fig].vb[1]-.5)*H,x1=cx+lx*Math.cos(r)-ly*Math.sin(r),y1=cy+lx*Math.sin(r)+ly*Math.cos(r);
+     const x2=TX,y2=this.surf(k,pc,lev)+6,L=Math.hypot(x2-x1,y2-y1),th=24*Math.min(1,(1.27*a-v)/(.12*a),(v-.72*a)/(.06*a));
+     const f=this.fl;f.style.display='block';f.style.width=L+'px';f.style.height=th+'px';f.style.borderRadius=th/2+'px';f.style.transform=`translate(${x1}px,${y1-th/2}px) rotate(${Math.atan2(y2-y1,x2-x1)}rad)`;}
+   }
+  }
+  // pipette : elle presse et lâche des gouttes pendant le remplissage
+  const pq=goutte?Math.sin((t-goutte.de)*30):0;
+  this.pi.style.transformOrigin='50% 0';this.pi.style.transform=`translate(${TX-36+jit(bi,401,1)}px,${TIP-236+jit(bi,402,1)}px) scale(${1+.08*Math.max(0,pq)},${1-.04*Math.max(0,pq)})`;
+  this.dr.forEach((e,j)=>{if(!goutte){e.style.display='none';return;}const ph=(((t-goutte.de)*2.6+j/4)%1+1)%1,y=lerp(TIP,goutte.y-30,ph*ph);
+   if(y>goutte.y-34||t-goutte.de<j/(4*2.6)){e.style.display='none';return;}e.style.display='block';e.style.transform=`translate(${TX-13}px,${y}px)`;});
+  tag('');fleche(0);
+ }
+};
+// ================= scène 11 : horloge (un personnage compte à voix haute, le réveil s'affole, les pages du calendrier s'envolent) =================
+const PARLEUR=`<rect x="62" y="250" width="30" height="86" rx="12" fill="#3b3550"/><rect x="108" y="250" width="30" height="86" rx="12" fill="#3b3550"/><ellipse cx="74" cy="336" rx="24" ry="10" fill="#22222e"/><ellipse cx="126" cy="336" rx="24" ry="10" fill="#22222e"/>
+<rect x="50" y="134" width="100" height="134" rx="36" fill="#2f9f5e"/><path d="M58 160q-30 40-14 86" fill="none" stroke="#2f9f5e" stroke-width="22" stroke-linecap="round"/><path d="M142 160q34 -10 40 -56" fill="none" stroke="#2f9f5e" stroke-width="22" stroke-linecap="round"/><circle cx="183" cy="98" r="14" fill="#f2c29b"/>
+<circle cx="100" cy="82" r="56" fill="#f2c29b"/><path id="hcv" d="M44 76q2-62 58-60q56 2 54 62q-22-30-56-28q-34 0-56 26z" fill="#5a3a2a"/>
+<g id="hbb"><path d="M50 96q4 64 50 70q46-6 50-70q-20 22-50 22q-30 0-50-22z" fill="#e8e8ee"/></g>
+<circle cx="80" cy="82" r="6" fill="${NOIR}"/><circle cx="120" cy="82" r="6" fill="${NOIR}"/><ellipse id="hbo" cx="100" cy="112" rx="14" ry="10" fill="#7a2230"/>`;
+const REVEIL=`<path d="M52 176l-16 20M148 176l16 20" stroke="#b8352c" stroke-width="10" stroke-linecap="round"/><g id="hcl"><circle cx="42" cy="34" r="26" fill="#ffb11f"/><circle cx="158" cy="34" r="26" fill="#ffb11f"/></g><rect x="94" y="2" width="12" height="16" rx="4" fill="#b8352c"/>
+<circle cx="100" cy="104" r="92" fill="#e0453a"/><circle cx="100" cy="104" r="76" fill="#fff6e3"/>
+${Array.from({length:12},(_,j)=>{const a=j*Math.PI/6,c=Math.cos(a),s=Math.sin(a),r1=j%3?62:56;return `<line x1="${(100+r1*s).toFixed(1)}" y1="${(104-r1*c).toFixed(1)}" x2="${(100+70*s).toFixed(1)}" y2="${(104-70*c).toFixed(1)}" stroke="#3b3550" stroke-width="${j%3?4:7}" stroke-linecap="round"/>`;}).join('')}
+<g id="hh"><line x1="100" y1="104" x2="100" y2="62" stroke="${NOIR}" stroke-width="10" stroke-linecap="round"/></g>
+<g id="hm2" opacity=".25"><line x1="100" y1="104" x2="100" y2="44" stroke="${NOIR}" stroke-width="7" stroke-linecap="round"/></g><g id="hm"><line x1="100" y1="104" x2="100" y2="44" stroke="${NOIR}" stroke-width="7" stroke-linecap="round"/></g>
+<g id="hs2" opacity=".3"><line x1="100" y1="116" x2="100" y2="38" stroke="#e0453a" stroke-width="3.5" stroke-linecap="round"/></g><g id="hs"><line x1="100" y1="116" x2="100" y2="38" stroke="#e0453a" stroke-width="3.5" stroke-linecap="round"/></g>
+<circle cx="100" cy="104" r="7" fill="#e0453a"/>`;
+// angle d'une aiguille entre deux instants : vrai mouvement si peu de tours, sinon 2 tours de plus « affolés » qui finissent pile à la bonne heure
+function aiguille(Sa,Sb,u,P){const a=Sa/P*360,b=Sb/P*360,d=b-a;if(Math.abs(d)<=720)return {ang:a+d*u,vite:0};
+ const am=((a%360)+360)%360,r=d>0?(((b-a)%360)+360)%360+720:-((((a-b)%360)+360)%360+720);return {ang:am+r*u,vite:u>0&&u<1?1:0};}
+SCENES.horloge={
+ init(){
+  this.A=O.map((o,k)=>{const P=(k<N-1?T[k+1]:(FT.length?FT[0]:T[k]+4))-T[k];return Math.min(1,P/2.6);});
+  O.forEach((o,i)=>{const a=this.A[i];
+   evObj(i,i?T[i]+.1:0,o.aff||{n:o.n});
+   if(i){const t0=T[i];SONS.push({t:t0,s:'whoosh',d:.5*a/V,fc:800,g:.35},{t:t0+.05,s:'compteur',n:16,f:1000+40*i,pas:1.1*a/16,g:.13},{t:t0+1.2*a,s:'plop',big:.15+.5*i/N,g:.5},{t:t0+1.3*a,s:'note',k:i,g:.26});
+    if(i>=3)SONS.push({t:t0+.15,s:'pip',g:.2},{t:t0+.45*a,s:'pip',g:.2});
+    if(Math.floor(o.n/86400)>Math.floor(O[i-1].n/86400))SONS.push({t:t0+.3,s:'whoosh',d:.7*a/V,fc:2200,g:.25});}
+   else SONS.push({t:.02,s:'plop',big:.15,g:.5},{t:.08,s:'compteur',n:10,f:1000,pas:.09,g:.14},{t:.7,s:'note',k:0,g:.26});});
+  for(let t=.5;t<TR-.3;t+=1.0)SONS.push({t,s:'toc',f:1250,g:.07});   // tic-tac
+ },
+ S(t){if(RB)return llog(O[N-1].n,1,RE)-RE;let k=0;for(let i=1;i<N;i++)if(t>=T[i])k=i;
+  if(!k)return O[0].n*eio(cl((t-.05)/.95));return llog(O[k-1].n,O[k].n,eio(cl((t-T[k]-.05)/(1.1*this.A[k]))));},
+ frac(t){const S=this.S(t);return cl(Math.log10(Math.max(1,S))/Math.log10(O[N-1].n));},
+ build(L){let h=`<div class="clay" style="left:-40px;top:1190px;width:1160px;height:40px;border-radius:20px;background:#a8744a"></div>`;
+  h+=`<div id="hlg" class="ln" style="top:415px;width:1080px;text-align:center;font-size:40px;color:#fff6e3;text-shadow:0 3px 0 rgba(0,0,0,.4)"></div>`;
+  h+=`<div id="hbu" class="clay" style="left:60px;top:480px;width:480px;height:130px"><div style="position:absolute;inset:0;border-radius:40px;background:#fff6e3"></div><svg style="position:absolute;left:96px;top:118px" width="80" height="90" viewBox="0 0 80 90"><path d="M0 0H64L18 86Z" fill="#fff6e3"/></svg><div id="hnb" class="ln" style="position:absolute;left:0;top:0;width:480px;height:130px;display:flex;align-items:center;justify-content:center;color:#2b2f3a"></div></div>`;
+  h+=`<div id="hpe" class="clay" style="left:30px;top:716px;width:280px;height:476px">${svgf('0 0 200 340',PARLEUR)}</div>`;
+  h+=`<div id="hre" class="clay" style="width:400px;height:420px">${svgf('0 0 200 210',REVEIL)}</div>`;
+  for(let j=0;j<3;j++)h+=`<div class="hpg clay" style="display:none;width:230px;height:150px;border-radius:12px;background:#fffdf6;border-top:34px solid #e0453a;box-sizing:border-box"></div>`;
+  h+=`<div id="hca" class="clay" style="left:650px;top:1012px;width:250px;height:178px"><div style="position:absolute;left:0;top:0;width:250px;height:178px;border-radius:14px;background:#fffdf6"></div><div style="position:absolute;left:0;top:0;width:250px;height:48px;border-radius:14px 14px 0 0;background:#e0453a;color:#fff6e3;font:700 34px Fredoka;text-align:center;line-height:50px">JOUR</div><div id="hcn" class="ln" style="position:absolute;left:0;top:52px;width:250px;text-align:center;color:#2b2f3a;line-height:120px"></div></div>`;
+  L.innerHTML=h;const g=id=>document.getElementById(id);
+  Object.assign(this,{nb:g('hnb'),bu:g('hbu'),pe:g('hpe'),re:g('hre'),cn:g('hcn'),hh:g('hh'),hm:g('hm'),hm2:g('hm2'),hs:g('hs'),hs2:g('hs2'),hcl:g('hcl'),hbb:g('hbb'),hcv:g('hcv'),hbo:g('hbo'),pg:[...L.querySelectorAll('.hpg')]});
+  g('hlg').textContent=D.legende||'';},
+ draw(t,bi){
+  let k=0;for(let i=1;i<N;i++)if(t>=T[i])k=i;
+  const S=this.S(t);let Sa,Sb,u;
+  if(RB){Sa=O[N-1].n;Sb=0;u=RE;}else if(!k){Sa=0;Sb=O[0].n;u=eio(cl((t-.05)/.95));}else{Sa=O[k-1].n;Sb=O[k].n;u=eio(cl((t-T[k]-.05)/(1.1*this.A[k])));}
+  const tr=t0=>t0>=0?.14*Math.exp(-t0*9):0,tk=RB?-1:k?t-T[k]:t;
+  // bulle : le nombre que l'on dit
+  const txt=fr(Math.max(1,Math.floor(S+Math.max(1e-6,S*1e-9))));this.nb.textContent=txt;this.nb.style.fontSize=Math.min(100,430/(txt.length*.6))+'px';
+  this.bu.style.transformOrigin='30% 100%';this.bu.style.transform=`translate(${jit(bi,1,1)}px,${jit(bi,2,1)}px) scale(${1+tr(tk)})`;
+  // personnage : rebond, bouche qui parle, barbe et cheveux qui blanchissent avec les jours
+  const vieux=cl(Math.log(Math.max(1,S/86400))/Math.log(O[N-1].n/86400));
+  this.hbb.setAttribute('transform',`translate(100 96) scale(${vieux} ${vieux}) translate(-100 -96)`);this.hbb.style.display=vieux>.02?'':'none';
+  this.hcv.setAttribute('fill',mix('#5a3a2a','#e8e8ee',vieux));
+  const parle=(u>0&&u<1)||(!k&&!RB&&t<1.05);this.hbo.setAttribute('ry',parle?(bi%2?12:4):6);
+  let sx=1,sy=1;if(!RB&&tk>=0){const v=k?tk-1.2*this.A[k]:tk;if(v>=0||!k){const q=.2*Math.exp(-Math.max(0,v)*9)*Math.cos(Math.max(0,v)*24);sy=1-q;sx=1+q*.8;}}
+  this.pe.style.transformOrigin='50% 100%';this.pe.style.transform=`translate(${jit(bi,3,1.2)}px,${jit(bi,4,1.2)}px) scale(${sx},${sy})`;
+  // réveil : les aiguilles suivent le temps écoulé (départ à midi)
+  const H=aiguille(Sa,Sb,u,43200),M=aiguille(Sa,Sb,u,3600),Se=aiguille(Sa,Sb,u,60),fou=M.vite||H.vite||Se.vite;
+  const rot=(el,a)=>el.setAttribute('transform',`rotate(${a.toFixed(2)} 100 104)`);
+  rot(this.hh,H.ang);rot(this.hm,M.ang);rot(this.hs,Se.ang);rot(this.hm2,M.ang-(M.vite?25:0));rot(this.hs2,Se.ang-(Se.vite?30:0));
+  this.hm2.style.display=M.vite?'':'none';this.hs2.style.display=Se.vite?'':'none';
+  this.hcl.setAttribute('transform',fou?`translate(0 ${bi%2?-5:3})`:'');
+  this.re.style.transformOrigin='50% 50%';this.re.style.transform=`translate(${520+jit(bi,5,1.2)}px,${600+jit(bi,6,1.2)}px) rotate(${fou?(bi%2?5:-5):jit(bi,7,.6)}deg)`;
+  // calendrier : numéro du jour, pages qui s'envolent quand les jours défilent
+  const jour=Math.floor(S/86400)+1,ja=Math.floor(Sa/86400),jb=Math.floor(Sb/86400),vole=ja!=jb&&u>0&&u<.85;
+  const jt=fr(jour);this.cn.textContent=jt;this.cn.style.fontSize=Math.min(110,230/(jt.length*.62))+'px';
+  this.pg.forEach((e,j)=>{if(!vole){e.style.display='none';return;}const ph=((u/.85*5+j/3)%1+1)%1;e.style.display='block';e.style.opacity=1-ph*ph;
+   e.style.transform=`translate(${660+ph*260}px,${1040-ph*420-(1-ph)*0}px) rotate(${ph*(60+40*j)}deg) scale(${1-ph*.5})`;});
+  tag('');fleche(0);
+ }
+};

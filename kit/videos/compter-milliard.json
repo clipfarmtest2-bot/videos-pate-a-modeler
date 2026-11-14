@@ -1,0 +1,26 @@
+{
+ "id": "compter-milliard",
+ "scene": "horloge",
+ "legende": "1 NOMBRE PAR SECONDE, SANS PAUSE",
+ "fond": ["#5b4fa8", "#4a4296", "#3c3684", "#302b70", "#25215c", "#1b1848"],
+ "objets": [
+  {"nom": "JUSQU'À 10", "n": 10, "texte": "10 SECONDES", "titre": ["COMPTER JUSQU'À UN", "MILLIARD ? FACILE"]},
+  {"nom": "JUSQU'À 100", "n": 100, "texte": "1 MIN 40 S", "dt": 1.5},
+  {"nom": "JUSQU'À 1 000", "n": 1000, "texte": "16 MIN 40 S", "dt": 1.8},
+  {"nom": "JUSQU'À 10 000", "n": 10000, "texte": "2 H 47 MIN", "dt": 2.0, "titre": ["SANS DORMIR,", "NI MANGER…"]},
+  {"nom": "JUSQU'À 100 000", "n": 100000, "texte": "27 H 47 MIN", "dt": 2.9},
+  {"nom": "JUSQU'À 1 MILLION", "n": 1000000, "texte": "11 JOURS ET 14 H", "dt": 3.0},
+  {"nom": "JUSQU'À 10 MILLIONS", "n": 10000000, "texte": "116 JOURS", "dt": 3.2, "titre": ["ET CE N'EST QUE", "1 % DU CHEMIN"]},
+  {"nom": "JUSQU'À 100 MILLIONS", "n": 100000000, "texte": "3 ANS ET 2 MOIS", "dt": 3.2},
+  {"nom": "JUSQU'À 1 MILLIARD", "n": 1000000000, "texte": "31 ANS ET 8 MOIS", "dt": 3.8}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["LE RECORD DU MONDE", "DE COMPTAGE ?"], "nom": "1 070 000", "texte": "COMPTÉ EN 70 JOURS"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "Combien de temps pour compter jusqu'à un milliard ?",
+  "description": "Calcul à 1 nombre par seconde, sans jamais s'arrêter : 1 milliard de secondes, c'est environ 31 ans et 8 mois (en vrai, les grands nombres sont bien plus longs à dire). Le record Guinness du nombre le plus élevé compté à voix haute : 1 070 000, atteint en 70 jours consécutifs (2025). Tu tiendrais jusqu'où ?",
+  "hashtags": ["#milliard", "#calculabsurde", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
