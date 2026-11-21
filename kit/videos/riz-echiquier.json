@@ -1,0 +1,26 @@
+{
+ "id": "riz-echiquier",
+ "scene": "echiquier",
+ "legende": "ON DOUBLE À CHAQUE CASE",
+ "fond": ["#2f6b55", "#2a604c", "#245443", "#1e483a", "#183c30", "#123026"],
+ "objets": [
+  {"nom": "CASE 1", "case": 1, "fig": "g1", "taille": 440, "haut": 0.2, "texte": "1 GRAIN", "titre": ["1 GRAIN DE RIZ,", "ON DOUBLE 64 FOIS"]},
+  {"nom": "CASE 2", "case": 2, "fig": "g2", "taille": 440, "haut": 0.2, "aff": {"n": 2, "de": 1, "suf": " GRAINS"}, "dt": 1.5},
+  {"nom": "CASE 3", "case": 3, "fig": "g4", "taille": 440, "haut": 0.25, "aff": {"n": 4, "de": 2, "suf": " GRAINS"}, "dt": 1.6},
+  {"nom": "CASE 10", "case": 10, "fig": "cuillere", "taille": 260, "haut": 0.35, "masse": "≈ 13 G", "aff": {"n": 512, "de": 4, "suf": " GRAINS"}, "dt": 2.0},
+  {"nom": "CASE 20", "case": 20, "fig": "sac", "taille": 280, "haut": 0.75, "masse": "≈ 13 KG", "aff": {"n": 524288, "de": 512, "suf": " GRAINS"}, "dt": 2.9, "titre": ["ÇA DEVIENT", "SÉRIEUX…"]},
+  {"nom": "CASE 30", "case": 30, "fig": "camion", "taille": 400, "haut": 0.6, "masse": "≈ 13 TONNES", "texte": "537 MILLIONS DE GRAINS", "dt": 3.0},
+  {"nom": "CASE 40", "case": 40, "fig": "cargo", "taille": 580, "haut": 0.64, "masse": "≈ 14 000 TONNES", "texte": "550 MILLIARDS DE GRAINS", "dt": 3.1},
+  {"nom": "CASE 50", "case": 50, "fig": "montagne", "taille": 760, "haut": 0.56, "masse": "≈ 14 MILLIONS DE T", "texte": "563 000 MILLIARDS DE GRAINS", "dt": 3.2, "titre": ["ET IL RESTE", "14 CASES…"]},
+  {"nom": "CASE 64", "case": 64, "fig": "geante", "taille": 1000, "haut": 0.5, "masse": "≈ 230 MILLIARDS DE T", "texte": "9,2 MILLIARDS DE MILLIARDS", "dt": 3.8, "titre": ["LA DERNIÈRE", "CASE"]}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["ET SUR TOUT", "L'ÉCHIQUIER ?"], "nom": "PLUS DE 650 ANS", "texte": "DE RÉCOLTES MONDIALES DE RIZ"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "1 grain de riz, doublé 64 fois : la légende de l'échiquier",
+  "description": "La légende de l'échiquier de Sissa : 1 grain sur la 1re case, puis on double à chaque case. Au total 2^64 − 1, soit environ 18 milliards de milliards de grains. En comptant ≈ 25 mg par grain (estimation, ça dépend du riz), ça fait 400 à 500 milliards de tonnes : plus de 650 ans de récolte mondiale (≈ 550 millions de tonnes par an d'après la FAO). Tu aurais accepté le marché ?",
+  "hashtags": ["#riz", "#maths", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
