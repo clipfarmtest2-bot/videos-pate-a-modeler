@@ -16,11 +16,11 @@
  "fin": [
   {"dt": 4.5, "titre": ["ET SUR TOUTE", "SA VIE ?"], "nom": "≈ 2,4 MILLIONS DE KM", "texte": "3 ALLERS-RETOURS TERRE-LUNE"}
  ],
- "finPrecis": "POUR UNE STERNE QUI VIT 30 ANS",
+ "finPrecis": "SI ELLE VIT PLUS DE 30 ANS",
  "queue": 2.8,
  "publication": {
   "titre": "Qui fait le plus long voyage ? Ce petit oiseau bat tout",
-  "description": "Distances de migration d'après NASA, Joly et al. 2019, Pêches et Océans Canada, USFWS, NOAA, BTO et l'étude Egevang et al. 2010 (PNAS) : la sterne arctique parcourt ≈ 70 900 km par an, soit plus de 2,4 millions de km sur une vie de 30 ans. Ce sont des ordres de grandeur (estimations, ça varie selon les individus) ; la tortue luth est un record suivi par satellite. Tu connaissais la sterne ?",
+  "description": "Distances de migration d'après NASA, Joly et al. 2019, Pêches et Océans Canada, USFWS, NOAA, BTO et l'étude Egevang et al. 2010 (PNAS) : la sterne arctique parcourt ≈ 70 900 km par an, soit plus de 2,4 millions de km sur une vie de plus de 30 ans. Ce sont des ordres de grandeur (estimations, ça varie selon les individus) ; la tortue luth est un record suivi par satellite. Tu connaissais la sterne ?",
   "hashtags": ["#animaux", "#migration", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
  }
 }
