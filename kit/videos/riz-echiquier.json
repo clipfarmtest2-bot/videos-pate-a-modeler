@@ -20,7 +20,7 @@
  "queue": 2.8,
  "publication": {
   "titre": "1 grain de riz, doublé 64 fois : la légende de l'échiquier",
-  "description": "La légende de l'échiquier de Sissa : 1 grain sur la 1re case, puis on double à chaque case. Au total 2^64 − 1, soit environ 18 milliards de milliards de grains. En comptant ≈ 25 mg par grain (estimation, ça dépend du riz), ça fait 400 à 500 milliards de tonnes : plus de 650 ans de récolte mondiale (≈ 550 millions de tonnes par an d'après la FAO). Tu aurais accepté le marché ?",
+  "description": "La légende de l'échiquier de Sissa : 1 grain sur la 1re case, puis on double à chaque case. Au total 2^64 − 1, soit environ 18 milliards de milliards de grains. En comptant ≈ 25 mg par grain (estimation, ça dépend du riz), ça fait ≈ 460 milliards de tonnes : plus de 650 ans de récolte mondiale (≈ 550 millions de tonnes par an d'après la FAO). Tu aurais accepté le marché ?",
   "hashtags": ["#riz", "#maths", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
  }
 }
