@@ -53,6 +53,12 @@
    "heure": "18:00",
    "id": "poids-nuage",
    "titre": "Combien pèse un nuage ? Une grue va essayer"
+  },
+  {
+   "date": "2026-11-24",
+   "heure": "18:00",
+   "id": "riz-echiquier",
+   "titre": "1 grain de riz, doublé 64 fois : la légende de l'échiquier"
   }
  ],
  "sujets_traites": [
@@ -69,7 +75,8 @@
   "fourmis pour peser autant qu'un humain — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
   "gouttes pour remplir une piscine olympique (goutte → bassin olympique)",
   "temps pour compter jusqu'à un milliard (10 → 1 milliard, 1 nombre par seconde)",
-  "poids d'un nuage (vache → statue de la Liberté → cumulus de 500 t, fin sur le nuage d'orage)"
+  "poids d'un nuage (vache → statue de la Liberté → cumulus de 500 t, fin sur le nuage d'orage)",
+  "grains de riz sur l'échiquier (on double à chaque case, case 1 → case 64, fin : plus de 650 ans de récolte mondiale)"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -85,7 +92,8 @@
   "balance (objet contre pluie de fourmis) — fourmis",
   "remplit (chaque récipient plein versé dans le suivant, puis pipette goutte à goutte) — gouttes piscine",
   "horloge (personnage qui compte, réveil qui s'affole, pages du calendrier qui s'envolent) — compter jusqu'à un milliard",
-  "grue (une grue soulève chaque objet, le peson s'affole, la flèche plie) — poids d'un nuage"
+  "grue (une grue soulève chaque objet, le peson s'affole, la flèche plie) — poids d'un nuage",
+  "echiquier (la caméra survole l'échiquier de case en case, tas de riz qui grossit : cuillère, sac, camion, cargo, montagne) — riz"
  ],
  "idees_en_reserve": []
 }
