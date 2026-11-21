@@ -59,6 +59,12 @@
    "heure": "18:00",
    "id": "riz-echiquier",
    "titre": "1 grain de riz, doublé 64 fois : la légende de l'échiquier"
+  },
+  {
+   "date": "2026-11-26",
+   "heure": "18:00",
+   "id": "feuilles-a4",
+   "titre": "Combien de feuilles A4 pour recouvrir la Terre ?"
   }
  ],
  "sujets_traites": [
@@ -76,7 +82,8 @@
   "gouttes pour remplir une piscine olympique (goutte → bassin olympique)",
   "temps pour compter jusqu'à un milliard (10 → 1 milliard, 1 nombre par seconde)",
   "poids d'un nuage (vache → statue de la Liberté → cumulus de 500 t, fin sur le nuage d'orage)",
-  "grains de riz sur l'échiquier (on double à chaque case, case 1 → case 64, fin : plus de 650 ans de récolte mondiale)"
+  "grains de riz sur l'échiquier (on double à chaque case, case 1 → case 64, fin : plus de 650 ans de récolte mondiale)",
+  "feuilles A4 pour recouvrir des surfaces (table de ping-pong → Terre, fin : papier graphique mondial d'un an ≈ 2 fois la France)"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -93,7 +100,8 @@
   "remplit (chaque récipient plein versé dans le suivant, puis pipette goutte à goutte) — gouttes piscine",
   "horloge (personnage qui compte, réveil qui s'affole, pages du calendrier qui s'envolent) — compter jusqu'à un milliard",
   "grue (une grue soulève chaque objet, le peson s'affole, la flèche plie) — poids d'un nuage",
-  "echiquier (la caméra survole l'échiquier de case en case, tas de riz qui grossit : cuillère, sac, camion, cargo, montagne) — riz"
+  "echiquier (la caméra survole l'échiquier de case en case, tas de riz qui grossit : cuillère, sac, camion, cargo, montagne) — riz",
+  "imprimante (vue du ciel, une imprimante recouvre chaque lieu de feuilles qui volent) — feuilles A4"
  ],
  "idees_en_reserve": []
 }
