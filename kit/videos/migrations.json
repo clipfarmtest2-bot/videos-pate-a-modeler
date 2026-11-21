@@ -1,0 +1,26 @@
+{
+ "id": "migrations",
+ "scene": "carte",
+ "fond": ["#2e6f8e", "#2a6483", "#255977", "#204e6b", "#1b4360", "#163854"],
+ "objets": [
+  {"nom": "LE GNOU", "fig": "gnou", "km": 1000, "aff": {"n": 1000, "pre": "≈ ", "suf": " KM"}, "precis": "SON TOUR DU SERENGETI, CHAQUE ANNÉE", "titre": ["QUI FAIT LE PLUS", "LONG VOYAGE ?"]},
+  {"nom": "LE CARIBOU", "fig": "caribou", "km": 1350, "aff": {"n": 1350, "pre": "≈ ", "suf": " KM"}, "precis": "ALLER-RETOUR, CHAQUE ANNÉE", "dt": 1.6},
+  {"nom": "LE SAUMON ROYAL", "fig": "saumon", "km": 2000, "aff": {"n": 2000, "pre": "≈ ", "suf": " KM"}, "precis": "EN REMONTANT LE FLEUVE YUKON", "dt": 1.7},
+  {"nom": "LE PAPILLON MONARQUE", "fig": "monarque", "km": 4800, "aff": {"n": 4800, "pre": "PLUS DE ", "suf": " KM"}, "precis": "JUSQU'AU MEXIQUE, POUR L'HIVER", "dt": 1.9},
+  {"nom": "LA BALEINE À BOSSE", "fig": "bosse", "km": 8000, "aff": {"n": 8000, "pre": "≈ ", "suf": " KM"}, "precis": "DES EAUX CHAUDES AUX EAUX FROIDES", "dt": 2.9, "titre": ["ET ÇA NE FAIT", "QUE COMMENCER…"]},
+  {"nom": "L'HIRONDELLE", "fig": "hirondelle", "km": 9650, "aff": {"n": 10000, "pre": "PRÈS DE ", "suf": " KM"}, "precis": "DE L'ANGLETERRE À L'AFRIQUE DU SUD", "dt": 3.0},
+  {"nom": "LA BALEINE GRISE", "fig": "grise", "km": 16000, "aff": {"n": 16000, "pre": "≈ ", "suf": " KM"}, "precis": "ALLER-RETOUR, CHAQUE ANNÉE", "dt": 3.1},
+  {"nom": "LA TORTUE LUTH", "fig": "luth", "km": 20558, "aff": {"n": 20558, "suf": " KM"}, "precis": "RECORD SUIVI PAR SATELLITE", "dt": 3.2},
+  {"nom": "LA STERNE ARCTIQUE", "fig": "sterne", "km": 70900, "aff": {"n": 70900, "pre": "≈ ", "suf": " KM"}, "precis": "DE L'ARCTIQUE À L'ANTARCTIQUE, ET RETOUR", "dt": 3.8, "titre": ["ET LA CHAMPIONNE", "DU MONDE…"]}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["ET SUR TOUTE", "SA VIE ?"], "nom": "≈ 2,4 MILLIONS DE KM", "texte": "3 ALLERS-RETOURS TERRE-LUNE"}
+ ],
+ "finPrecis": "POUR UNE STERNE QUI VIT 30 ANS",
+ "queue": 2.8,
+ "publication": {
+  "titre": "Qui fait le plus long voyage ? Ce petit oiseau bat tout",
+  "description": "Distances de migration d'après NASA, Joly et al. 2019, Pêches et Océans Canada, USFWS, NOAA, BTO et l'étude Egevang et al. 2010 (PNAS) : la sterne arctique parcourt ≈ 70 900 km par an, soit plus de 2,4 millions de km sur une vie de 30 ans. Ce sont des ordres de grandeur (estimations, ça varie selon les individus) ; la tortue luth est un record suivi par satellite. Tu connaissais la sterne ?",
+  "hashtags": ["#animaux", "#migration", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
