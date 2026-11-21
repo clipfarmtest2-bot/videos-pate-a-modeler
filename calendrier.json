@@ -47,6 +47,12 @@
    "heure": "18:00",
    "id": "compter-milliard",
    "titre": "Combien de temps pour compter jusqu'à un milliard ?"
+  },
+  {
+   "date": "2026-11-23",
+   "heure": "18:00",
+   "id": "poids-nuage",
+   "titre": "Combien pèse un nuage ? Une grue va essayer"
   }
  ],
  "sujets_traites": [
@@ -62,7 +68,8 @@
   "pas pour marcher jusqu'à la Lune — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
   "fourmis pour peser autant qu'un humain — vidéo faite, en attente de décision de l'utilisateur (réserve ou calendrier) ; ne pas la refaire",
   "gouttes pour remplir une piscine olympique (goutte → bassin olympique)",
-  "temps pour compter jusqu'à un milliard (10 → 1 milliard, 1 nombre par seconde)"
+  "temps pour compter jusqu'à un milliard (10 → 1 milliard, 1 nombre par seconde)",
+  "poids d'un nuage (vache → statue de la Liberté → cumulus de 500 t, fin sur le nuage d'orage)"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -77,12 +84,8 @@
   "escalier (marcheur qui grimpe, repères qui défilent) — pas jusqu'à la Lune",
   "balance (objet contre pluie de fourmis) — fourmis",
   "remplit (chaque récipient plein versé dans le suivant, puis pipette goutte à goutte) — gouttes piscine",
-  "horloge (personnage qui compte, réveil qui s'affole, pages du calendrier qui s'envolent) — compter jusqu'à un milliard"
+  "horloge (personnage qui compte, réveil qui s'affole, pages du calendrier qui s'envolent) — compter jusqu'à un milliard",
+  "grue (une grue soulève chaque objet, le peson s'affole, la flèche plie) — poids d'un nuage"
  ],
- "idees_en_reserve": [
-  {
-   "sujet": "Combien pèse un nuage ?",
-   "piste": "le nuage d'un côté, des éléphants empilés de l'autre ; éviter de refaire la scène balance telle quelle (par exemple un ascenseur ou une grue qui soulève)"
-  }
- ]
+ "idees_en_reserve": []
 }

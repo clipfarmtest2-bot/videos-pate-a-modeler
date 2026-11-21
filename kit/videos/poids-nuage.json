@@ -1,0 +1,25 @@
+{
+ "id": "poids-nuage",
+ "scene": "grue",
+ "fond": ["#6fb7e8", "#5aa3dc", "#4a8fcf", "#3d7cbf", "#336aad", "#2a5896"],
+ "objets": [
+  {"nom": "UNE VACHE", "fig": "vache", "kg": 700, "aff": {"n": 700, "pre": "≈ ", "suf": " KG"}, "titre": ["COMBIEN PÈSE", "UN NUAGE ?"]},
+  {"nom": "UNE VOITURE", "fig": "voiture", "kg": 1500, "aff": {"n": 1.5, "dec": 1, "pre": "≈ ", "suf": " TONNE"}, "dt": 1.7},
+  {"nom": "UN HIPPOPOTAME", "fig": "hippo", "kg": 4500, "aff": {"n": 4.5, "dec": 1, "pre": "JUSQU'À ", "suf": " TONNES"}, "dt": 1.8},
+  {"nom": "UN ÉLÉPHANT", "fig": "elephant", "kg": 6000, "aff": {"n": 6, "pre": "JUSQU'À ", "suf": " TONNES"}, "dt": 1.9, "titre": ["ÇA COMMENCE", "À PESER LOURD…"]},
+  {"nom": "UN BUS", "fig": "bus", "kg": 12000, "aff": {"n": 12, "pre": "≈ ", "suf": " TONNES"}, "dt": 2.9},
+  {"nom": "UN CAMION CHARGÉ", "fig": "camion", "kg": 44000, "aff": {"n": 44, "pre": "JUSQU'À ", "suf": " TONNES"}, "dt": 3.0},
+  {"nom": "UNE BALEINE BLEUE", "fig": "baleine", "kg": 150000, "aff": {"n": 150, "pre": "PLUS DE ", "suf": " TONNES"}, "dt": 3.1},
+  {"nom": "LA STATUE DE LA LIBERTÉ", "fig": "statue", "kg": 254000, "aff": {"n": 250, "pre": "≈ ", "suf": " TONNES"}, "dt": 3.2},
+  {"nom": "UN PETIT NUAGE", "fig": "nuage", "kg": 500000, "aff": {"n": 500, "pre": "≈ ", "suf": " TONNES"}, "dt": 3.8, "titre": ["ET UN PETIT NUAGE", "TOUT BLANC ?"]}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["ET UN NUAGE", "D'ORAGE ?"], "nom": "DES MILLIONS", "texte": "DE TONNES D'EAU"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "Combien pèse un nuage ? Une grue va essayer",
+  "description": "Un petit cumulus d'1 km³ contient environ 500 tonnes d'eau en gouttelettes (calcul de l'USGS), plus que 3 baleines bleues ! Les autres poids sont des ordres de grandeur (estimations : vache, voiture, poids maximum pour l'hippopotame, l'éléphant et le camion), et un gros nuage d'orage pèserait des millions de tonnes d'après un chercheur du NCAR. Pourquoi il ne tombe pas, à ton avis ?",
+  "hashtags": ["#nuage", "#meteo", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
