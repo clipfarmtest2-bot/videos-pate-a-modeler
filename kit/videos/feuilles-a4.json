@@ -1,0 +1,26 @@
+{
+ "id": "feuilles-a4",
+ "scene": "imprimante",
+ "legende": "1 FEUILLE A4 : 21 CM SUR 29,7 CM",
+ "fond": ["#7a5bd0", "#6b4fc0", "#5d44ae", "#4f3a9a", "#423086", "#352772"],
+ "objets": [
+  {"nom": "UNE TABLE DE PING-PONG", "fig": "pingpong", "aff": {"n": 67, "suf": " FEUILLES"}, "titre": ["ET SI ON COUVRAIT", "LA TERRE DE A4 ?"]},
+  {"nom": "UN COURT DE TENNIS", "fig": "tennis", "aff": {"n": 4181, "suf": " FEUILLES"}, "dt": 1.6},
+  {"nom": "UN TERRAIN DE BASKET", "fig": "basket", "aff": {"n": 6734, "suf": " FEUILLES"}, "dt": 1.7},
+  {"nom": "UNE PISCINE OLYMPIQUE", "fig": "piscine", "aff": {"n": 20042, "suf": " FEUILLES"}, "dt": 1.9},
+  {"nom": "UN TERRAIN DE FOOT", "fig": "foot", "aff": {"n": 114478, "suf": " FEUILLES"}, "dt": 2.9, "titre": ["ON ACCÉLÈRE", "L'IMPRESSION…"]},
+  {"nom": "MONACO", "fig": "monaco", "aff": {"n": 32, "pre": "≈ ", "suf": " MILLIONS DE FEUILLES"}, "dt": 3.0},
+  {"nom": "PARIS", "fig": "paris", "aff": {"n": 1.7, "dec": 1, "pre": "≈ ", "suf": " MILLIARD DE FEUILLES"}, "dt": 3.1},
+  {"nom": "LA FRANCE", "fig": "france", "aff": {"n": 8700, "pre": "≈ ", "suf": " MILLIARDS DE FEUILLES"}, "dt": 3.2, "titre": ["ET POUR TOUTE", "LA PLANÈTE ?"]},
+  {"nom": "LA TERRE ENTIÈRE", "fig": "terre", "aff": {"n": 8.2, "dec": 1, "pre": "≈ ", "suf": " MILLIONS DE MILLIARDS"}, "dt": 3.8}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["ET LE PAPIER DU", "MONDE EN 1 AN ?"], "nom": "≈ 2 FOIS LA FRANCE", "texte": "84 MILLIONS DE TONNES"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "Combien de feuilles A4 pour recouvrir la Terre ?",
+  "description": "Calcul simple : surface ÷ surface d'une feuille A4 (21 × 29,7 cm). Table de ping-pong, courts et bassin aux dimensions officielles, Monaco ≈ 2 km², Paris 105 km² (bois compris), France métropolitaine 543 940 km², Terre ≈ 510 millions de km². Fin : les 84 millions de tonnes de papier graphique produites en 2023 (FAO), comptées en A4 de 80 g, couvriraient ≈ 2 fois la France (estimation). Tu aurais dit combien ?",
+  "hashtags": ["#papier", "#calculabsurde", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
