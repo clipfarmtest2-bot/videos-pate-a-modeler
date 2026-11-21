@@ -1,0 +1,26 @@
+{
+ "id": "repas-animaux",
+ "scene": "tapis",
+ "legende": "CE QU'IL AVALE EN UNE JOURNÉE",
+ "fond": ["#e08a4c", "#d87c44", "#cc6e3e", "#bd6038", "#ab5332", "#97462c"],
+ "objets": [
+  {"nom": "UN COLIBRI", "fig": "colibri", "food": "nectar", "aff": {"n": 2.5, "dec": 1, "pre": "≈ ", "suf": " G DE NECTAR"}, "titre": ["16 TONNES EN", "UN SEUL JOUR ?!"]},
+  {"nom": "UNE SOURIS", "fig": "souris", "food": "graines", "texte": "3 À 5 G DE NOURRITURE", "dt": 1.6},
+  {"nom": "UN KOALA", "fig": "koala", "food": "feuilles", "texte": "500 À 800 G DE FEUILLES", "dt": 1.7},
+  {"nom": "UNE LIONNE", "fig": "lion", "food": "viande", "aff": {"n": 14, "pre": "≈ ", "suf": " KG DE VIANDE"}, "dt": 1.9},
+  {"nom": "UNE GIRAFE", "fig": "girafe", "food": "acacia", "aff": {"n": 34, "pre": "≈ ", "suf": " KG DE FEUILLES"}, "dt": 2.9, "titre": ["LES GRANDS", "ARRIVENT…"]},
+  {"nom": "UN PANDA GÉANT", "fig": "panda", "food": "bambou", "aff": {"n": 38, "pre": "JUSQU'À ", "suf": " KG DE BAMBOU"}, "dt": 3.0},
+  {"nom": "UN HIPPOPOTAME", "fig": "hippo", "food": "herbe", "aff": {"n": 40, "pre": "≈ ", "suf": " KG D'HERBE"}, "dt": 3.1},
+  {"nom": "UN ÉLÉPHANT", "fig": "elephant", "food": "plantes", "aff": {"n": 150, "pre": "JUSQU'À ", "suf": " KG DE PLANTES"}, "dt": 3.2},
+  {"nom": "UNE BALEINE BLEUE", "fig": "baleine", "food": "krill", "aff": {"n": 16, "pre": "≈ ", "suf": " TONNES DE KRILL"}, "dt": 3.8, "titre": ["ET LA PLUS", "GROSSE FAIM…"]}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["EN PROPORTION,", "LA CHAMPIONNE…"], "nom": "LE COLIBRI", "texte": "LA MOITIÉ DE SON POIDS !"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "Combien mangent les animaux en une journée ?",
+  "description": "Ordres de grandeur par jour (estimations, ça varie selon l'animal et la saison) d'après le Smithsonian, le Merck Vet Manual, le gouvernement du Queensland, le zoo de San Diego, le WWF et l'étude Savoca et al. 2021 (Nature) : une baleine bleue avale ≈ 16 tonnes de krill les jours où elle se nourrit ! Mais en proportion, le colibri gagne : jusqu'à la moitié de son poids en nectar chaque jour. Tu mangerais quoi sur ce tapis ?",
+  "hashtags": ["#animaux", "#nature", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
