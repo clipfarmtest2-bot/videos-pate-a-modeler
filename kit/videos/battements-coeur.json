@@ -1,0 +1,135 @@
+{
+ "id": "battements-coeur",
+ "scene": "coeur",
+ "legende": "BATTEMENTS DE CŒUR PAR MINUTE",
+ "fond": [
+  "#3a3f73",
+  "#3f3d70",
+  "#463a6b",
+  "#4e3765",
+  "#56345e",
+  "#5e3157"
+ ],
+ "objets": [
+  {
+   "nom": "LA BALEINE BLEUE",
+   "fig": "baleine",
+   "bpm": 2,
+   "texte": "2 SEULEMENT !",
+   "precis": "EN PLONGÉE",
+   "titre": [
+    "SON CŒUR BAT",
+    "1 511 FOIS/MIN ?"
+   ]
+  },
+  {
+   "nom": "L'ÉLÉPHANT",
+   "fig": "elephant",
+   "bpm": 30,
+   "texte": "25 À 35",
+   "precis": "AU REPOS",
+   "dt": 1.6
+  },
+  {
+   "nom": "TOI",
+   "fig": "humain",
+   "bpm": 72,
+   "aff": {
+    "n": 72,
+    "pre": "≈ ",
+    "de": 30
+   },
+   "precis": "AU REPOS",
+   "dt": 1.7
+  },
+  {
+   "nom": "LE CHIEN",
+   "fig": "chien",
+   "bpm": 95,
+   "texte": "70 À 120",
+   "precis": "AU REPOS",
+   "dt": 1.9
+  },
+  {
+   "nom": "LE CHAT",
+   "fig": "chat",
+   "bpm": 130,
+   "texte": "120 À 140",
+   "precis": "AU REPOS",
+   "dt": 2.8
+  },
+  {
+   "nom": "LE LAPIN",
+   "fig": "lapin",
+   "bpm": 260,
+   "texte": "180 À 350",
+   "precis": "AU REPOS",
+   "dt": 2.9
+  },
+  {
+   "nom": "LA SOURIS",
+   "fig": "souris",
+   "bpm": 600,
+   "texte": "450 À 750",
+   "precis": "AU REPOS",
+   "dt": 3.0,
+   "titre": [
+    "ÇA S'ACCÉLÈRE",
+    "ENCORE…"
+   ]
+  },
+  {
+   "nom": "LE COLIBRI",
+   "fig": "colibri",
+   "bpm": 1200,
+   "aff": {
+    "n": 1200,
+    "pre": "≈ ",
+    "de": 600
+   },
+   "precis": "EN VOL",
+   "dt": 3.1
+  },
+  {
+   "nom": "LA MUSARAIGNE ÉTRUSQUE",
+   "fig": "musaraigne",
+   "bpm": 1511,
+   "aff": {
+    "n": 1511,
+    "pre": "JUSQU'À ",
+    "de": 1200
+   },
+   "precis": "AU MAXIMUM",
+   "dt": 3.8,
+   "titre": [
+    "ET LE CŒUR",
+    "LE PLUS RAPIDE…"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.5,
+   "titre": [
+    "DE LA BALEINE",
+    "À LA MUSARAIGNE"
+   ],
+   "nom": "PLUS DE 750 FOIS",
+   "texte": "PLUS RAPIDE !"
+  }
+ ],
+ "finPrecis": "DE 2 À 1 511 PAR MINUTE",
+ "queue": 2.8,
+ "publication": {
+  "titre": "Son cœur bat 1 511 fois par minute !",
+  "description": "Battements par minute : baleine bleue seulement 2 au plus bas, en plongée (étude PNAS 2019), éléphant 25 à 35, chien 70 à 120, chat 120 à 140, lapin 180 à 350, souris 450 à 750 (Merck Veterinary Manual), humain ≈ 72 au repos et colibri ≈ 1 200 en vol (National Wildlife Federation, Audubon), musaraigne étrusque jusqu'à 1 511 (Jürgens 2002). Ce sont des fourchettes (estimations, ça varie selon l'âge et l'effort). Et toi, combien au repos ?",
+  "hashtags": [
+   "#animaux",
+   "#coeur",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

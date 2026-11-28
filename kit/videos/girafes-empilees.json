@@ -1,0 +1,148 @@
+{
+ "id": "girafes-empilees",
+ "scene": "pile",
+ "girafe": 5.5,
+ "fond": [
+  "#6fb3e0",
+  "#64a7d6",
+  "#5a9bcb",
+  "#4f8ebf",
+  "#4581b2",
+  "#3b74a4"
+ ],
+ "objets": [
+  {
+   "nom": "UNE GIRAFE",
+   "h": 5.5,
+   "n": 1,
+   "texte": "5,5 M DE HAUT",
+   "precis": "NOTRE UNITÉ DE MESURE",
+   "titre": [
+    "COMBIEN DE GIRAFES",
+    "POUR L'EVEREST ?"
+   ]
+  },
+  {
+   "nom": "L'ARBRE RECORD D'EUROPE",
+   "fig": "karri",
+   "h": 72.9,
+   "n": 13,
+   "aff": {
+    "n": 13,
+    "pre": "≈ ",
+    "suf": " GIRAFES"
+   },
+   "precis": "UN EUCALYPTUS DE 72,9 M (PORTUGAL)",
+   "dt": 2.0
+  },
+  {
+   "nom": "LA STATUE DE LA LIBERTÉ",
+   "fig": "liberte",
+   "h": 93,
+   "n": 17,
+   "aff": {
+    "n": 17,
+    "pre": "≈ ",
+    "suf": " GIRAFES"
+   },
+   "precis": "93 M, SOCLE COMPRIS",
+   "dt": 2.0
+  },
+  {
+   "nom": "HYPERION",
+   "fig": "hyperion",
+   "h": 116.07,
+   "n": 21,
+   "aff": {
+    "n": 21,
+    "pre": "≈ ",
+    "suf": " GIRAFES"
+   },
+   "precis": "LE PLUS GRAND ARBRE DU MONDE : 116 M",
+   "dt": 2.0
+  },
+  {
+   "nom": "LA PYRAMIDE DE KHÉOPS",
+   "fig": "kheops",
+   "h": 137.5,
+   "n": 25,
+   "aff": {
+    "n": 25,
+    "suf": " GIRAFES"
+   },
+   "precis": "137,5 M AUJOURD'HUI",
+   "dt": 3.3
+  },
+  {
+   "nom": "LA TOUR EIFFEL",
+   "fig": "eiffel",
+   "h": 330,
+   "n": 60,
+   "aff": {
+    "n": 60,
+    "suf": " GIRAFES"
+   },
+   "precis": "330 M AVEC SES ANTENNES",
+   "dt": 3.3,
+   "titre": [
+    "ET ÇA MONTE",
+    "ENCORE…"
+   ]
+  },
+  {
+   "nom": "BURJ KHALIFA",
+   "fig": "burj",
+   "h": 828,
+   "n": 151,
+   "aff": {
+    "n": 151,
+    "pre": "≈ ",
+    "suf": " GIRAFES"
+   },
+   "precis": "LA PLUS HAUTE TOUR DU MONDE : 828 M",
+   "dt": 3.3
+  },
+  {
+   "nom": "L'EVEREST",
+   "fig": "everest",
+   "h": 8848.86,
+   "n": 1609,
+   "aff": {
+    "n": 1609,
+    "pre": "≈ ",
+    "suf": " GIRAFES"
+   },
+   "precis": "8 849 M AU-DESSUS DE LA MER",
+   "dt": 3.8,
+   "titre": [
+    "ET LE TOIT",
+    "DU MONDE…"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.6,
+   "titre": [
+    "ET EN TOURS",
+    "EIFFEL ?"
+   ],
+   "nom": "L'EVEREST",
+   "texte": "≈ 27 TOURS EIFFEL"
+  }
+ ],
+ "finPrecis": "8 849 M CONTRE 330 M",
+ "queue": 3.0,
+ "publication": {
+  "titre": "Combien de girafes empilées pour atteindre l'Everest ?",
+  "description": "Une girafe mesure environ 5,5 m (Smithsonian). Hauteurs : eucalyptus record d'Europe 72,9 m et Hyperion 116 m (Guinness), statue de la Liberté 93 m socle compris (NPS), Khéops 137,5 m aujourd'hui (Guinness), tour Eiffel 330 m (Ville de Paris), Burj Khalifa 828 m (CTBUH), Everest 8 848,86 m (mesure Népal-Chine 2020). Nombres de girafes arrondis (estimations, une girafe n'a pas toujours la même taille). Combien de girafes pour ta maison ?",
+  "hashtags": [
+   "#girafe",
+   "#everest",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}

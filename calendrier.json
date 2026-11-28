@@ -89,6 +89,18 @@
    "heure": "18:00",
    "id": "temperatures",
    "titre": "De −89 °C à 15 millions de degrés : ça chauffe !"
+  },
+  {
+   "date": "2026-12-02",
+   "heure": "18:00",
+   "id": "girafes-empilees",
+   "titre": "Combien de girafes empilées pour atteindre l'Everest ?"
+  },
+  {
+   "date": "2026-12-03",
+   "heure": "18:00",
+   "id": "battements-coeur",
+   "titre": "Son cœur bat 1 511 fois par minute !"
   }
  ],
  "sujets_traites": [
@@ -111,7 +123,9 @@
   "nourriture avalée en un jour par les animaux (colibri → baleine bleue, fin : le colibri champion en proportion)",
   "migrations animales (gnou 1 000 km → sterne arctique 70 900 km/an, fin : 2,4 millions de km sur une vie)",
   "pattes des animaux en chaussettes (humain 2 → Eumillipes persephone 1 306, fin : aucun vrai mille-pattes avant 2021)",
-  "températures du plus froid au plus chaud (record de froid −89,2 °C → cœur du Soleil 15 millions °C, fin : zéro absolu)"
+  "températures du plus froid au plus chaud (record de froid −89,2 °C → cœur du Soleil 15 millions °C, fin : zéro absolu)",
+  "hauteurs en girafes empilées (girafe 5,5 m → Everest ≈ 1 609 girafes, fin : Everest ≈ 27 tours Eiffel)",
+  "battements de cœur par minute (baleine bleue 2 → musaraigne étrusque 1 511, fin : plus de 750 fois plus rapide)"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -133,7 +147,9 @@
   "tapis (tapis roulant qui apporte la nourriture à chaque animal) — repas des animaux",
   "carte (une carte se replie puis se déplie à chaque voyage plus long, l'animal suit son trajet en pointillés) — migrations",
   "linge (fil à linge, une chaussette par patte, la grille de chaussettes se resserre, panier qui lance les chaussettes) — chaussettes / pattes",
-  "thermo (thermomètre géant dont l'échelle se resserre à chaque palier, objets qui tombent à côté) — températures"
+  "thermo (thermomètre géant dont l'échelle se resserre à chaque palier, objets qui tombent à côté) — températures",
+  "pile (des girafes s'empilent à côté de chaque géant, la caméra dézoome, le repère tombe et s'écrase) — girafes empilées",
+  "coeur (cœur qui bat au rythme de l'animal + moniteur qui trace les battements) — battements de cœur"
  ],
  "idees_en_reserve": []
 }
