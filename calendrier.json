@@ -77,6 +77,12 @@
    "heure": "18:00",
    "id": "repas-animaux",
    "titre": "Combien mangent les animaux en une journée ?"
+  },
+  {
+   "date": "2026-11-30",
+   "heure": "18:00",
+   "id": "chaussettes-pattes",
+   "titre": "1 306 chaussettes pour un seul animal ?"
   }
  ],
  "sujets_traites": [
@@ -97,7 +103,8 @@
   "grains de riz sur l'échiquier (on double à chaque case, case 1 → case 64, fin : plus de 650 ans de récolte mondiale)",
   "feuilles A4 pour recouvrir des surfaces (table de ping-pong → Terre, fin : papier graphique mondial d'un an ≈ 2 fois la France)",
   "nourriture avalée en un jour par les animaux (colibri → baleine bleue, fin : le colibri champion en proportion)",
-  "migrations animales (gnou 1 000 km → sterne arctique 70 900 km/an, fin : 2,4 millions de km sur une vie)"
+  "migrations animales (gnou 1 000 km → sterne arctique 70 900 km/an, fin : 2,4 millions de km sur une vie)",
+  "pattes des animaux en chaussettes (humain 2 → Eumillipes persephone 1 306, fin : aucun vrai mille-pattes avant 2021)"
  ],
  "scenes_utilisees": [
   "barres v (piles de pièces) — argent",
@@ -117,7 +124,8 @@
   "echiquier (la caméra survole l'échiquier de case en case, tas de riz qui grossit : cuillère, sac, camion, cargo, montagne) — riz",
   "imprimante (vue du ciel, une imprimante recouvre chaque lieu de feuilles qui volent) — feuilles A4",
   "tapis (tapis roulant qui apporte la nourriture à chaque animal) — repas des animaux",
-  "carte (une carte se replie puis se déplie à chaque voyage plus long, l'animal suit son trajet en pointillés) — migrations"
+  "carte (une carte se replie puis se déplie à chaque voyage plus long, l'animal suit son trajet en pointillés) — migrations",
+  "linge (fil à linge, une chaussette par patte, la grille de chaussettes se resserre, panier qui lance les chaussettes) — chaussettes / pattes"
  ],
  "idees_en_reserve": []
 }

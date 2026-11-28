@@ -1,0 +1,26 @@
+{
+ "id": "chaussettes-pattes",
+ "scene": "linge",
+ "legende": "UNE CHAUSSETTE PAR PATTE",
+ "fond": ["#3f7fb0", "#3a74a3", "#356a97", "#305f8a", "#2b557d", "#264a70"],
+ "objets": [
+  {"nom": "UN HUMAIN", "fig": "humain", "pattes": 2, "aff": {"n": 2, "suf": " CHAUSSETTES"}, "titre": ["1 306 CHAUSSETTES", "POUR UN ANIMAL ?"]},
+  {"nom": "UN CHIEN", "fig": "chien", "pattes": 4, "dt": 1.6},
+  {"nom": "UNE FOURMI", "fig": "fourmi", "pattes": 6, "dt": 1.7},
+  {"nom": "UNE ARAIGNÉE", "fig": "araignee", "pattes": 8, "dt": 1.9},
+  {"nom": "UN CRABE", "fig": "crabe", "pattes": 10, "aff": {"n": 10, "suf": " (PINCES COMPRISES)"}, "dt": 2.9},
+  {"nom": "LA SCUTIGÈRE", "fig": "scutigere", "pattes": 30, "aff": {"n": 30, "pre": "JUSQU'À ", "suf": " CHAUSSETTES"}, "dt": 3.0, "titre": ["ET ÇA NE FAIT", "QUE COMMENCER…"]},
+  {"nom": "LA SCOLOPENDRE", "fig": "scolopendre", "pattes": 42, "dt": 3.1},
+  {"nom": "ILLACME PLENIPES", "fig": "illacme", "pattes": 750, "aff": {"n": 750, "pre": "JUSQU'À ", "suf": " CHAUSSETTES"}, "dt": 3.2},
+  {"nom": "EUMILLIPES PERSEPHONE", "fig": "eumillipes", "pattes": 1306, "aff": {"n": 1306, "suf": " CHAUSSETTES"}, "dt": 3.8, "titre": ["ET LE RECORD", "DU MONDE…"]}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["UN VRAI", "« MILLE-PATTES » ?"], "nom": "AUCUN AVANT 2021 !", "texte": "LE RECORD ÉTAIT DE 750"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "1 306 chaussettes pour un seul animal ?",
+  "description": "Une chaussette par patte : le crabe en a 10 (pinces comprises), la scutigère jusqu'à 30 (15 paires, Missouri Dept. of Conservation), la scolopendre 42 (21 paires), Illacme plenipes jusqu'à 750 (Smithsonian) et Eumillipes persephone 1 306, découvert en Australie et décrit en 2021 (Scientific Reports) : le premier vrai « mille-pattes » connu. Les nombres varient selon les individus et les espèces. Tu prendrais combien de paires dans ta valise ?",
+  "hashtags": ["#animaux", "#millepattes", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
