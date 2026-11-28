@@ -1,0 +1,153 @@
+{
+ "id": "voyage-lumiere",
+ "scene": "lumiere",
+ "fond": [
+  "#1a1f4a",
+  "#181c45",
+  "#161940",
+  "#14163a",
+  "#121334",
+  "#10102e"
+ ],
+ "objets": [
+  {
+   "nom": "DE LA LUNE",
+   "de": "lune",
+   "a": "terre",
+   "sec": 1.3,
+   "aff": {
+    "n": 1.3,
+    "dec": 1,
+    "suf": " SECONDE"
+   },
+   "precis": "JUSQU'À LA TERRE",
+   "titre": [
+    "300 000 KM/S…",
+    "ET C'EST LENT ?"
+   ]
+  },
+  {
+   "nom": "DU SOLEIL",
+   "de": "soleil",
+   "a": "terre",
+   "sec": 500,
+   "texte": "8 MIN 20 S",
+   "precis": "JUSQU'À LA TERRE",
+   "dt": 2.0
+  },
+  {
+   "nom": "JUSQU'À NEPTUNE",
+   "de": "soleil",
+   "a": "neptune",
+   "sec": 14400,
+   "aff": {
+    "n": 4,
+    "pre": "≈ ",
+    "suf": " HEURES"
+   },
+   "precis": "EN PARTANT DU SOLEIL",
+   "dt": 2.0
+  },
+  {
+   "nom": "JUSQU'À VOYAGER 1",
+   "de": "terre",
+   "a": "voyager",
+   "sec": 86400,
+   "aff": {
+    "n": 24,
+    "suf": " HEURES"
+   },
+   "precis": "DEPUIS LE 18 NOVEMBRE 2026",
+   "dt": 2.0,
+   "titre": [
+    "LA SONDE LA PLUS",
+    "LOINTAINE…"
+   ]
+  },
+  {
+   "nom": "DE PROXIMA DU CENTAURE",
+   "de": "proxima",
+   "a": "terre",
+   "sec": 134000000.0,
+   "aff": {
+    "n": 4.24,
+    "dec": 2,
+    "suf": " ANS"
+   },
+   "precis": "L'ÉTOILE LA PLUS PROCHE",
+   "dt": 3.3,
+   "titre": [
+    "ET PLUS LOIN",
+    "ENCORE…"
+   ]
+  },
+  {
+   "nom": "DU CENTRE DE LA GALAXIE",
+   "de": "centre",
+   "a": "terre",
+   "sec": 820000000000.0,
+   "aff": {
+    "n": 26000,
+    "pre": "≈ ",
+    "suf": " ANS"
+   },
+   "precis": "JUSQU'À NOUS",
+   "dt": 3.3
+  },
+  {
+   "nom": "POUR TRAVERSER LA VOIE LACTÉE",
+   "traverse": true,
+   "sec": 3200000000000.0,
+   "aff": {
+    "n": 100000,
+    "pre": "PLUS DE ",
+    "suf": " ANS"
+   },
+   "precis": "D'UN BORD À L'AUTRE",
+   "dt": 3.3
+  },
+  {
+   "nom": "D'ANDROMÈDE",
+   "de": "andromede",
+   "a": "terre",
+   "sec": 79000000000000.0,
+   "aff": {
+    "n": 2.5,
+    "dec": 1,
+    "pre": "≈ ",
+    "suf": " MILLIONS D'ANNÉES"
+   },
+   "precis": "LA GRANDE GALAXIE VOISINE",
+   "dt": 3.8,
+   "titre": [
+    "ET NOTRE GRANDE",
+    "VOISINE…"
+   ]
+  }
+ ],
+ "fin": [
+  {
+   "dt": 4.6,
+   "titre": [
+    "ET LE SOLEIL",
+    "QUE TU VOIS ?"
+   ],
+   "nom": "C'EST CELUI",
+   "texte": "D'IL Y A 8 MIN 20 S"
+  }
+ ],
+ "finPrecis": "LA LUMIÈRE MET DU TEMPS À ARRIVER",
+ "queue": 3.0,
+ "publication": {
+  "titre": "La lumière va vite… mais l'univers est immense",
+  "description": "Temps de trajet de la lumière (≈ 300 000 km/s) : 1,3 s depuis la Lune (Royal Museums Greenwich), 8 min 20 s depuis le Soleil à 150 millions de km (calculé d'après la NASA), ≈ 4 h du Soleil à Neptune (NASA), 24 h jusqu'à la sonde Voyager 1 depuis le 18 novembre 2026 (NASA), 4,24 ans depuis Proxima du Centaure (NASA), ≈ 26 000 ans depuis le centre de notre galaxie (Britannica), plus de 100 000 ans pour traverser la Voie lactée et ≈ 2,5 millions d'années depuis Andromède (NASA). Ordres de grandeur (estimations). Tu savais que tu regardais le passé ?",
+  "hashtags": [
+   "#espace",
+   "#lumiere",
+   "#comparaison",
+   "#lesaviezvous",
+   "#satisfaisant",
+   "#stopmotion"
+  ]
+ }
+}
