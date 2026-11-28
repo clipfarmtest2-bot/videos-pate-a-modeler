@@ -785,3 +785,323 @@ SCENES.tapis={
   tag('');fleche(0);
  }
 };
+// ================= outils des scènes 17 à 21 =================
+const finT=()=>FT.length?FT[0]:1e9;   // instant du premier écran de fin
+const sortie=(t,a)=>{const k=etape(t);return {k,a:k?a[k]:1,v:k?t-T[k]:t};};
+// ================= scène 17 : linge (chaque patte a sa chaussette, étendue sur un fil à linge) =================
+const corpsLong=(n,x0,x1,y,h,col,leg,legc,amp,per,tete)=>{   // corps segmenté + pattes (vue de côté), tête à droite
+ let b='',f='',l='';const pts=[];for(let i=0;i<n;i++){const u=n>1?i/(n-1):0,x=lerp(x0,x1,u),yy=y+amp*Math.sin(u*Math.PI*per);pts.push([x,yy]);}
+ const rx=Math.max(2.2,(x1-x0)/Math.max(1,n-1)*.62);
+ pts.forEach(([x,yy],i)=>{b+=`<path d="M${(x-2).toFixed(1)} ${(yy+h*.5).toFixed(1)}l${(-leg*.35).toFixed(1)} ${(leg).toFixed(1)}" stroke="${mix(legc,'#000000',.25)}" stroke-width="${Math.max(1.6,rx*.32).toFixed(1)}" stroke-linecap="round"/>`;
+  f+=`<path d="M${(x+2).toFixed(1)} ${(yy+h*.5).toFixed(1)}l${(leg*.3).toFixed(1)} ${(leg*1.05).toFixed(1)}" stroke="${legc}" stroke-width="${Math.max(1.8,rx*.36).toFixed(1)}" stroke-linecap="round"/>`;
+  l+=`<ellipse cx="${x.toFixed(1)}" cy="${yy.toFixed(1)}" rx="${(rx*1.15).toFixed(1)}" ry="${h}" fill="${i%2?col:mix(col,'#000000',.12)}"/>`;});
+ const [hx,hy]=pts[n-1];return b+l+f+(tete||'').replace(/HX/g,hx.toFixed(1)).replace(/HY/g,hy.toFixed(1));};
+const LINGE_F={   // cadre 0 0 400 200, posé en bas (y = 200), regarde vers la droite
+ humain:`<g transform="translate(60,4) scale(1.4)">${ANI.humain}</g>`,
+ chien:`<g transform="translate(60,4) scale(1.4)">${ANI.chien}</g>`,
+ fourmi:`<g transform="translate(60,-30) scale(2.8)">${ZFIG.fourmi.s}</g>`,
+ araignee:`<g stroke="#2b2440" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">${[[195,130,90,62,34,198],[198,132,150,84,140,198],[218,132,252,84,262,198],[222,128,318,62,384,198]].map(p=>`<path d="M${p[0]} ${p[1]}L${p[2]} ${p[3]}L${p[4]} ${p[5]}"/>`).join('')}</g><g stroke="#4a3d6e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">${[[200,122,120,44,70,198],[202,126,160,70,112,198],[214,126,262,66,300,198],[218,120,296,40,354,198]].map(p=>`<path d="M${p[0]} ${p[1]}L${p[2]} ${p[3]}L${p[4]} ${p[5]}"/>`).join('')}</g><ellipse cx="160" cy="116" rx="62" ry="50" fill="#5d4c8c"/><ellipse cx="146" cy="100" rx="22" ry="12" fill="#7d6cb0"/><circle cx="244" cy="128" r="34" fill="#6b5a9c"/><circle cx="252" cy="118" r="9" fill="#fff"/><circle cx="272" cy="120" r="8" fill="#fff"/><circle cx="254" cy="119" r="4" fill="${NOIR}"/><circle cx="273" cy="121" r="3.6" fill="${NOIR}"/>`,
+ crabe:`<g stroke="#c4402c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">${[0,1,2,3].map(j=>`<path d="M${150-j*12} ${140+j*4}L${96-j*20} ${150-j*6}L${76-j*16} 198"/><path d="M${250+j*12} ${140+j*4}L${304+j*20} ${150-j*6}L${324+j*16} 198"/>`).join('')}<path d="M160 120L112 74M240 120L288 74"/></g><path d="M86 30q30-26 52 10l-14 14q-10-12-20-6l18 18-20 16q-30-20-16-52z" fill="#e8553c"/><path d="M314 30q-30-26-52 10l14 14q10-12 20-6l-18 18 20 16q30-20 16-52z" fill="#e8553c"/><ellipse cx="200" cy="132" rx="96" ry="50" fill="#e8553c"/><ellipse cx="200" cy="118" rx="70" ry="22" fill="#f27a5e"/><path d="M180 92v-30M220 92v-30" stroke="#c4402c" stroke-width="8" stroke-linecap="round"/><circle cx="180" cy="58" r="11" fill="#fff"/><circle cx="220" cy="58" r="11" fill="#fff"/><circle cx="182" cy="59" r="5" fill="${NOIR}"/><circle cx="222" cy="59" r="5" fill="${NOIR}"/>`,
+ scutigere:(()=>{let s='';for(let i=0;i<15;i++){const x=110+i*12,ln=58+i*4.5;s+=`<path d="M${x} 120q${-30-i} ${-60} ${-60-i*1.5} ${78}" stroke="#a88a5c" stroke-width="3.6" fill="none" stroke-linecap="round"/><path d="M${x} 124q${30+i} ${-46} ${ln*.9} ${74}" stroke="#d9b98a" stroke-width="4" fill="none" stroke-linecap="round"/>`;}
+  return s+`<path d="M110 118q-50-40-96-30M110 122q-60 0-100 40" stroke="#d9b98a" stroke-width="3" fill="none"/><rect x="104" y="106" width="196" height="26" rx="13" fill="#c9a26a"/><path d="M118 112v14M140 112v14M162 112v14M184 112v14M206 112v14M228 112v14M250 112v14M272 112v14" stroke="#8a6a40" stroke-width="5"/><path d="M300 112q40-60 90-72M300 120q50-30 96-14" stroke="#d9b98a" stroke-width="3" fill="none"/><circle cx="304" cy="118" r="15" fill="#c9a26a"/><circle cx="310" cy="112" r="4.5" fill="${NOIR}"/>`;})(),
+ scolopendre:corpsLong(21,40,330,150,15,'#d9622b',30,'#f2b33d',8,1.6,`<circle cx="HX" cy="HY" r="20" fill="#7a2a1a" transform="translate(22,-2)"/><path d="M372 140q14-24 26-26M372 150q18-10 26 0" stroke="#7a2a1a" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="360" cy="140" r="4" fill="#fff"/>`),
+ illacme:corpsLong(70,20,360,168,8,'#f2e3c2',18,'#f6d7a0',6,2.2,`<circle cx="HX" cy="HY" r="12" fill="#e9cfa2" transform="translate(12,0)"/><path d="M380 160q10-14 18-14" stroke="#e9cfa2" stroke-width="4" fill="none" stroke-linecap="round"/>`),
+ eumillipes:corpsLong(150,10,380,166,6.5,'#f4e9d6',16,'#f0d6aa',9,3.2,`<circle cx="HX" cy="HY" r="11" fill="#efdcbc" transform="translate(10,0)"/><path d="M394 158q6-12 6-18" stroke="#efdcbc" stroke-width="4" fill="none" stroke-linecap="round"/>`),
+};
+const CHAUSS=['#e0453a','#2f80da','#ffb11f','#4fb56c','#b06ad9','#ff7fc8'];
+const chaussette=(x,c,r)=>`<g transform="translate(${x} 0)"><rect x="30" y="0" width="14" height="26" rx="3" fill="#c98a4b"/><path d="M24 18h28v60q0 8 6 10l14 4q10 4 8 14q-2 10-14 8l-30-6q-14-3-12-18z" fill="${c}"/><rect x="24" y="18" width="28" height="14" rx="4" fill="${r}"/><path d="M24 52h28" stroke="${r}" stroke-width="6"/><path d="M60 92q8 4 6 12" stroke="${mix(c,'#000000',.25)}" stroke-width="5" fill="none"/></g>`;
+const tuileChauss=()=>'data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 125" width="450" height="125">${[0,1,2,3,4,5].map(j=>chaussette(j*75,CHAUSS[j],'#fff6e3')).join('')}</svg>`);
+SCENES.linge={
+ X0:70,W:940,Y0:470,H:520,GY:1180,AX:460,AW:740,BX:930,BY:1118,
+ init(){this.A=rythme();
+  O.forEach((o,i)=>{const a=i?this.A[i]:1,t0=i?T[i]:0,tf=t0+.45*a;
+   evObj(i,i?t0+.35*a:0,{cs:i?tf:-9,dur:1.0*a,de:i?O[i-1].pattes:0,...(o.aff||{n:o.pattes,suf:' CHAUSSETTES'})});
+   if(i){SONS.push({t:t0,s:'whoosh',d:.4*a/V,fc:700,g:.3},{t:t0+.3*a,s:'plop',big:.1+.5*i/N,g:.5},{t:tf+1.0*a,s:'note',k:i,g:.26});
+    const nb=Math.min(14,o.pattes-O[i-1].pattes);for(let j=0;j<nb;j++)SONS.push({t:tf+1.0*a*j/nb,s:'zip',d:.07,f:600+(j%3)*90,g:.12},{t:tf+1.0*a*j/nb+.05,s:'toc',f:1300,g:.12});}
+   else SONS.push({t:.02,s:'plop',big:.1,g:.5},{t:.6,s:'note',k:0,g:.26});});
+ },
+ nb(t){   // nombre de chaussettes étendues
+  if(RB)return llog(O[N-1].pattes,O[0].pattes,RE);
+  const {k,a,v}=sortie(t,this.A);if(!k)return O[0].pattes;
+  const q=cl((v-.45*a)/(1.0*a));return lerp(O[k-1].pattes,O[k].pattes,q);},
+ grille(c){const W=this.W,H=this.H;let s=Math.min(150,.9*Math.sqrt(W*H/(.9375*Math.max(1,c))));
+  for(let g=0;g<60;g++){const co=Math.floor(W/(.75*s)),ro=Math.floor(H/(1.25*s));if(co*ro>=c)break;s*=.97;}
+  return {s,sp:.75*s,rh:1.25*s,co:Math.floor(W/(.75*s))};},
+ build(L){let h=`<div class="clay" style="left:-40px;top:${this.GY}px;width:1160px;height:40px;border-radius:20px;background:#7a9a4a"></div>`;
+  h+=`<div class="clay" style="left:40px;top:${this.Y0-60}px;width:22px;height:${this.GY-this.Y0+60}px;border-radius:11px;background:#8a5a33"></div><div class="clay" style="left:1018px;top:${this.Y0-60}px;width:22px;height:${this.GY-this.Y0+60}px;border-radius:11px;background:#8a5a33"></div>`;
+  for(let r=0;r<30;r++)h+=`<div class="lcd" style="display:none;height:4px;border-radius:2px;background:#fff6e3"></div>`;
+  h+=`<div id="lrows" class="clay" style="width:1080px;height:1920px">`;for(let r=0;r<30;r++)h+=`<div class="lrw" style="position:absolute;display:none;background-image:url('${tuileChauss()}');background-repeat:repeat-x"></div>`;h+=`</div>`;
+  O.forEach((o,i)=>h+=`<div id="la${i}" class="clay" style="display:none;width:${this.AW}px;height:${this.AW/2}px">${svgf('0 0 400 200',LINGE_F[o.fig])}</div>`);
+  h+=`<div class="clay" style="left:${this.BX-80}px;top:${this.BY-30}px;width:160px;height:92px">${svgf('0 0 160 92','<path d="M6 10h148l-14 82H20z" fill="#d9a35c"/><path d="M14 30h132M18 52h124M22 74h116" stroke="#b07a3a" stroke-width="6"/>'+[0,1,2].map(j=>`<g transform="translate(${18+j*40} -26) rotate(${-20+j*20} 30 40) scale(.6)">${chaussette(0,CHAUSS[j+2],'#fff6e3')}</g>`).join(''))}</div>`;
+  for(let j=0;j<5;j++)h+=`<div class="lfl clay" style="display:none;width:80px;height:125px">${svgf('0 0 80 125',chaussette(0,CHAUSS[j],'#fff6e3'))}</div>`;
+  h+=legendeDiv('llg',418);
+  L.innerHTML=h;const g=id=>document.getElementById(id);
+  Object.assign(this,{rw:[...L.querySelectorAll('.lrw')],cd:[...L.querySelectorAll('.lcd')],a:O.map((_,i)=>g('la'+i)),fl:[...L.querySelectorAll('.lfl')]});g('llg').textContent=D.legende||'';},
+ draw(t,bi){
+  const GY=this.GY,AW=this.AW,AX=this.AX;this.a.forEach(e=>e.style.display='none');
+  const put=(i,x,y,sx,sy)=>{const e=this.a[i];e.style.display='block';e.style.transformOrigin='50% 100%';
+   e.style.transform=`translate(${x-AW/2+jit(bi,i*7+1,1.2)}px,${y-AW/2+jit(bi,i*7+2,1.2)}px) rotate(${jit(bi,i*7+3,.5)}deg) scale(${sx},${sy})`;};
+  let fill=false;
+  if(RB){const q1=eio(cl(RP/.4)),q2=cl((RP-.4)/.38);if(q1<1)put(N-1,AX-1200*q1,GY,1,1);if(q2>0)put(0,AX,lerp(-300,GY,q2*q2),1,1);}
+  else{const {k,a,v}=sortie(t,this.A);
+   if(!k){const [sx,sy]=ecrase(t);put(0,AX,GY,sx,sy);}
+   else{const o=eo(cl(v/(.3*a)));if(o<1)put(k-1,AX-1200*o,GY,1,1);
+    const q=cl(v/(.3*a));let y=GY,sx=1,sy=1;if(v<.3*a)y=lerp(-300,GY,q*q);else[sx,sy]=ecrase(v-.3*a);put(k,AX,y,sx,sy);
+    fill=v>.45*a&&v<1.45*a&&t<finT();}}
+  // chaussettes : rangées de gauche à droite, de haut en bas ; la grille rétrécit quand il en faut plus
+  const c=Math.max(1,Math.round(this.nb(t))),G=this.grille(c),rows=Math.ceil(c/G.co),off=this.X0+(this.W-G.co*G.sp)/2;
+  this.rw.forEach((e,r)=>{const k=Math.min(G.co,c-r*G.co);if(r>=rows||k<=0){e.style.display='none';return;}
+   const w=rows==1?k*G.sp:k*G.sp,x0=rows==1?this.X0+(this.W-k*G.sp)/2:off;
+   e.style.display='block';e.style.width=w+'px';e.style.height=G.rh+'px';e.style.backgroundSize=`${6*G.sp}px ${G.rh}px`;
+   e.style.transform=`translate(${x0+jit(bi,200+r,.8)}px,${this.Y0+r*G.rh+jit(bi,240+r,.8)}px)`;});
+  this.cd.forEach((e,r)=>{if(r>=rows){e.style.display='none';return;}const th=Math.max(2,G.s*.05);
+   e.style.display='block';e.style.width='980px';e.style.height=th+'px';e.style.transform=`translate(50px,${this.Y0+r*G.rh+G.s*.1-th/2}px)`;});
+  // chaussettes qui volent du panier vers la prochaine place libre
+  const last=c-1,lr=Math.floor(last/G.co),lc=last%G.co,lx0=rows==1?this.X0+(this.W-c*G.sp)/2:off,tx=lx0+(lc+.5)*G.sp,ty=this.Y0+lr*G.rh+G.rh*.4;
+  this.fl.forEach((e,j)=>{if(!fill){e.style.display='none';return;}const ph=((t*2.6+j/5)%1+1)%1,x=lerp(this.BX,tx,ph),y=lerp(this.BY-40,ty,ph)-220*Math.sin(Math.PI*ph),sc=lerp(.9,Math.max(.25,G.s/125),ph);
+   e.style.display='block';e.style.opacity=1-Math.pow(ph,6);e.style.transform=`translate(${x-40}px,${y-62}px) rotate(${ph*400+j*50}deg) scale(${sc})`;});
+  tag('');fleche(0);
+ }
+};
+// ================= scène 18 : thermo (un thermomètre géant qui grimpe, son échelle se resserre à chaque palier) =================
+const boule=(o,x,y,r,k)=>svgObj(o,k).replace('width="100%" height="100%"',`x="${x-r}" y="${y-r}" width="${2*r}" height="${2*r}"`);
+const flocon=(x,y,r,c)=>{let s='';for(let j=0;j<6;j++){const a=j*Math.PI/3,cx=Math.cos(a),sy=Math.sin(a);s+=`<path d="M${x} ${y}l${(r*cx).toFixed(1)} ${(r*sy).toFixed(1)}M${(x+r*.6*cx).toFixed(1)} ${(y+r*.6*sy).toFixed(1)}l${(r*.3*Math.cos(a+.8)).toFixed(1)} ${(r*.3*Math.sin(a+.8)).toFixed(1)}M${(x+r*.6*cx).toFixed(1)} ${(y+r*.6*sy).toFixed(1)}l${(r*.3*Math.cos(a-.8)).toFixed(1)} ${(r*.3*Math.sin(a-.8)).toFixed(1)}"/>`;}
+ return `<g stroke="${c}" stroke-width="${Math.max(2,r*.16).toFixed(1)}" stroke-linecap="round" fill="none">${s}</g>`;};
+const THERMO_F={   // cadre 0 0 200 200, posé en bas
+ vostok:`<path d="M0 200V150q50-24 100-10t100-6V200z" fill="#f4f8fc"/><rect x="34" y="96" width="96" height="56" rx="8" fill="#e0453a"/><rect x="30" y="88" width="104" height="14" rx="7" fill="#fff6e3"/><rect x="48" y="112" width="22" height="18" rx="3" fill="#9fdcff"/><rect x="88" y="116" width="24" height="36" rx="3" fill="#8a2a20"/><path d="M156 150V56" stroke="#8a8f99" stroke-width="6"/><path d="M156 58h36l-9 11 9 11h-36z" fill="#2f80da"/>${flocon(30,40,14,'#ffffff')}${flocon(110,24,10,'#ffffff')}${flocon(180,110,9,'#ffffff')}`,
+ congelateur:`<rect x="36" y="14" width="128" height="186" rx="14" fill="#e6edf3"/><rect x="46" y="26" width="108" height="164" rx="8" fill="#9fd8f5"/><rect x="46" y="96" width="108" height="8" fill="#e6edf3"/><rect x="58" y="62" width="30" height="30" rx="6" fill="#dff4ff"/><rect x="96" y="70" width="44" height="22" rx="5" fill="#ff9a8a"/><rect x="60" y="150" width="34" height="36" rx="6" fill="#dff4ff"/><rect x="102" y="140" width="40" height="46" rx="6" fill="#ffe08a"/><path d="M50 30q20 10 40 0t40 2t22-2" stroke="#ffffff" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="164" y="20" width="16" height="176" rx="6" fill="#cfd8e0"/>`,
+ glacon:`<ellipse cx="100" cy="190" rx="84" ry="12" fill="#7fc8ef" opacity=".8"/><rect x="40" y="70" width="120" height="118" rx="26" fill="#bfe9ff"/><rect x="40" y="70" width="120" height="118" rx="26" fill="none" stroke="#e8f8ff" stroke-width="6"/><path d="M60 96q10-12 30-12" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M150 150q10 20 2 34" stroke="#9fdcff" stroke-width="8" fill="none" stroke-linecap="round"/>`,
+ corps:`<g transform="translate(-30,18) scale(1.3)">${ANI.humain}</g>`,
+ casserole:`<rect x="20" y="170" width="160" height="30" rx="8" fill="#3b3550"/><path d="M60 168h80M70 176h60" stroke="#ff6a2b" stroke-width="6" stroke-linecap="round"/><path d="M34 90h132v62q0 18-18 18H52q-18 0-18-18z" fill="#cfd4dc"/><rect x="28" y="84" width="144" height="12" rx="6" fill="#e9edf3"/><path d="M172 98h22" stroke="#3b3550" stroke-width="10" stroke-linecap="round"/><g fill="#9fdcff"><circle cx="70" cy="88" r="8"/><circle cx="104" cy="84" r="10"/><circle cx="136" cy="88" r="7"/></g><path d="M70 66q-12-16 0-30t0-30M104 66q-12-16 0-30t0-30M138 66q-12-16 0-30" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round" opacity=".85"/>`,
+ venus:`<defs><clipPath id="qvc"><circle cx="100" cy="106" r="90"/></clipPath></defs><circle cx="100" cy="106" r="90" fill="#d99a52"/><g clip-path="url(#qvc)" fill="none" stroke-linecap="round"><path d="M0 60q50-24 100 0t100-4" stroke="#f2cf8e" stroke-width="18"/><path d="M0 100q60 30 120-2t90 10" stroke="#efc27a" stroke-width="22"/><path d="M0 146q50-20 100 6t110-6" stroke="#f2cf8e" stroke-width="16"/><path d="M20 180q60-12 160 0" stroke="#c4843f" stroke-width="12"/></g><circle cx="70" cy="70" r="22" fill="#fff" opacity=".18"/>`,
+ volcan:`<path d="M4 200L78 70h44l74 130z" fill="#6e4a36"/><path d="M30 200L86 100h12z" fill="#5a3a2a"/><path d="M78 70h44l-6 12q-16 12-32 0z" fill="#ff5a1f"/><path d="M100 78q-6 40-26 70q-12 22-20 52h30q6-40 20-68q12-26 10-54z" fill="#ff7a1f"/><path d="M100 80q-2 30-12 52" stroke="#ffd24a" stroke-width="8" fill="none" stroke-linecap="round"/><g fill="#ff9a3d"><circle cx="86" cy="40" r="9"/><circle cx="116" cy="30" r="7"/><circle cx="100" cy="14" r="6"/></g>`,
+ soleil:`${[...Array(12)].map((_,j)=>{const a=j*Math.PI/6;return `<path d="M${(100+70*Math.cos(a-.2)).toFixed(1)} ${(106+70*Math.sin(a-.2)).toFixed(1)}L${(100+98*Math.cos(a)).toFixed(1)} ${(106+98*Math.sin(a)).toFixed(1)}L${(100+70*Math.cos(a+.2)).toFixed(1)} ${(106+70*Math.sin(a+.2)).toFixed(1)}z" fill="#ff9a1e"/>`;}).join('')}${boule({couleur:'#ffc23d'},100,106,76,62)}`,
+ eclair:`<g fill="#8a93a6"><circle cx="58" cy="56" r="34"/><circle cx="102" cy="40" r="42"/><circle cx="146" cy="58" r="32"/><rect x="26" y="52" width="150" height="42" rx="21"/></g><path d="M108 88l-34 62h30l-18 50 56-74h-32l22-38z" fill="#ffe14a"/>`,
+ coeursoleil:`<circle cx="100" cy="104" r="94" fill="#ff8a1e"/><path d="M100 104L100 10A94 94 0 0 1 194 104z" fill="#ffb11f"/><path d="M100 104L100 44A60 60 0 0 1 160 104z" fill="#ffd24a"/><path d="M100 104L100 74A30 30 0 0 1 130 104z" fill="#fff3c9"/><g fill="#d9661a"><circle cx="58" cy="70" r="10"/><circle cx="70" cy="150" r="13"/><circle cx="138" cy="160" r="9"/></g>`,
+ flocon:`${flocon(100,104,88,'#e8f8ff')}<circle cx="100" cy="104" r="14" fill="#e8f8ff"/>`,
+};
+SCENES.thermo={
+ CB:1030,TT:500,XT:150,OX:690,GY:1180,OW:470,
+ p(T){const sl=x=>Math.sign(x)*Math.log10(1+Math.abs(x)/10);return sl(T)-sl(-100);},
+ init(){this.A=rythme();
+  O.forEach((o,i)=>{const a=i?this.A[i]:1,t0=i?T[i]:0,tm=t0+.35*a;
+   evObj(i,i?t0+.3*a:0,{cs:i?tm:-9,dur:1.0*a,...(o.aff||{n:o.temp,suf:' °C'})});
+   if(i)SONS.push({t:t0,s:'whoosh',d:.4*a/V,fc:700,g:.3},{t:t0+.3*a,s:'plop',big:.15+.5*i/N,g:.5},{t:tm,s:'zip',d:1.0*a/V,f:200+40*i,g:.35},{t:tm,s:'compteur',n:14,f:900,pas:1.0*a/14,g:.12},{t:tm+1.05*a,s:'note',k:i,g:.26});
+   else SONS.push({t:.02,s:'plop',big:.1,g:.5},{t:.1,s:'bulles',n:6,g:.15},{t:.6,s:'note',k:0,g:.26});});
+  const f=finT();if(f<1e9)SONS.push({t:f+.05,s:'whoosh',d:.9/V,fc:500,g:.35},{t:f+.35,s:'plop',big:.2,g:.45});
+ },
+ niv(t){   // niveau du liquide (en unités p)
+  const P=O.map(o=>this.p(o.temp)),pf=this.p(D.finTemp??-273.15),f=finT();
+  if(RB){const st=f<1e9?pf:P[N-1];return lerp(st,P[0],RE);}
+  if(t>=f)return lerp(P[N-1],pf,eio(cl((t-f)/1.0)));
+  const {k,a,v}=sortie(t,this.A);if(!k)return P[0];return lerp(P[k-1],P[k],eio(cl((v-.35*a)/(1.0*a))));},
+ frac(t){return cl((this.niv(t)+.5)/7.7);},
+ build(L){const XT=this.XT,TT=this.TT,CB=this.CB;
+  let h=`<div class="clay" style="left:-40px;top:${this.GY}px;width:1160px;height:40px;border-radius:20px;background:#6d6a8a"></div>`;
+  h+=`<div class="clay" style="left:${XT-62}px;top:${TT-50}px;width:124px;height:${CB-TT+190}px"><div style="position:absolute;left:12px;top:0;width:100px;height:${CB-TT+120}px;border-radius:50px;background:#c9d6e3"></div><div style="position:absolute;left:0;top:${CB-TT+56}px;width:124px;height:124px;border-radius:50%;background:#c9d6e3"></div><div style="position:absolute;left:36px;top:30px;width:52px;height:${CB-TT+40}px;border-radius:26px;background:#eef3f8"></div></div>`;
+  h+=`<div id="qbu" class="clay" style="left:${XT-46}px;top:${CB+22}px;width:92px;height:92px;border-radius:50%"></div><div id="qco" class="clay" style="left:${XT-24}px;width:48px;border-radius:24px 24px 0 0"></div>`;
+  for(let i=0;i<N;i++)h+=`<div class="qtk" style="display:none;left:${XT+56}px;width:40px;height:9px;border-radius:5px;background:#fff6e3"></div><div class="qtl ln" style="display:none;left:${XT+104}px;font-size:46px;color:#fff6e3;text-shadow:0 3px 0 rgba(0,0,0,.35)"></div>`;
+  O.forEach((o,i)=>h+=`<div id="qo${i}" class="clay" style="display:none;width:${this.OW}px;height:${this.OW}px">${svgf('0 0 200 200',THERMO_F[o.fig])}</div>`);
+  if(D.finFig)h+=`<div id="qof" class="clay" style="display:none;width:${this.OW}px;height:${this.OW}px">${svgf('0 0 200 200',THERMO_F[D.finFig])}</div>`;
+  h+=legendeDiv('qlg',418);
+  L.innerHTML=h;const g=id=>document.getElementById(id);
+  Object.assign(this,{bu:g('qbu'),co:g('qco'),tk:[...L.querySelectorAll('.qtk')],tl:[...L.querySelectorAll('.qtl')],o:O.map((_,i)=>g('qo'+i)),of:g('qof')});g('qlg').textContent=D.legende||'';},
+ couleur(P){const S=[[-.5,'#bfe9ff'],[.6,'#7fd4ff'],[1.04,'#5fb0ff'],[1.7,'#ff9a3d'],[3.1,'#ff3b2f'],[4.5,'#ffd24a'],[7.3,'#ffe680']];
+  for(let j=1;j<S.length;j++)if(P<=S[j][0])return mix(S[j-1][1],S[j][1],cl((P-S[j-1][0])/(S[j][0]-S[j-1][0])));return S.at(-1)[1];},
+ draw(t,bi){
+  const OX=this.OX,GY=this.GY,OW=this.OW,P=this.niv(t),top=Math.max(1.5,P/.8),yp=p=>this.CB-Math.max(0,p)/top*(this.CB-this.TT),f=finT();
+  // liquide : tremble un peu, déborde de couleur selon la chaleur
+  const col=this.couleur(P),yl=yp(P)+(P>0?2*Math.sin(t*9):0);
+  this.co.style.background=col;this.co.style.height=Math.max(0,this.CB+40-yl)+'px';this.co.style.transform=`translate(0,${yl}px)`;
+  this.bu.style.background=col;this.bu.style.transform=P<0?`scale(${1-.25*cl(-P/.5)})`:'';
+  // graduations : chaque palier atteint laisse un trait ; l'échelle se resserre, les anciens libellés trop proches s'effacent
+  const k=RB?-1:t>=f?N-1:etape(t),vis=[];
+  for(let i=N-1;i>=0;i--){const ok=RB?i==0&&RP>.5:i<k||(i==k&&P>=this.p(O[i].temp)-.02)||(t>=f&&i<=k);const y=yp(this.p(O[i].temp));
+   const tk=this.tk[i],tl=this.tl[i];if(!ok||y<this.TT-6){tk.style.display=tl.style.display='none';continue;}
+   tk.style.display='block';tk.style.transform=`translate(0,${y-4.5}px)`;
+   const libre=vis.every(v=>Math.abs(v-y)>56);tl.style.display=libre?'block':'none';if(libre){vis.push(y);tl.textContent=O[i].grad;tl.style.transform=`translate(${jit(bi,300+i,1)}px,${y-28+jit(bi,330+i,1)}px)`;}}
+  // objets : le précédent file à droite, le nouveau tombe et rebondit
+  this.o.forEach(e=>e.style.display='none');if(this.of)this.of.style.display='none';
+  const put=(e,x,y,sx,sy,j)=>{e.style.display='block';e.style.transformOrigin='50% 100%';e.style.transform=`translate(${x-OW/2+jit(bi,j*7+1,1.2)}px,${y-OW+jit(bi,j*7+2,1.2)}px) rotate(${jit(bi,j*7+3,.5)}deg) scale(${sx},${sy})`;};
+  const chute=(e,v,j)=>{const q=cl(v/.3);let y=GY,sx=1,sy=1;if(v<.3)y=lerp(-500,GY,q*q);else[sx,sy]=ecrase(v-.3);put(e,OX,y,sx,sy,j);};
+  if(RB){const q1=eio(cl(RP/.4)),q2=cl((RP-.4)/.38),last=this.of||this.o[N-1];if(q1<1)put(last,OX+900*q1,GY,1,1,40);if(q2>0)put(this.o[0],OX,lerp(-500,GY,q2*q2),1,1,0);}
+  else if(t>=f&&this.of){const v=t-f,o=eo(cl(v/.3));if(o<1)put(this.o[N-1],OX+900*o,GY,1,1,N-1);chute(this.of,v,40);}
+  else{const {k,a,v}=sortie(t,this.A);if(!k){const [sx,sy]=ecrase(t);put(this.o[0],OX,GY,sx,sy,0);}
+   else{const o=eo(cl(v/(.3*a)));if(o<1)put(this.o[k-1],OX+900*o,GY,1,1,k-1);chute(this.o[k],v/a,k);}}
+  tag('');fleche(0);
+ }
+};
+// ================= scène 19 : pile (des girafes s'empilent jusqu'au sommet de chaque géant) =================
+const GIRAFE_T=`<path d="M70 150v10M50 150v10" stroke="#c98a34" stroke-width="7"/><rect x="28" y="96" width="9" height="62" rx="4" fill="#d99a3c"/><rect x="70" y="96" width="9" height="62" rx="4" fill="#d99a3c"/><ellipse cx="54" cy="96" rx="34" ry="17" fill="#f2bf5c"/><rect x="40" y="100" width="9" height="58" rx="4" fill="#f2bf5c"/><rect x="82" y="100" width="9" height="58" rx="4" fill="#f2bf5c"/><path d="M76 90L96 22" stroke="#f2bf5c" stroke-width="17" stroke-linecap="round"/><g fill="#b8732c"><ellipse cx="44" cy="92" rx="7" ry="5"/><ellipse cx="62" cy="88" rx="6" ry="5"/><ellipse cx="54" cy="102" rx="6" ry="4"/><ellipse cx="88" cy="56" rx="4" ry="6"/><ellipse cx="93" cy="36" rx="3.5" ry="5"/></g><ellipse cx="104" cy="14" rx="15" ry="9" fill="#f2bf5c"/><path d="M96 6l-3-6M102 5l1-6" stroke="#b8732c" stroke-width="4" stroke-linecap="round"/><circle cx="102" cy="11" r="2.6" fill="${NOIR}"/>`;
+const tuileGirafe=()=>'data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160">${GIRAFE_T}</svg>`);
+const PILE_F={   // vb : [largeur, hauteur] du dessin, posé en bas ; la largeur suit les proportions réelles
+ karri:{vb:[110,200],s:`<path d="M50 200V70h10v130z" fill="#d9c7a8"/><path d="M55 120l-22-30M55 100l20-26M55 150l18-18" stroke="#c9b28c" stroke-width="5" stroke-linecap="round"/><g fill="#5f9e4a"><ellipse cx="34" cy="80" rx="26" ry="20"/><ellipse cx="78" cy="70" rx="28" ry="22"/><ellipse cx="56" cy="40" rx="32" ry="26"/><ellipse cx="40" cy="22" rx="18" ry="14"/><ellipse cx="72" cy="20" rx="20" ry="16"/></g><g fill="#7fb85f"><ellipse cx="50" cy="34" rx="12" ry="8"/><ellipse cx="80" cy="62" rx="10" ry="7"/></g>`},
+ liberte:{vb:[70,200],s:`<path d="M8 200l6-56h42l6 56z" fill="#b7a58a"/><rect x="12" y="104" width="46" height="44" rx="3" fill="#cdbb9c"/><rect x="16" y="98" width="38" height="10" rx="2" fill="#b7a58a"/><path d="M24 100q-4-34 4-52h14q8 18 4 52z" fill="#5fb59a"/><path d="M40 50q6-16 10-38" stroke="#5fb59a" stroke-width="7" stroke-linecap="round" fill="none"/><rect x="46" y="6" width="9" height="9" rx="2" fill="#4a9a80"/><path d="M50 6q-7-8 0-16q7 8 0 16z" fill="#ffb11f"/><circle cx="35" cy="40" r="8" fill="#5fb59a"/><path d="M27 34l-5-6M31 31l-2-7M35 30v-7M39 31l2-7M43 34l5-6" stroke="#5fb59a" stroke-width="3" stroke-linecap="round"/><rect x="18" y="60" width="8" height="12" rx="2" fill="#4a9a80"/>`},
+ hyperion:{vb:[50,200],s:`<rect x="21" y="40" width="8" height="160" fill="#8a4a2a"/><g fill="#2f6b3a"><path d="M25 0L8 40h34z"/><path d="M25 24L4 74h42z"/><path d="M25 56L2 110h46z"/><path d="M25 90L4 140h42z"/></g><g fill="#3f8a4a"><path d="M25 8L16 30h18z"/><path d="M25 66L14 92h22z"/></g>`},
+ kheops:{vb:[334,200],s:`<path d="M0 200L167 0l167 200z" fill="#e2c57f"/><path d="M167 0l167 200H190z" fill="#cfae63"/><g stroke="#c4a058" stroke-width="3">${[40,80,120,160].map(y=>`<path d="M${167-y*.835} ${y}H${167+y*.835}"/>`).join('')}</g>`},
+ eiffel:{vb:[96,194],x0:52,y0:6,s:REP.eiffel},
+ burj:{vb:[44,200],s:`<path d="M22 0v40" stroke="#9aa8ba" stroke-width="3"/><path d="M18 40h8l3 40h4l3 40h4l2 80H4l2-80h4l3-40h4z" fill="#c9d4e2"/><path d="M22 40v160" stroke="#a9b6c8" stroke-width="3"/><g fill="#7fb6e0" opacity=".6"><rect x="16" y="90" width="12" height="6"/><rect x="12" y="140" width="20" height="6"/><rect x="10" y="176" width="24" height="6"/></g>`},
+ everest:{vb:[230,200],s:`<path d="M0 200L60 110l20 16L130 0l42 70 16-12 42 142z" fill="#7a7f8e"/><path d="M130 0l42 70-16-4-14 14-14-22-14 18-12-8z" fill="#ffffff"/><path d="M60 110l20 16-10 4-10-8-10 6z" fill="#ffffff"/><path d="M130 0l42 70 16-12 42 142H140z" fill="#5f6474" opacity=".45"/>`},
+};
+SCENES.pile={
+ G:5.5,GY:1180,LX:650,HMAX:700,WMAX:760,
+ init(){this.A=rythme();this.G=D.girafe||5.5;
+  this.S=O.map(o=>{if(!o.fig)return 100;const f=PILE_F[o.fig],r=f.vb[0]/f.vb[1];return Math.min(100,this.HMAX/o.h,this.WMAX/(o.h*r));});
+  O.forEach((o,i)=>{const a=i?this.A[i]:1,t0=i?T[i]:0,tf=t0+.55*a;
+   evObj(i,i?t0+.4*a:0,{cs:i?tf:-9,dur:1.0*a,de:i?O[i-1].n:0,...(o.aff||{n:o.n,suf:' GIRAFES'})});
+   if(i){SONS.push({t:t0,s:'whoosh',d:.4*a/V,fc:500,g:.3},{t:t0+.47*a,s:'plop',big:.2+.6*i/N,g:.55},{t:tf+1.05*a,s:'note',k:i,g:.26});
+    const nb=Math.min(14,o.n-O[i-1].n);for(let j=0;j<nb;j++)SONS.push({t:tf+1.0*a*(j+1)/(nb+1),s:'plop',big:.05,g:.18});
+    SONS.push({t:tf,s:'compteur',n:16,f:850,pas:1.0*a/16,g:.1});}
+   else SONS.push({t:.02,s:'plop',big:.2,g:.5},{t:.6,s:'note',k:0,g:.26});});
+ },
+ etat(t){   // s : pixels par mètre ; c : girafes empilées ; ax : position de la pile ; la/lo : repère courant / précédent et leur visibilité
+  if(RB)return {s:llog(this.S[N-1],this.S[0],RE),c:llog(O[N-1].n,1,RE),ax:lerp(210,540,eio(cl((RP-.3)/.5))),cur:N-1,cv:1-eio(cl(RP/.35)),dy:0,prev:-1,pv:0};
+  const {k,a,v}=sortie(t,this.A);if(!k)return {s:this.S[0],c:1,ax:540,cur:0,cv:0,dy:0,prev:-1,pv:0};
+  const z=eio(cl(v/(.4*a))),q=cl((v-.3*a)/(.17*a));
+  return {s:llog(this.S[k-1],this.S[k],z),c:lerp(O[k-1].n,O[k].n,cl((v-.55*a)/(1.0*a))),ax:k==1?lerp(540,210,z):210,cur:k,cv:v<.3*a?0:1,dy:v<.47*a?-(1-q*q)*1400:0,sq:v-.47*a,prev:k-1,pv:1-cl((v-.2*a)/(.2*a))};},
+ build(L){let h=`<div class="clay" style="left:-40px;top:${this.GY}px;width:1160px;height:44px;border-radius:22px;background:#c9a86a"></div>`;
+  O.forEach((o,i)=>{if(!o.fig)return;const f=PILE_F[o.fig];h+=`<div id="pl${i}" class="clay" style="display:none">${svgf(`${f.x0||0} ${f.y0||0} ${f.vb[0]} ${f.vb[1]}`,f.s)}</div>`;});
+  h+=`<div id="pst" style="filter:url(#f-clay) drop-shadow(0 0 7px #fff3c9) drop-shadow(4px 8px 6px rgba(8,8,40,.5));background-image:url('${tuileGirafe()}');background-repeat:repeat-y;background-position:left bottom"></div><div id="pfa" class="clay" style="display:none;background-image:url('${tuileGirafe()}');background-size:100% 100%"></div>`;
+  h+=legendeDiv('plg',418);
+  L.innerHTML=h;const g=id=>document.getElementById(id);Object.assign(this,{l:O.map((_,i)=>g('pl'+i)),st:g('pst'),fa:g('pfa'),lg:g('plg')});},
+ draw(t,bi,ev){
+  const e=this.etat(t),GY=this.GY,gh=this.G*e.s,gw=gh*.75,n=Math.floor(e.c+1e-6),fr=e.c-n;
+  // les repères : le précédent rétrécit avec la caméra puis s'efface, le nouveau tombe et s'écrase
+  this.l.forEach(x=>{if(x)x.style.display='none';});
+  const montre=(i,op,dy,sq)=>{const el=this.l[i];if(!el||op<=.01)return;const f=PILE_F[O[i].fig],H=O[i].h*e.s,W=H*f.vb[0]/f.vb[1];let [sx,sy]=sq!=null&&sq>=0?ecrase(sq):[1,1];
+   el.style.display='block';el.style.opacity=op;el.style.width=W+'px';el.style.height=H+'px';el.style.transformOrigin='50% 100%';
+   el.style.transform=`translate(${this.LX-W/2+jit(bi,i*7+1,1.2)}px,${GY-H+dy+jit(bi,i*7+2,1.2)}px) rotate(${jit(bi,i*7+3,.4)}deg) scale(${sx},${sy})`;};
+  if(e.prev>=0)montre(e.prev,e.pv,0);
+  if(e.cur>0)montre(e.cur,e.cv,e.dy,e.sq);
+  // la pile de girafes
+  let [sx,sy]=!RB&&e.cur==0?ecrase(t):[1,1];
+  const st=this.st,w=Math.max(9,gw),hh=Math.max(1,n*gh);st.style.width=w+'px';st.style.height=hh+'px';
+  if(gh>=3){st.style.backgroundImage=`url('${tuileGirafe()}')`;st.style.backgroundSize=`${w}px ${gh}px`;st.style.backgroundColor='transparent';st.style.borderRadius='0';}
+  else{st.style.backgroundImage='none';st.style.backgroundColor='#f2bf5c';st.style.borderRadius='3px';}
+  st.style.transformOrigin='50% 100%';st.style.transform=`translate(${e.ax-w/2+jit(bi,401,1.2)}px,${GY-hh+jit(bi,402,1)}px) scale(${sx},${sy})`;
+  // une girafe qui tombe sur le haut de la pile pendant qu'elle grandit
+  const fa=this.fa;if(fr>.02&&gh>=8&&!RB){const y=GY-hh-gh-(1-fr)*(1-fr)*gh*3;fa.style.display='block';fa.style.width=gw+'px';fa.style.height=gh+'px';fa.style.transform=`translate(${e.ax-gw/2}px,${y}px)`;}else fa.style.display='none';
+  const ix=ev.fin?-1:ev.i;this.lg.textContent=ix>=0?(O[ix].precis||''):(D.finPrecis||'');
+  tag('');fleche(0);
+ }
+};
+// ================= scène 20 : coeur (un cœur bat au vrai rythme de chaque animal, le moniteur trace les battements) =================
+const COEUR_F={   // vb : cadre du dessin, posé en bas, regarde vers la droite
+ baleine:{vb:'0 0 200 130',s:`<g transform="translate(200 4) scale(-1 1)">${FIG.baleine()}</g>`},
+ elephant:{vb:'0 0 200 140',s:miroir(ANI.elephant).replace('translate(240 0)','translate(200 0)')},
+ humain:{vb:'40 0 130 140',s:ANI.humain},
+ chien:{vb:'0 0 200 140',s:miroir(ANI.chien).replace('translate(240 0)','translate(200 0)')},
+ chat:{vb:'0 0 200 140',s:`<path d="M30 92q-30-10-20-60" fill="none" stroke="#e08a3c" stroke-width="12" stroke-linecap="round"/><rect x="50" y="104" width="14" height="34" rx="6" fill="#c97a30"/><rect x="118" y="104" width="14" height="34" rx="6" fill="#c97a30"/><ellipse cx="96" cy="96" rx="62" ry="30" fill="#f0a04a"/><rect x="70" y="106" width="14" height="32" rx="6" fill="#f0a04a"/><rect x="134" y="106" width="14" height="32" rx="6" fill="#f0a04a"/><path d="M70 82h10M90 76h10M110 82h10" stroke="#c97a30" stroke-width="6" stroke-linecap="round"/><circle cx="156" cy="64" r="30" fill="#f0a04a"/><path d="M134 46l-2-30 20 16zM176 44l6-28-22 14z" fill="#f0a04a"/><path d="M138 40l0-14 9 9zM172 38l3-14-10 8z" fill="#ffc8b0"/><ellipse cx="148" cy="62" rx="4" ry="6" fill="${NOIR}"/><ellipse cx="168" cy="62" rx="4" ry="6" fill="${NOIR}"/><path d="M154 74l4 4 4-4z" fill="#e0606a"/><path d="M168 76h22M168 80l20 6M144 76h-22M144 80l-20 6" stroke="#fff6e3" stroke-width="2"/>`},
+ lapin:{vb:'0 0 200 140',s:`<circle cx="36" cy="100" r="14" fill="#ffffff"/><ellipse cx="88" cy="106" rx="54" ry="32" fill="#d8cfc4"/><ellipse cx="62" cy="128" rx="26" ry="10" fill="#c4b9ac"/><ellipse cx="130" cy="132" rx="12" ry="7" fill="#c4b9ac"/><circle cx="146" cy="84" r="28" fill="#e2d9ce"/><ellipse cx="128" cy="34" rx="10" ry="32" fill="#e2d9ce" transform="rotate(-14 128 34)"/><ellipse cx="128" cy="36" rx="5" ry="24" fill="#f4b6c4" transform="rotate(-14 128 36)"/><ellipse cx="150" cy="30" rx="10" ry="32" fill="#d8cfc4" transform="rotate(10 150 30)"/><circle cx="154" cy="80" r="5" fill="${NOIR}"/><circle cx="172" cy="92" r="5" fill="#f08aa0"/>`},
+ souris:{vb:'0 30 200 110',s:miroir(ANI.souris).replace('translate(240 0)','translate(200 0)')},
+ colibri:{vb:'0 0 240 200',s:TFIG.colibri.s.replace(/id="tw(\d)"/g,'class="ctw$1"')},
+ musaraigne:{vb:'0 20 200 120',s:`<path d="M44 118q-30 6-40-10" fill="none" stroke="#8a7a6e" stroke-width="7" stroke-linecap="round"/><ellipse cx="96" cy="108" rx="56" ry="28" fill="#8f8076"/><ellipse cx="98" cy="122" rx="44" ry="10" fill="#b8aca2"/><path d="M140 92q30 4 56 20q-30 8-52 6z" fill="#a39488"/><circle cx="194" cy="112" r="5" fill="#e0909a"/><circle cx="146" cy="96" r="4" fill="${NOIR}"/><circle cx="130" cy="86" r="8" fill="#b8aca2"/><ellipse cx="80" cy="134" rx="10" ry="5" fill="#e0b8b0"/><ellipse cx="124" cy="134" rx="10" ry="5" fill="#e0b8b0"/><path d="M180 108l14-8M180 112l16 0" stroke="#5a4e46" stroke-width="1.5"/>`},
+};
+const COEUR=`<path d="M100 186C40 140 6 104 6 64C6 32 30 10 58 10C78 10 92 22 100 38C108 22 122 10 142 10C170 10 194 32 194 64C194 104 160 140 100 186Z" fill="#e0303a"/><path d="M40 44q8-18 28-18" stroke="#ff8a8a" stroke-width="12" fill="none" stroke-linecap="round"/><ellipse cx="146" cy="58" rx="14" ry="9" fill="#ff6a6a" opacity=".6"/>`;
+SCENES.coeur={
+ X0:90,X1:990,Y0:500,MH:220,HX:270,HY:960,HS:320,AX:760,GY:1180,AW:540,AH:380,FW:4,
+ init(){this.A=rythme();
+  this.P=O.map(o=>60/o.bpm*V);   // intervalle entre deux battements, en temps de scène
+  O.forEach((o,i)=>{const a=i?this.A[i]:1,t0=i?T[i]:0;
+   evObj(i,i?t0+.35*a:0,{cs:i?t0+.4*a:-9,dur:.9*a,...(o.aff||{n:o.bpm})});
+   if(i)SONS.push({t:t0,s:'whoosh',d:.4*a/V,fc:700,g:.3},{t:t0+.3*a,s:'plop',big:.1+.5*i/N,g:.4},{t:t0+1.3*a,s:'note',k:i,g:.22});
+   else SONS.push({t:.6,s:'note',k:0,g:.22});});
+  for(const b of this.battements(0,TR-.05)){const r=O[b.i].bpm;
+   if(r<=160)SONS.push({t:b.t,s:'plop',big:.45,g:.42},{t:b.t+Math.min(.13,this.P[b.i]*.3),s:'plop',big:.3,g:.25});
+   else SONS.push({t:b.t,s:'toc',f:520+r*.2,g:r>600?.09:.16});}
+ },
+ battements(t0,t1){   // instants des battements (temps de scène) entre t0 et t1 ; chaque animal bat depuis son arrivée
+  const out=[];for(let i=0;i<N;i++){const a=i?T[i]:0,b=i<N-1?T[i+1]:1e9,P=this.P[i];
+   const j0=Math.max(0,Math.ceil((Math.max(a,t0)-a)/P-1e-9));for(let j=j0;;j++){const tb=a+j*P;if(tb>Math.min(b,t1)+1e-9||tb>=b)break;out.push({t:tb,i});}}
+  return out;},
+ build(L){let h=`<div class="clay" style="left:-40px;top:${this.GY}px;width:1160px;height:40px;border-radius:20px;background:#5a6a8a"></div>`;
+  let grid='';for(let x=40;x<960;x+=60)grid+=`<path d="M${x} 0V${this.MH+40}" stroke="#1f4a3a" stroke-width="2"/>`;for(let y=20;y<this.MH+40;y+=50)grid+=`<path d="M0 ${y}H960" stroke="#1f4a3a" stroke-width="2"/>`;
+  h+=`<div class="clay" style="left:${this.X0-30}px;top:${this.Y0-20}px;width:960px;height:${this.MH+40}px"><svg width="960" height="${this.MH+40}" style="display:block"><rect width="960" height="${this.MH+40}" rx="26" fill="#10241c"/>${grid}<rect width="960" height="${this.MH+40}" rx="26" fill="none" stroke="#3b3550" stroke-width="14"/></svg></div>`;
+  h+=`<svg id="ctr" width="1080" height="1920" style="position:absolute;left:0;top:0"><path id="ctp" fill="none" stroke="#6dff9a" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" style="filter:drop-shadow(0 0 8px #6dff9a)"/><circle id="ctd" r="11" fill="#d8ffe4" style="filter:drop-shadow(0 0 10px #6dff9a)"/></svg>`;
+  h+=`<div id="cpr" class="ln" style="left:${this.X0+4}px;top:${this.Y0-6}px;font-size:38px;color:#6dff9a;background:rgba(16,36,28,.92);padding:2px 14px;border-radius:14px"></div>`;
+  h+=`<div id="cco" class="clay" style="width:${this.HS}px;height:${this.HS*.95}px;filter:url(#f-clay) drop-shadow(0 0 30px #ff3b3b88) drop-shadow(8px 16px 10px rgba(8,8,40,.5))">${svgf('0 0 200 190',COEUR)}</div>`;
+  O.forEach((o,i)=>{const f=COEUR_F[o.fig];h+=`<div id="ca${i}" class="clay" style="display:none;width:${this.AW}px;height:${this.AH}px"><svg viewBox="${f.vb}" width="100%" height="100%" preserveAspectRatio="xMidYMax meet" style="overflow:visible;display:block">${f.s}</svg></div>`;});
+  h+=legendeDiv('clg',418);
+  L.innerHTML=h;const g=id=>document.getElementById(id);
+  Object.assign(this,{tp:g('ctp'),td:g('ctd'),pr:g('cpr'),co:g('cco'),a:O.map((_,i)=>g('ca'+i))});g('clg').textContent=D.legende||'';},
+ trace(t){   // chemin du moniteur à l'instant t (fenêtre de 6 s réelles)
+  const W=this.FW*V,X0=this.X0,X1=this.X1,yb=this.Y0+this.MH*.62,bs=this.battements(t-W,t),px=(X1-X0)/W;
+  let d=`M${X0} ${yb}`;
+  bs.forEach((b,j)=>{const x=X1-(t-b.t)*px,sp=this.P[b.i]*px,w=Math.min(36,sp*.85);
+   if(x-w*.5<X0)return;d+=`L${(x-w*.5).toFixed(1)} ${yb}L${(x-w*.28).toFixed(1)} ${yb+16}L${(x-w*.08).toFixed(1)} ${yb-118}L${(x+w*.16).toFixed(1)} ${yb+38}L${(x+w*.4).toFixed(1)} ${yb}`;});
+  return d+`L${X1} ${yb}`;},
+ draw(t,bi,ev){
+  const AX=this.AX,GY=this.GY,AW=this.AW,AH=this.AH;
+  // moniteur
+  let op=1,tt=t;if(RB){if(RP<.45){op=1-RP/.45;}else{tt=0;op=cl((RP-.45)/.4);}}
+  this.tp.setAttribute('d',this.trace(tt));this.tp.style.opacity=op;
+  const last=this.battements(tt-this.FW*V,tt).pop(),spx=last?this.P[last.i]*(this.X1-this.X0)/(this.FW*V):99;this.tp.setAttribute('stroke-width',Math.max(2.2,Math.min(7,spx*.3)).toFixed(1)),db=last?(tt-last.t)/V:9,yb=this.Y0+this.MH*.62;
+  this.td.setAttribute('cx',this.X1);this.td.setAttribute('cy',yb-(db<.05?60:0));this.td.style.opacity=op;
+  // cœur : se gonfle à chaque battement ; trop rapide pour l'œil, il vibre
+  const P=last?this.P[last.i]/V:9;let pu=Math.exp(-db/.09);if(P<.25)pu=.55+.35*(bi%2);if(RB)pu=lerp(.5,1,RE);
+  this.co.style.transformOrigin='50% 55%';this.co.style.transform=`translate(${this.HX-this.HS/2+jit(bi,501,1.2)}px,${this.HY-this.HS*.5+jit(bi,502,1.2)}px) scale(${1+.16*pu})`;
+  this.pr.textContent=RB?(O[0].precis||''):ev.fin?(D.finPrecis||''):(O[ev.i].precis||'');this.pr.style.opacity=op;
+  // animaux
+  this.a.forEach(e=>e.style.display='none');
+  const put=(i,x,y,sx,sy)=>{const e=this.a[i];e.style.display='block';e.style.transformOrigin='50% 100%';
+   e.style.transform=`translate(${x-AW/2+jit(bi,i*7+1,1.2)}px,${y-AH+jit(bi,i*7+2,1.2)}px) rotate(${jit(bi,i*7+3,.5)}deg) scale(${sx},${sy})`;
+   e.querySelectorAll('.ctw1').forEach(w=>w.style.display=bi%2?'none':'');e.querySelectorAll('.ctw2').forEach(w=>w.style.display=bi%2?'':'none');};
+  if(RB){const q1=eio(cl(RP/.4)),q2=cl((RP-.4)/.38);if(q1<1)put(N-1,AX+900*q1,GY,1,1);if(q2>0)put(0,AX,lerp(-400,GY,q2*q2),1,1);}
+  else{const {k,a,v}=sortie(t,this.A);
+   if(!k){const [sx,sy]=ecrase(t);put(0,AX,GY,sx,sy);}
+   else{const o=eo(cl(v/(.3*a)));if(o<1)put(k-1,AX+900*o,GY,1,1);const q=cl(v/(.3*a));let y=GY,sx=1,sy=1;if(v<.3*a)y=lerp(-400,GY,q*q);else[sx,sy]=ecrase(v-.3*a);put(k,AX,y,sx,sy);}}
+  tag('');fleche(0);
+ }
+};
+// ================= scène 21 : lumiere (un grain de lumière file d'un astre à l'autre, le temps du trajet s'affiche) =================
+const astre=(o,k)=>svgObj(o,k);
+const LUM_F={   // contenu d'un cadre carré
+ lune:()=>astre({look:'lune'},71),terre:()=>astre({look:'terre'},72),neptune:()=>astre({look:'neptune'},73),
+ soleil:()=>svgf('0 0 200 200',THERMO_F.soleil),
+ proxima:()=>astre({couleur:'#ff6a3d'},74),
+ centre:()=>astre({look:'galaxie',couleur:'#ffd27a'},75),
+ andromede:()=>astre({look:'galaxie',couleur:'#d99aff'},76),
+ voyager:()=>svgf('0 0 200 200',`<path d="M100 110L190 40M100 110l-70 80" stroke="#cfd4dc" stroke-width="6" stroke-linecap="round"/><rect x="84" y="100" width="40" height="34" rx="4" fill="#e3b93e"/><path d="M40 50a62 62 0 0 0 110 40z" fill="#eef1f5"/><path d="M40 50a62 62 0 0 0 110 40" fill="none" stroke="#b9c0cc" stroke-width="6"/><path d="M95 70l30 30" stroke="#8a8f99" stroke-width="5"/><circle cx="125" cy="100" r="7" fill="#8a8f99"/><circle cx="190" cy="40" r="10" fill="#8a8f99"/><circle cx="30" cy="190" r="9" fill="#8a8f99"/>`),
+};
+SCENES.lumiere={
+ TY:840,SX:230,DX:850,FS:330,
+ init(){this.A=rythme();
+  this.du=O.map((o,i)=>Math.min(1.2,.55+.1*Math.log10(1+o.sec)));   // durée du trajet à l'écran (fraction de a)
+  O.forEach((o,i)=>{const a=i?this.A[i]:1,t0=i?T[i]:0,tp=t0+(i?.45*a:0),d=this.du[i]*a;
+   evObj(i,i?t0+.4*a:0,{cs:tp,dur:d,...(o.aff||{})});
+   if(i)SONS.push({t:t0,s:'whoosh',d:.4*a/V,fc:900,g:.3},{t:t0+.3*a,s:'plop',big:.15,g:.4},{t:t0+.36*a,s:'plop',big:.3,g:.35});
+   SONS.push({t:tp,s:'zip',d:d/V,f:500+60*i,g:.4},{t:tp+d,s:'pip',g:.35},{t:tp+d+.05,s:'note',k:i,g:.26});});
+ },
+ etat(t){if(RB)return {k:-1};const {k,a,v}=sortie(t,this.A),tp=k?.45*a:0,d=this.du[k]*a;return {k,a,v,p:cl((v-tp)/d),arr:v-tp-d};},
+ build(L){let h='';for(let j=0;j<40;j++){const r=4+rnd(j,3)*8;h+=`<div class="star lst" style="width:${r}px;height:${r}px"></div>`;}
+  h+=`<div id="ltr" style="left:0;top:${this.TY-5}px;width:1080px;height:10px;background:repeating-linear-gradient(90deg,rgba(255,246,227,.55) 0 22px,rgba(0,0,0,0) 22px 44px)"></div>`;
+  O.forEach((o,i)=>{if(o.traverse)h+=`<div id="lg${i}" class="clay" style="display:none;width:900px;height:900px;filter:url(#f-clay) drop-shadow(0 0 40px #9fb4ff88)">${astre({look:'galaxie',couleur:'#9fb4ff'},77)}</div>`;
+   else h+=`<div id="ls${i}" class="clay" style="display:none;width:${this.FS}px;height:${this.FS}px">${LUM_F[o.de]()}</div><div id="ld${i}" class="clay" style="display:none;width:${this.FS}px;height:${this.FS}px">${LUM_F[o.a]()}</div>`;});
+  h+=`<div id="lqu" style="height:34px;border-radius:17px;background:linear-gradient(90deg,rgba(255,240,160,0),rgba(255,240,160,.85))"></div><div id="lph" style="width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#ffffff,#fff3a0 45%,#ffc23d);filter:url(#f-clay) drop-shadow(0 0 26px #ffe14a) drop-shadow(0 0 60px #ffe14a)"></div><div id="lfl" style="width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,250,200,.9),rgba(255,240,160,0) 70%)"></div>`;
+  h+=legendeDiv('llg2',418);
+  L.innerHTML=h;const g=id=>document.getElementById(id);
+  Object.assign(this,{s:O.map((_,i)=>g('ls'+i)),d:O.map((_,i)=>g('ld'+i)),gx:O.map((_,i)=>g('lg'+i)),ph:g('lph'),qu:g('lqu'),fl:g('lfl'),lg:g('llg2'),tr:g('ltr'),st:[...L.querySelectorAll('.lst')]});},
+ paire(i,dx,dy,op,sq,bi){   // place l'astre de départ et celui d'arrivée (ou la galaxie à traverser)
+  const FS=this.FS,o=O[i],[sx,sy]=sq>=0?ecrase(sq):[1,1];
+  if(o.traverse){const e=this.gx[i];e.style.display='block';e.style.opacity=op;e.style.transform=`translate(${90+dx}px,${this.TY-450+dy}px) rotate(${-20+jit(bi,600,.5)}deg) scale(${sx*.95},${sy*.62})`;return;}
+  [[this.s[i],this.SX-dx],[this.d[i],this.DX+dx]].forEach(([e,x],j)=>{e.style.display='block';e.style.opacity=op;e.style.transformOrigin='50% 50%';
+   e.style.transform=`translate(${x-FS/2+jit(bi,i*7+j,1.2)}px,${this.TY-FS/2+dy+jit(bi,i*7+3+j,1.2)}px) scale(${sx},${sy})`;});},
+ draw(t,bi,ev){
+  [...this.s,...this.d,...this.gx].forEach(e=>{if(e)e.style.display='none';});
+  const e=this.etat(t);let p=0,cur=0,arr=-1;
+  if(RB){const q1=eio(cl(RP/.4)),q2=cl((RP-.4)/.38);if(q1<1)this.paire(N-1,900*q1,0,1-q1,-1,bi);if(q2>0)this.paire(0,(1-q2)*(1-q2)*900,0,q2,-1,bi);cur=0;p=0;}
+  else{const {k,a,v}=e;cur=k;p=e.p;arr=e.arr;
+   if(!k)this.paire(0,0,0,1,t,bi);
+   else{const o=eo(cl(v/(.22*a)));if(o<1)this.paire(k-1,700*o,0,1-o,-1,bi);const q=cl(v/(.3*a));this.paire(k,(1-q)*(1-q)*700,0,Math.min(1,.3+q),v>=.3*a?v-.3*a:-1,bi);}}
+  // le grain de lumière et sa traînée
+  const o=O[cur],x0=o.traverse?110:this.SX+this.FS*.3,x1=o.traverse?970:this.DX-this.FS*.3,x=lerp(x0,x1,eio(p)),y=this.TY,show=RB?RP>.6:(e.k==0||e.v>.3*e.a);
+  this.ph.style.display=show?'block':'none';this.ph.style.transform=`translate(${x-32}px,${y-32}px) scale(${1+.08*Math.sin(t*30)})`;
+  const ql=p>0&&p<1&&!RB?Math.min(360,x-x0):0;this.qu.style.display=ql>4?'block':'none';this.qu.style.width=ql+'px';this.qu.style.transform=`translate(${x-ql}px,${y-17}px)`;
+  const fl=arr>=0&&arr<.5&&!RB?1-arr/.5:0;this.fl.style.display=fl>0?'block':'none';this.fl.style.opacity=fl;this.fl.style.transform=`translate(${x1-100}px,${y-100}px) scale(${1+arr*2})`;
+  this.tr.style.opacity=o.traverse&&!RB?0:1;
+  // étoiles du fond qui scintillent
+  this.st.forEach((s,j)=>{s.style.opacity=.45+.4*Math.sin(t*3+j*1.7)**2;s.style.transform=`translate(${20+rnd(j,1)*1040}px,${460+rnd(j,2)*700}px)`;});
+  const ix=ev.fin?-1:ev.i;this.lg.textContent=ix>=0?(O[ix].precis||''):(D.finPrecis||'');
+  tag('');fleche(0);
+ }
+};

@@ -1,0 +1,28 @@
+{
+ "id": "temperatures",
+ "scene": "thermo",
+ "fond": ["#2f5f9e", "#3d5e98", "#5a5a8e", "#7a557e", "#97506a", "#b04a55", "#c44a3a"],
+ "finFig": "flocon",
+ "finTemp": -273.15,
+ "objets": [
+  {"nom": "LE RECORD DE FROID", "fig": "vostok", "temp": -89.2, "grad": "−89 °C", "texte": "−89,2 °C (ANTARCTIQUE)", "titre": ["DE −89 °C À", "15 MILLIONS °C"]},
+  {"nom": "UN CONGÉLATEUR", "fig": "congelateur", "temp": -18, "grad": "−18 °C", "texte": "−18 °C", "dt": 1.6},
+  {"nom": "LA GLACE FOND", "fig": "glacon", "temp": 0, "grad": "0 °C", "texte": "0 °C", "dt": 1.7},
+  {"nom": "TON CORPS", "fig": "corps", "temp": 37, "grad": "37 °C", "aff": {"n": 37, "de": 0, "pre": "≈ ", "suf": " °C"}, "dt": 1.9},
+  {"nom": "L'EAU BOUT", "fig": "casserole", "temp": 100, "grad": "100 °C", "aff": {"n": 100, "de": 37, "suf": " °C"}, "dt": 2.8},
+  {"nom": "VÉNUS", "fig": "venus", "temp": 470, "grad": "470 °C", "aff": {"n": 470, "de": 100, "pre": "≈ ", "suf": " °C"}, "dt": 2.9, "titre": ["PLUS CHAUD", "QU'UN FOUR…"]},
+  {"nom": "LA LAVE", "fig": "volcan", "temp": 1170, "grad": "1 170 °C", "aff": {"n": 1170, "de": 470, "pre": "≈ ", "suf": " °C"}, "dt": 2.9},
+  {"nom": "LE SOLEIL (SURFACE)", "fig": "soleil", "temp": 5500, "grad": "5 500 °C", "aff": {"n": 5500, "de": 1170, "pre": "≈ ", "suf": " °C"}, "dt": 3.0},
+  {"nom": "UN ÉCLAIR", "fig": "eclair", "temp": 27760, "grad": "28 000 °C", "aff": {"n": 28000, "de": 5500, "pre": "≈ ", "suf": " °C"}, "dt": 3.1, "titre": ["5 FOIS PLUS", "QUE LE SOLEIL !"]},
+  {"nom": "LE CŒUR DU SOLEIL", "fig": "coeursoleil", "temp": 15000000, "grad": "15 MILLIONS °C", "aff": {"n": 15, "de": 0, "pre": "≈ ", "suf": " MILLIONS °C"}, "dt": 3.8, "titre": ["ET LE PLUS", "CHAUD DE TOUS…"]}
+ ],
+ "fin": [
+  {"dt": 4.5, "titre": ["ET LE PLUS FROID", "POSSIBLE ?"], "nom": "LE ZÉRO ABSOLU", "texte": "−273,15 °C"}
+ ],
+ "queue": 2.8,
+ "publication": {
+  "titre": "De −89 °C à 15 millions de degrés : ça chauffe !",
+  "description": "Record de froid −89,2 °C à Vostok en 1983 (OMM), Vénus ≈ 470 °C (Planetary Society), lave d'Hawaï ≈ 1 170 °C (USGS), surface du Soleil ≈ 5 500 °C et cœur ≈ 15 millions °C (NASA), un éclair chauffe l'air à ≈ 28 000 °C, soit 50 000 °F (NOAA). Ce sont des ordres de grandeur (estimations) ; le zéro absolu, −273,15 °C, est la température la plus basse possible. Tu supportes mieux le froid ou le chaud ?",
+  "hashtags": ["#science", "#temperature", "#comparaison", "#lesaviezvous", "#satisfaisant", "#stopmotion"]
+ }
+}
